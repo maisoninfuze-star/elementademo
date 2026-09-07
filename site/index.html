@@ -2,184 +2,289 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Elementa · Rawdon</title>
-<meta name="description" content="Elementa, une chambre noire en porte-à-faux dans la forêt de Rawdon, Lanaudière. Une pièce, deux personnes, à 1 h 15 de Montréal.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elementa · Refuge d’architecture pour deux, Rawdon</title>
+<meta name="description" content="Elementa, un refuge d’architecture pour deux dans la forêt de Rawdon, Lanaudière. Une pièce vitrée, une terrasse sur le toit, à 1 h 15 de Montréal.">
 <meta name="theme-color" content="#0B0B0A">
+<link rel="canonical" href="https://elementademo.vercel.app/">
+<link rel="alternate" hreflang="fr" href="https://elementademo.vercel.app/?lang=fr">
+<link rel="alternate" hreflang="en" href="https://elementademo.vercel.app/?lang=en">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Elementa">
+<meta property="og:title" content="Elementa · Refuge d’architecture pour deux, Rawdon">
+<meta property="og:description" content="Une pièce vitrée dans la forêt de Rawdon, une terrasse sur le toit, à 1 h 15 de Montréal.">
+<meta property="og:image" content="https://elementademo.vercel.app/assets/og.jpg">
+<meta property="og:url" content="https://elementademo.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/poster-hero.jpg">
+<link rel="stylesheet" href="css/style.css?v=202609070001">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Elementa","description":"Refuge d’architecture pour deux dans la forêt de Rawdon, Lanaudière, Québec.","url":"https://elementademo.vercel.app/","email":"hello@elementa.ca","address":{"@type":"PostalAddress","addressLocality":"Rawdon","addressRegion":"QC","addressCountry":"CA"},"geo":{"@type":"GeoCoordinates","latitude":46.05,"longitude":-73.71},"image":"https://elementademo.vercel.app/assets/og.jpg"}
+</script>
 </head>
 <body data-frames="202609062130">
 
-<div id="loader" aria-hidden="true">
-  <span class="loader-brand">Elementa</span>
-  <div class="loader-bar"><i></i></div>
-  <span class="loader-pct">0</span>
-</div>
-
+<a class="skip" href="#chambre" data-i18n="a11y.skip">Passer la séquence d’ouverture</a>
 <div class="grain" aria-hidden="true"></div>
-<div class="cursor" aria-hidden="true"><span class="cursor-label"></span></div>
 <div class="progress" aria-hidden="true"><i></i></div>
 
-<header class="nav">
-  <a class="brand" href="#top" data-magnetic>Elementa</a>
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Elementa, retour au début">Elementa</a>
   <nav class="pills" aria-label="Sections">
     <a href="#refuge" data-i18n="nav.refuge" data-section="refuge">Le refuge</a>
+    <a href="#chambre" data-i18n="nav.chambre" data-section="chambre">La chambre</a>
     <a href="#elements" data-i18n="nav.elements" data-section="elements">Les éléments</a>
-    <a href="#galerie" data-i18n="nav.pieces" data-section="galerie">Photos</a>
-    <a href="#ou" data-i18n="nav.where" data-section="ou">Où</a>
+    <a href="#galerie" data-i18n="nav.photos" data-section="galerie">Photos</a>
+    <a href="#ou" data-i18n="nav.where" data-section="ou">Séjour</a>
   </nav>
   <div class="nav-right">
-    <button class="lang" type="button" aria-label="Switch to English">EN</button>
-    <a class="cta-pill" href="#reserver" data-i18n="nav.book" data-magnetic>Réserver</a>
+    <button class="lang" type="button">EN</button>
+    <a class="cta-pill" href="#reserver" data-i18n="nav.enquire">Nous écrire</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span><span></span></button>
   </div>
 </header>
 
-<div class="stage" aria-hidden="true">
-  <canvas id="stage"></canvas>
-  <div class="stage-shade"></div>
+<div class="menu" id="menu" hidden>
+  <div class="menu-inner">
+    <img class="menu-logo" src="assets/logo-ivory.png" alt="Elementa">
+    <nav class="menu-links" aria-label="Sections">
+      <a href="#refuge" data-i18n="nav.refuge">Le refuge</a>
+      <a href="#chambre" data-i18n="nav.chambre">La chambre</a>
+      <a href="#elements" data-i18n="nav.elements">Les éléments</a>
+      <a href="#galerie" data-i18n="nav.photos">Photos</a>
+      <a href="#ou" data-i18n="nav.where">Séjour</a>
+    </nav>
+    <div class="menu-actions">
+      <a class="btn btn-primary" href="#reserver" data-i18n="cta.enquire">Parler de votre séjour</a>
+      <button class="btn btn-ghost lang-alt" type="button">English</button>
+    </div>
+  </div>
 </div>
 
 <main id="top">
 
   <div class="cinema" id="cinema">
-
     <section class="chapter chapter-hero" id="refuge" data-seq="approach" data-frames="96" data-bridge="approach_bridge" data-bridge-frames="48">
       <div class="panel">
+        <img class="stage-poster" src="assets/poster-hero.jpg" alt="" decoding="async" fetchpriority="high">
         <div class="hero-inner">
           <h1 class="hero-title">Elementa</h1>
-          <p class="hero-sub" data-i18n="hero.sub">Une chambre noire, suspendue dans la forêt de Rawdon.</p>
+          <p class="hero-sub" data-i18n="hero.sub">Un refuge d’architecture pour deux, dans la forêt de Rawdon.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#reserver" data-i18n="cta.enquire">Parler de votre séjour</a>
+            <a class="btn btn-ghost" href="#chambre" data-i18n="cta.explore">Explorer le refuge</a>
+          </div>
         </div>
         <div class="hero-meta">
           <span data-i18n="hero.m1">Une pièce · deux personnes</span>
-          <span data-i18n="hero.m2">Lanaudière, à 1 h 15 de Montréal</span>
+          <span data-i18n="hero.m2">Rawdon, Lanaudière · 1 h 15 de Montréal</span>
         </div>
       </div>
     </section>
 
-    <section class="chapter" data-seq="creek" data-frames="84">
+    <section class="chapter chapter-short" id="terrain" data-seq="creek" data-frames="84">
       <div class="panel">
         <div class="ch-inner">
-          <span class="ch-index">02 / 02</span>
-          <h2 class="ch-title" data-split data-i18n="ch5.title">Vous ne verrez personne.</h2>
-          <p class="ch-body" data-i18n="ch5.body">Un terrain boisé privé, un ruisseau, dix minutes des chutes Dorwin. Vous entendrez le vent et, à l’automne, les huards.</p>
-          <ul class="tags" data-i18n-list="ch5.tags"><li>Terrain privé</li><li>Ruisseau</li><li>Chutes Dorwin</li></ul>
+          <span class="ch-index" data-i18n="ch5.label">Autour du refuge</span>
+          <h2 class="ch-title" data-split data-i18n="ch5.title">Un autre rythme, <em>au cœur de la forêt.</em></h2>
+          <p class="ch-body" data-i18n="ch5.body">Un terrain boisé privé en Lanaudière. Les chutes Dorwin sont à dix minutes, le village juste après.</p>
+          <ul class="tags" data-i18n-list="ch5.tags"><li>Terrain boisé privé</li><li>Chutes Dorwin à 10 min</li><li>1 h 15 de Montréal</li></ul>
         </div>
       </div>
     </section>
-
   </div>
+
+  <section class="enter" id="chambre" aria-label="La chambre">
+    <div class="enter-pin">
+      <img class="enter-out" src="assets/photos/window.jpg" srcset="assets/photos/window-800.jpg 800w, assets/photos/window.jpg 1600w" sizes="100vw" alt="" decoding="async">
+      <img class="enter-in" src="assets/photos/enter-bed.jpg" srcset="assets/photos/enter-bed-800.jpg 800w, assets/photos/enter-bed.jpg 1600w" sizes="100vw" data-i18n-alt="alt.enter" alt="Le lit, le coin vitré et la terrasse, avec la forêt derrière" decoding="async">
+      <div class="enter-shade" aria-hidden="true"></div>
+      <div class="enter-text">
+        <span class="ch-index" data-i18n="en.label">La chambre</span>
+        <h2 class="ch-title" data-split data-i18n="en.title">Se réveiller <em>au rythme de la forêt.</em></h2>
+        <p class="ch-body" data-i18n="en.body">Une seule pièce, vitrée sur deux côtés. Le lit fait face aux arbres, la terrasse s’ouvre juste derrière la vitre.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="live" id="vivre" aria-label="Vivre le refuge">
+    <div class="live-grid">
+      <div class="live-media" aria-hidden="true">
+        <img class="live-img is-on" src="assets/photos/bedroom-overview.jpg" srcset="assets/photos/bedroom-overview-800.jpg 800w, assets/photos/bedroom-overview.jpg 1600w" sizes="50vw" alt="" loading="lazy" decoding="async">
+        <img class="live-img" src="assets/photos/terrace-door.jpg" srcset="assets/photos/terrace-door-800.jpg 800w, assets/photos/terrace-door.jpg 1600w" sizes="50vw" alt="" loading="lazy" decoding="async">
+        <img class="live-img" src="assets/photos/rooftop-terrace.jpg" srcset="assets/photos/rooftop-terrace-800.jpg 800w, assets/photos/rooftop-terrace.jpg 1600w" sizes="50vw" alt="" loading="lazy" decoding="async">
+        <span class="live-count"><b>01</b> / 03</span>
+      </div>
+      <div class="live-text">
+        <article class="live-item" id="vivre-chambre" data-live="0">
+          <img class="live-inline" src="assets/photos/bedroom-overview-800.jpg" srcset="assets/photos/bedroom-overview-800.jpg 800w, assets/photos/bedroom-overview.jpg 1600w" sizes="100vw" data-i18n-alt="alt.bedroom" alt="La chambre, le miroir rond et le fauteuil sculptural" loading="lazy" decoding="async">
+          <span class="ch-index">01</span>
+          <h3 class="ch-title" data-i18n="lv1.title">S’éveiller <em>contre la vitre.</em></h3>
+          <p class="ch-body" data-i18n="lv1.body">Un lit king face à la forêt, un miroir rond, un plafond de cèdre tressé. Le matin, la lumière traverse les feuilles avant de vous atteindre.</p>
+        </article>
+        <article class="live-item" id="vivre-terrasse" data-live="1">
+          <img class="live-inline" src="assets/photos/terrace-door-800.jpg" srcset="assets/photos/terrace-door-800.jpg 800w, assets/photos/terrace-door.jpg 1600w" sizes="100vw" data-i18n-alt="alt.terrace" alt="La porte coulissante ouverte sur la terrasse et les fauteuils" loading="lazy" decoding="async">
+          <span class="ch-index">02</span>
+          <h3 class="ch-title" data-i18n="lv2.title">Ouvrir <em>sur la terrasse.</em></h3>
+          <p class="ch-body" data-i18n="lv2.body">La porte coulisse, la chambre continue dehors : deux chaises, une table basse, les pins à portée de main.</p>
+        </article>
+        <article class="live-item" id="vivre-toit" data-live="2">
+          <img class="live-inline" src="assets/photos/rooftop-terrace-800.jpg" srcset="assets/photos/rooftop-terrace-800.jpg 800w, assets/photos/rooftop-terrace.jpg 1600w" sizes="100vw" data-i18n-alt="alt.rooftop" alt="La terrasse sur le toit, ses chaises longues et la cheminée du poêle" loading="lazy" decoding="async">
+          <span class="ch-index">03</span>
+          <h3 class="ch-title" data-i18n="lv3.title">Monter <em>sur le toit.</em></h3>
+          <p class="ch-body" data-i18n="lv3.body">Une échelle intérieure mène à la terrasse du toit : deux chaises longues, la cime des arbres et, le soir, plus d’étoiles que vous ne le pensiez.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
   <section class="elements" id="elements">
     <div class="wrap">
-      <h2 class="sec-title" data-split data-i18n="el.title">Quatre éléments, <em>quatre saisons.</em></h2>
-      <p class="sec-body" data-i18n="el.body">Le refuge change avec ce qui l’entoure. Le feu du poêle en hiver, la pluie sur les vitres, la brume du matin, la neige sur le toit.</p>
+      <h2 class="sec-title" data-split data-i18n="el.title">Quatre éléments, <em>un seul refuge.</em></h2>
+      <p class="sec-body" data-i18n="el.body">Air, feu, eau, terre : quatre façons d’habiter le même lieu, chacune visible depuis la chambre.</p>
       <div class="el-grid">
-        <a class="el-tile el-air" href="#galerie" data-cursor-text="Air">
-          <img class="el-icon" src="assets/el-air.jpg" alt="">
-          <video class="el-photo" muted loop playsinline preload="none" poster="assets/gen/air.jpg" aria-label="Le refuge au lever du jour, dans la brume"><source src="assets/gen/air.mp4" type="video/mp4"></video>
-          <figcaption><span data-i18n="el.air">Air</span><span data-i18n="el.airc">La brume du matin sur la terrasse</span></figcaption>
+        <a class="el-tile el-air" href="#vivre-terrasse">
+          <img src="assets/photos/deck-view.jpg" srcset="assets/photos/deck-view-800.jpg 800w, assets/photos/deck-view.jpg 1600w" sizes="(max-width: 767px) 100vw, 40vw" data-i18n-alt="alt.air" alt="La terrasse, ses chaises longues et la vue sur les collines" loading="lazy" decoding="async">
+          <figcaption><span data-i18n="el.air">Air</span><span data-i18n="el.airc">La terrasse et la vue sur les collines</span></figcaption>
         </a>
-        <a class="el-tile el-fire" href="#galerie" data-cursor-text="Feu">
-          <img class="el-icon" src="assets/el-fire.jpg" alt="">
-          <video class="el-photo" muted loop playsinline preload="none" poster="assets/gen/fire.jpg" aria-label="Le refuge au crépuscule, vitres allumées"><source src="assets/gen/fire.mp4" type="video/mp4"></video>
-          <figcaption><span data-i18n="el.fire">Feu</span><span data-i18n="el.firec">Le poêle allumé, les vitres qui rougeoient</span></figcaption>
+        <a class="el-tile el-fire" href="#vivre-chambre">
+          <img src="assets/photos/stove.jpg" srcset="assets/photos/stove-800.jpg 800w, assets/photos/stove.jpg 1600w" sizes="(max-width: 767px) 100vw, 50vw" data-i18n-alt="alt.fire" alt="Le poêle à bois près de la vitre, dans la chambre" loading="lazy" decoding="async">
+          <figcaption><span data-i18n="el.fire">Feu</span><span data-i18n="el.firec">Le poêle à bois, près de la vitre</span></figcaption>
         </a>
-        <a class="el-tile el-water" href="#galerie" data-cursor-text="Eau">
-          <img class="el-icon" src="assets/el-water.jpg" alt="">
-          <video class="el-photo" muted loop playsinline preload="none" poster="assets/gen/water.jpg" aria-label="La pluie sur la fenêtre de la douche"><source src="assets/gen/water.mp4" type="video/mp4"></video>
-          <figcaption><span data-i18n="el.water">Eau</span><span data-i18n="el.waterc">La pluie sur la longue fenêtre de la douche</span></figcaption>
+        <a class="el-tile el-water" href="#galerie" data-lightbox="5">
+          <img src="assets/photos/shower-window.jpg" srcset="assets/photos/shower-window-800.jpg 800w, assets/photos/shower-window.jpg 1600w" sizes="(max-width: 767px) 100vw, 50vw" data-i18n-alt="alt.water" alt="La douche en ardoise et son hublot sur les arbres" loading="lazy" decoding="async">
+          <figcaption><span data-i18n="el.water">Eau</span><span data-i18n="el.waterc">La douche en ardoise et son hublot</span></figcaption>
         </a>
-        <a class="el-tile el-earth" href="#galerie" data-cursor-text="Terre">
-          <img class="el-icon" src="assets/el-earth.jpg" alt="">
-          <video class="el-photo" muted loop playsinline preload="none" poster="assets/gen/earth.jpg" aria-label="Le refuge sous la neige, vu du ciel"><source src="assets/gen/earth.mp4" type="video/mp4"></video>
-          <figcaption><span data-i18n="el.earth">Terre</span><span data-i18n="el.earthc">La neige sur le toit, la forêt en silence</span></figcaption>
+        <a class="el-tile el-earth" href="#ou">
+          <img src="assets/photos/window.jpg" srcset="assets/photos/window-800.jpg 800w, assets/photos/window.jpg 1600w" sizes="(max-width: 767px) 100vw, 40vw" data-i18n-alt="alt.earth" alt="La façade noire et le hublot, sur le terrain boisé" loading="lazy" decoding="async">
+          <figcaption><span data-i18n="el.earth">Terre</span><span data-i18n="el.earthc">La façade noire sur son terrain boisé</span></figcaption>
         </a>
       </div>
     </div>
   </section>
 
-  <section class="gallery" id="galerie">
-    <div class="gallery-pin">
-      <div class="gallery-head">
-        <span data-i18n="ga.label">Détails</span>
-        <span class="gallery-count">01 / 10</span>
+  <section class="gallery" id="galerie" aria-label="Photos">
+    <div class="wrap gallery-head">
+      <h2 class="sec-title" data-split data-i18n="ga.title">Ardoise, laiton, <em>verre, cèdre.</em></h2>
+      <div class="gallery-ctl">
+        <span class="gallery-count" aria-live="polite"><b>01</b> / 12</span>
+        <button class="gal-btn gal-prev" type="button" data-i18n-aria="ga.prev" aria-label="Photo précédente">←</button>
+        <button class="gal-btn gal-next" type="button" data-i18n-aria="ga.next" aria-label="Photo suivante">→</button>
       </div>
-      <div class="gallery-track">
-        <div class="gallery-title" data-i18n="ga.title">Ardoise, laiton, verre, cèdre.</div>
-        <img src="assets/photos/bed-forest.jpg" alt="" class="g-tall">
-        <img src="assets/photos/porthole.jpg" alt="" class="g-short g-top">
-        <img src="assets/photos/deck-view.jpg" alt="" class="g-tall">
-        <img src="assets/photos/brass.jpg" alt="" class="g-mid g-bottom">
-        <img src="assets/photos/rooftop.jpg" alt="" class="g-tall">
-        <img src="assets/photos/ladder.jpg" alt="" class="g-mid">
-        <img src="assets/photos/bath.jpg" alt="" class="g-short g-top">
-        <img src="assets/photos/bed-front.jpg" alt="" class="g-tall">
-        <img src="assets/photos/kitchen.jpg" alt="" class="g-mid g-bottom">
-        <img src="assets/photos/cocoon.jpg" alt="" class="g-tall">
-      </div>
-        <img src="assets/e5762.jpg" alt="" class="g-tall">
-        <img src="assets/e5765.jpg" alt="" class="g-short g-top">
-        <img src="assets/p5756.jpg" alt="" class="g-tall">
-        <img src="assets/p5753.jpg" alt="" class="g-mid g-bottom">
-        <img src="assets/e5763.jpg" alt="" class="g-tall">
-        <img src="assets/e5761.jpg" alt="" class="g-mid">
-        <img src="assets/e5767.jpg" alt="" class="g-short g-top">
-        <img src="assets/gen/autumn.jpg" alt="" class="g-tall">
-        <img src="assets/e5769.jpg" alt="" class="g-mid g-top">
-      </div>
-      <div class="gallery-bar"><i></i></div>
+    </div>
+    <div class="gallery-track" tabindex="0">
+      <figure><img src="assets/photos/enter-bed.jpg" srcset="assets/photos/enter-bed-800.jpg 800w, assets/photos/enter-bed.jpg 1600w" sizes="(max-width: 767px) 84vw, 60vw" width="1474" height="982" data-i18n-alt="ga.c1" alt="La chambre, le coin vitré et la terrasse" loading="lazy" decoding="async"><figcaption data-i18n="ga.c1">La chambre, le coin vitré et la terrasse</figcaption></figure>
+      <figure><img src="assets/photos/bedroom-overview.jpg" srcset="assets/photos/bedroom-overview-800.jpg 800w, assets/photos/bedroom-overview.jpg 1600w" sizes="(max-width: 767px) 84vw, 60vw" width="1474" height="982" data-i18n-alt="ga.c2" alt="La chambre, le miroir rond et le fauteuil" loading="lazy" decoding="async"><figcaption data-i18n="ga.c2">La chambre, le miroir rond et le fauteuil</figcaption></figure>
+      <figure><img src="assets/photos/window.jpg" srcset="assets/photos/window-800.jpg 800w, assets/photos/window.jpg 1600w" sizes="(max-width: 767px) 84vw, 60vw" width="2048" height="1365" data-i18n-alt="ga.c3" alt="Le hublot sur la façade noire" loading="lazy" decoding="async"><figcaption data-i18n="ga.c3">Le hublot sur la façade noire</figcaption></figure>
+      <figure><img src="assets/photos/terrace-door.jpg" srcset="assets/photos/terrace-door-800.jpg 800w, assets/photos/terrace-door.jpg 1600w" sizes="(max-width: 767px) 84vw, 60vw" width="1474" height="982" data-i18n-alt="ga.c4" alt="De l’intérieur vers la terrasse" loading="lazy" decoding="async"><figcaption data-i18n="ga.c4">De l’intérieur vers la terrasse</figcaption></figure>
+      <figure><img src="assets/photos/rooftop-terrace.jpg" srcset="assets/photos/rooftop-terrace-800.jpg 800w, assets/photos/rooftop-terrace.jpg 1600w" sizes="(max-width: 767px) 84vw, 60vw" width="1474" height="982" data-i18n-alt="ga.c5" alt="La terrasse sur le toit" loading="lazy" decoding="async"><figcaption data-i18n="ga.c5">La terrasse sur le toit</figcaption></figure>
+      <figure><img src="assets/photos/shower-window.jpg" srcset="assets/photos/shower-window-800.jpg 800w, assets/photos/shower-window.jpg 1600w" sizes="(max-width: 767px) 84vw, 60vw" width="1474" height="982" data-i18n-alt="ga.c6" alt="La douche et son hublot" loading="lazy" decoding="async"><figcaption data-i18n="ga.c6">La douche et son hublot</figcaption></figure>
+      <figure><img src="assets/photos/kitchen-materials.jpg" srcset="assets/photos/kitchen-materials-800.jpg 800w, assets/photos/kitchen-materials.jpg 1600w" sizes="(max-width: 767px) 84vw, 60vw" width="1474" height="982" data-i18n-alt="ga.c7" alt="La cuisine, le bois et le laiton" loading="lazy" decoding="async"><figcaption data-i18n="ga.c7">La cuisine, le bois et le laiton</figcaption></figure>
+      <figure><img src="assets/photos/terrace-detail.jpg" srcset="assets/photos/terrace-detail-800.jpg 800w, assets/photos/terrace-detail.jpg 1600w" sizes="(max-width: 767px) 84vw, 60vw" width="2048" height="1365" data-i18n-alt="ga.c8" alt="Détail de la terrasse : la chaise, la table et les objets" loading="lazy" decoding="async"><figcaption data-i18n="ga.c8">Détail de la terrasse</figcaption></figure>
+      <figure><img src="assets/photos/ladder-roof.jpg" srcset="assets/photos/ladder-roof-800.jpg 800w, assets/photos/ladder-roof.jpg 1600w" sizes="(max-width: 767px) 84vw, 60vw" width="1474" height="982" data-i18n-alt="ga.c9" alt="L’échelle intérieure qui mène au toit" loading="lazy" decoding="async"><figcaption data-i18n="ga.c9">L’échelle vers le toit</figcaption></figure>
+      <figure><img src="assets/photos/deck-view.jpg" srcset="assets/photos/deck-view-800.jpg 800w, assets/photos/deck-view.jpg 1600w" sizes="(max-width: 767px) 84vw, 60vw" width="1600" height="1067" data-i18n-alt="ga.c10" alt="La terrasse et la vue sur les collines" loading="lazy" decoding="async"><figcaption data-i18n="ga.c10">La terrasse et la vue</figcaption></figure>
+      <figure><img src="assets/photos/bath.jpg" srcset="assets/photos/bath-800.jpg 800w, assets/photos/bath.jpg 1600w" sizes="(max-width: 767px) 84vw, 60vw" width="1474" height="982" data-i18n-alt="ga.c11" alt="La salle de bain et son lavabo en pierre" loading="lazy" decoding="async"><figcaption data-i18n="ga.c11">La salle de bain</figcaption></figure>
+      <figure><img src="assets/photos/porthole.jpg" srcset="assets/photos/porthole-800.jpg 800w, assets/photos/porthole.jpg 1600w" sizes="(max-width: 767px) 84vw, 60vw" width="1474" height="982" data-i18n-alt="ga.c12" alt="Le hublot vu de l’intérieur, sur les pins" loading="lazy" decoding="async"><figcaption data-i18n="ga.c12">Le hublot, vu de l’intérieur</figcaption></figure>
     </div>
   </section>
 
-  <section class="where" id="ou">
-    <div class="wrap where-grid">
-      <div class="where-text">
+  <section class="plan" id="ou">
+    <div class="wrap plan-grid">
+      <div class="plan-text">
         <h2 class="sec-title" data-split data-i18n="wh.title">Rawdon, <em>à 1 h 15 de Montréal.</em></h2>
         <p class="sec-body" data-i18n="wh.body">Sur un terrain boisé privé de Lanaudière, à dix minutes des chutes Dorwin et du village. Autoroute 25, puis la 125 vers le nord.</p>
-        <div class="amen">
-          <span class="amen-label" data-i18n="am.label">Commodités</span>
-          <ul class="amen-list" data-i18n-list="am.list">
-            <li>Lit king</li><li>Terrasse sur le toit</li><li>Poêle à bois</li><li>Douche pluie</li>
-            <li>Cuisinette et espresso</li><li>Wi-Fi et télé</li><li>Planchers chauffants</li><li>Terrain boisé privé</li>
-          </ul>
+        <div class="plan-cols">
+          <div>
+            <span class="plan-label" data-i18n="am.label">Commodités</span>
+            <ul class="plan-list" data-i18n-list="am.list">
+              <li>Lit king</li><li>Terrasse sur le toit</li><li>Poêle à bois</li><li>Douche pluie</li>
+              <li>Cuisinette et espresso</li><li>Wi-Fi et télé</li><li>Planchers chauffants</li><li>Terrain boisé privé</li>
+            </ul>
+          </div>
+          <div>
+            <span class="plan-label" data-i18n="kn.label">Bon à savoir</span>
+            <ul class="plan-list" data-i18n-list="kn.list">
+              <li>Une seule pièce, pour deux personnes</li><li>Le toit se rejoint par une échelle intérieure</li><li>Stationnement sur place</li><li>Tarifs, arrivée et politiques : sur demande</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="map" data-reveal>
-        <iframe title="Carte, Rawdon, Québec" loading="lazy" referrerpolicy="no-referrer" src="https://www.openstreetmap.org/export/embed.html?bbox=-73.80%2C46.00%2C-73.62%2C46.10&amp;layer=mapnik&amp;marker=46.05%2C-73.71"></iframe>
-        <div class="map-pin"><i></i><span>46.05° N, 73.71° O</span></div>
+      <div class="plan-map">
+        <div class="map-static" id="map">
+          <div class="map-card">
+            <span class="plan-label" data-i18n="mp.label">Où</span>
+            <p class="map-place" data-i18n="mp.place">Rawdon, Lanaudière, Québec</p>
+            <p class="map-coords">46.05° N, 73.71° O</p>
+            <div class="map-actions">
+              <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=46.05,-73.71" target="_blank" rel="noopener" data-i18n="mp.dir">Itinéraire</a>
+              <button class="btn btn-ghost map-load" type="button" data-i18n="mp.show">Afficher la carte</button>
+            </div>
+            <p class="map-note" data-i18n="mp.note">Position approximative. L’adresse exacte est envoyée avec la confirmation.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="book" id="reserver">
-    <div class="book-bg" data-parallax="0.18"><img src="assets/gen/night-rooftop.jpg" alt=""></div>
-    <div class="book-inner">
-      <h2 class="book-title" data-split data-i18n="bk.title">Une nuit <em>dans la canopée.</em></h2>
-      <a class="book-cta" href="mailto:hello@elementa.ca" data-magnetic data-cursor-text="Réserver">
-        <span class="ring"></span>
-        <span data-i18n="bk.cta">Voir les disponibilités</span>
-      </a>
-      <div class="book-links">
-        <a href="mailto:hello@elementa.ca">hello@elementa.ca</a>
-        <a href="https://instagram.com/elementa.rawdon" rel="noopener">@elementa.rawdon</a>
+    <div class="book-bg" aria-hidden="true"><img src="assets/photos/terrace-detail.jpg" srcset="assets/photos/terrace-detail-800.jpg 800w, assets/photos/terrace-detail.jpg 1600w" sizes="100vw" alt="" loading="lazy" decoding="async"></div>
+    <div class="wrap book-grid">
+      <div class="book-text">
+        <h2 class="book-title" data-split data-i18n="bk.title">Une nuit <em>dans la canopée.</em></h2>
+        <p class="book-body" data-i18n="bk.body">Il n’y a pas encore de réservation en ligne. Dites-nous vos dates : nous répondons le jour même avec les disponibilités, le tarif et les modalités.</p>
+        <p class="book-alt"><a href="mailto:hello@elementa.ca">hello@elementa.ca</a> · <a href="https://instagram.com/elementa.rawdon" rel="noopener">@elementa.rawdon</a></p>
       </div>
+      <form class="enquiry" id="enquiry" novalidate>
+        <div class="f-row">
+          <label><span data-i18n="fm.in">Arrivée</span><input type="date" name="arrivee" required></label>
+          <label><span data-i18n="fm.out">Départ</span><input type="date" name="depart" required></label>
+        </div>
+        <div class="f-row">
+          <label><span data-i18n="fm.guests">Personnes</span>
+            <select name="personnes"><option value="2" selected>2</option><option value="1">1</option></select>
+          </label>
+          <label><span data-i18n="fm.name">Votre nom</span><input type="text" name="nom" autocomplete="name" required></label>
+        </div>
+        <label><span data-i18n="fm.msg">Message</span><textarea name="message" rows="3" data-i18n-ph="fm.msgph" placeholder="Une question, une occasion, une demande particulière…"></textarea></label>
+        <p class="f-error" hidden aria-live="polite" data-i18n="fm.err">Vérifiez les dates et votre nom.</p>
+        <div class="f-actions">
+          <button class="btn btn-primary" type="submit" data-i18n="cta.enquire">Parler de votre séjour</button>
+          <span class="f-hint" data-i18n="fm.hint">Ouvre votre messagerie avec la demande préremplie.</span>
+        </div>
+        <div class="f-done" hidden aria-live="polite">
+          <p data-i18n="fm.done">Merci. Votre demande s’ouvre dans votre messagerie : envoyez-la et nous répondons le jour même.</p>
+          <a class="f-done-link" href="#" data-i18n="fm.again">Si rien ne s’est ouvert, cliquez ici.</a>
+        </div>
+      </form>
     </div>
   </section>
 
   <footer class="footer">
     <span>© 2026 Elementa, Rawdon, Québec</span>
+    <a href="https://instagram.com/elementa.rawdon" rel="noopener">@elementa.rawdon</a>
     <span data-i18n="ft.credit">Images : WOLFILMZ</span>
     <a href="#top" data-i18n="ft.top">Haut de page</a>
   </footer>
 
 </main>
 
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo">
+  <button class="lb-close" type="button" data-i18n-aria="lb.close" aria-label="Fermer">×</button>
+  <button class="lb-prev" type="button" data-i18n-aria="ga.prev" aria-label="Photo précédente">←</button>
+  <figure class="lb-fig"><img class="lb-img" src="" alt=""><figcaption class="lb-cap"></figcaption></figure>
+  <button class="lb-next" type="button" data-i18n-aria="ga.next" aria-label="Photo suivante">→</button>
+  <span class="lb-count"></span>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="js/app.js?v=202609062130"></script>
+<script src="js/app.js?v=202609070001"></script>
 </body>
 </html>

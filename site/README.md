@@ -3,19 +3,23 @@
 Static scroll site (no build step). Serve the folder: `python3 -m http.server 8642 --directory site`.
 
 ## Experience
-Two pinned chapters scrubbed by scroll:
+Built to the 7 September 2026 audit and creative brief. Page order:
 
-1. **Hero** – Inder's own edited film (`../0905.mov`, 16 s: aerial descent, golden-hour exterior, deck, bedroom, stove), trimmed just before its fade to black. The Elementa wordmark recedes as the film plays.
-2. **Le terrain** – a Kling v3 glide over the Dorwin falls, with the closing text. A Kling bridge carries the camera from the stove shot out through the glass and over the forest to the falls (`../generated/v5/br_hero_falls.mp4`).
+1. **Arrive** – Inder's hero film (`../0905.mov`) scrubbed by scroll under the Elementa wordmark; descriptor and both actions (enquire, explore) visible immediately over a sharp poster, no loader.
+2. **Around the cabin** – Kling glide over the Dorwin falls, joined to the film by a Seedance pull-back bridge; copy names the falls as a nearby attraction.
+3. **Enter** – the round window (WLF03425) opens as a circular mask onto the bedroom (WLF03302) as you scroll; static image and text under reduced motion.
+4. **Live** – three compact chapters (wake by the glass, open to the terrace, rise to the rooftop) with a sticky image column on desktop and stacked images on phones.
+5. **Elements** – Air / Fire / Water / Earth as real views of the property (terrace, stove, shower, facade); each card links to its own scene.
+6. **Photos** – one canonical collection of 12 graded WOLFILMZ previews in a native horizontal scroller with previous/next, live count, captions, srcset, lightbox (keyboard, swipe, focus restore).
+7. **Plan** – ivory section: amenities, verified practical notes, static location card with directions link and on-demand OpenStreetMap.
+8. **Reserve** – honest enquiry form (dates, guests, name, message) that opens a prefilled email and shows an acknowledgement; email as the secondary route. Labelled "Parler de votre séjour" / "Enquire about a stay" until a booking provider exists.
 
-Then the supporting content: the four elements (fal.ai seasonal visuals on hover), photos (graded WOLFILMZ previews), where and amenities, booking (real rooftop at nightfall, fal.ai), footer. FR/EN toggle. Nav pills: Le refuge, Les éléments, Photos, Où.
+Mobile: hamburger menu sheet (links, language, enquiry action), 44 px targets, native scrolling. Language switch updates copy, alt text, aria labels, placeholders, title and meta description (`?lang=fr|en` also works). Metadata: canonical, hreflang, Open Graph image, favicons, LodgingBusiness JSON-LD with verified facts only.
 
-The three clips were upscaled 2x to 4K with Topaz Proteus on fal.ai (`fal-ai/topaz/upscale/video`, masters in `../generated/v6/*_4k.mp4`); `assemble_v5.py` prefers those masters automatically and `--xw 2560` sets the Retina tier width.
-
-Earlier chapter clips (orbit, room, roof, all Kling from WOLFILMZ stills) are still in `../generated/v5` if they are wanted back; `tools/assemble_v5.py` lists the chapters.
+QA: `../generated/qa/qa.js` (Playwright) screenshots desktop 1440, phone 390 and 360 and checks hero actions, chapter toggles, gallery count vs visible photo, lightbox, menu, touch targets and horizontal overflow.
 
 ## Structure
-- `index.html`, `css/style.css`, `js/app.js` – markup, styles, the whole engine (Lenis + GSAP ScrollTrigger, canvas frame player with blending, chapter text reveals, bridges, nav, gallery). Copy lives in `js/app.js` (`I18N`).
+- `index.html`, `css/style.css`, `js/app.js` – markup, styles, the whole engine (Lenis + GSAP ScrollTrigger, canvas frame player, window mask, live chapters, gallery + lightbox, menu, map, enquiry form). All FR/EN copy lives in `js/app.js` (`I18N`).
 - `frames/x/` (1920 px, wide Retina screens), `frames/d/` (1280 px) and `frames/m/` (720 px, phones), one folder per chapter plus `<chapter>_bridge/` folders. `app.js` picks the set from viewport width and pixel ratio. `data-seq`, `data-frames`, `data-bridge`, `data-bridge-frames` on each `.chapter` in `index.html`.
 - `assets/photos/` – gallery, `assets/gen/` – element tiles and the night rooftop, `assets/el-*.jpg` – brand element images.
 - `tools/seq_extract.py` – clip → frame set (motion-equalised sampling, optional grade, reverse, desktop + mobile sizes)
