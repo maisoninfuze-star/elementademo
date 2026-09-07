@@ -118,7 +118,7 @@
   /* ================= smooth scroll ================= */
   let lenis = null;
   if (!reduce && typeof Lenis !== 'undefined') {
-    lenis = new Lenis({ duration: 1.1, easing: x => Math.min(1, 1.001 - Math.pow(2, -10 * x)), smoothWheel: true, syncTouch: false });
+    lenis = new Lenis({ duration: 1.25, easing: x => Math.min(1, 1.001 - Math.pow(2, -10 * x)), smoothWheel: true, syncTouch: false });
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add(time => lenis.raf(time * 1000));
     gsap.ticker.lagSmoothing(0);
@@ -201,7 +201,7 @@
     const a = nearest(arr, Math.min(n - 1, Math.floor(clamp(tt) * (n - 1)))); if (!a) return false;
     drawImg(a, scale, alpha); return true;
   }
-  const MAIN = 0.62, BR0 = 0.8, XF = 0.86;
+  const MAIN = 0.66, BR0 = 0.8, XF = 0.86;   // film over the first 66 %, short hold, bridge over the last 20 %
   let stageOn = false;
   function render() {
     const ch = chapters[state.i]; if (!ch) return;
@@ -221,7 +221,7 @@
     } else drew = drawSeq(ch.frames, Math.min(1, p / BR0), 1, 1);
     if (drew && !stageOn) { stageOn = true; stage.classList.add('on'); const po = $('.stage-poster'); if (po) po.classList.add('off'); }
   }
-  chapters.forEach(ch => ScrollTrigger.create({ trigger: ch.el, start: 'top top', end: 'bottom bottom', scrub: true, onUpdate: s => { state.i = ch.i; state.p = s.progress; requestRender(); } }));
+  chapters.forEach(ch => ScrollTrigger.create({ trigger: ch.el, start: 'top top', end: 'bottom bottom', scrub: 0.35, onUpdate: s => { state.i = ch.i; state.p = s.progress; requestRender(); } }));
   ScrollTrigger.create({ trigger: '#cinema', start: 'top top', end: 'bottom top', onLeave: () => stage.classList.add('hidden'), onEnterBack: () => stage.classList.remove('hidden') });
 
   /* hero text: available immediately, recedes as the film plays */
@@ -230,7 +230,7 @@
   const heroTl = gsap.timeline({ paused: true })
     .to('.hero-inner', { y: -60, opacity: 0, transformOrigin: 'left bottom', ease: 'power2.in', duration: 1 }, 0)
     .to('.hero-meta', { opacity: 1, duration: 0.5, ease: 'none' }, 0.5);
-  ScrollTrigger.create({ trigger: hero.el, start: 'top top', end: 'bottom bottom', scrub: 0.5, onUpdate: s => heroTl.progress(reduce ? (s.progress > 0.35 ? 1 : 0) : clamp(s.progress / 0.65)) });
+  ScrollTrigger.create({ trigger: hero.el, start: 'top top', end: 'bottom bottom', scrub: 0.5, onUpdate: s => heroTl.progress(reduce ? (s.progress > 0.35 ? 1 : 0) : clamp(s.progress / 0.5)) });
   if (!reduce) gsap.from('.hero-inner', { y: 24, opacity: 0, duration: 1.1, ease: 'power3.out', delay: 0.1 });
 
   /* falls chapter text */

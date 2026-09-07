@@ -66,8 +66,8 @@ button{font:inherit;color:inherit}
 
 /* cinema chapters (frame sequences) */
 .cinema{position:relative;z-index:1}
-.chapter{height:220vh;position:relative}
-.chapter-short{height:180vh}
+.chapter{height:320vh;position:relative}   /* long travel = slow, smooth scrub */
+.chapter-short{height:220vh}
 .panel{position:sticky;top:0;height:100vh;height:100dvh;overflow:hidden}
 .stage-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .6s}
 .stage-poster.off{opacity:0}
@@ -243,8 +243,8 @@ main>section{position:relative;z-index:2;background:var(--bg)}
   .pills,.cta-pill,.lang{display:none}
   .menu-btn{display:block}
   .brand{font-size:22px}
-  .chapter{height:200vh}
-  .chapter-short{height:160vh}
+  .chapter{height:280vh}
+  .chapter-short{height:200vh}
   .hero-inner{left:var(--pad);right:var(--pad);bottom:13vh;max-width:none}
   .hero-title{font-size:clamp(68px,22vw,110px)}
   .hero-sub{font-size:16px}

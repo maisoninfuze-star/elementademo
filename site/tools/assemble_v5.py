@@ -8,7 +8,7 @@ bridges = "--bridges" in sys.argv
 dq = sys.argv[sys.argv.index("--dq") + 1] if "--dq" in sys.argv else "76"
 mq = sys.argv[sys.argv.index("--mq") + 1] if "--mq" in sys.argv else "66"
 chapters = [  # (chapter id, clip, frames, bridge clip)
-    ("approach", "hero0905", 96, "br_hero_falls"),   # Inder's edited hero film (0905.mov), bridge out to the falls
+    ("approach", "hero0905", 144, "br_hero_falls"),   # Inder's edited hero film (0905.mov), bridge out to the falls
     ("creek",    "ch5_falls", 84, None),
 ]
 XW = sys.argv[sys.argv.index("--xw") + 1] if "--xw" in sys.argv else "1920"
@@ -30,7 +30,7 @@ for sub in ("x", "d", "m"): shutil.rmtree(f"{OUT}/{sub}", ignore_errors=True)
 for cid, clip, n, br in chapters:
     extract(clip, n)
     use_br = bridges and br and os.path.exists(f"{V5}/{br}.mp4")
-    if use_br: extract(br, 48)
+    if use_br: extract(br, 60)
     for sub in ("x", "d", "m"):
         counts[cid] = copy(clip, f"{OUT}/{sub}/{cid}")
         if use_br: counts[cid + "_bridge"] = copy(br, f"{OUT}/{sub}/{cid}_bridge")
