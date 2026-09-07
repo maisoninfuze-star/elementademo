@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/poster-hero.jpg">
-<link rel="stylesheet" href="css/style.css?v=202609070001">
+<link rel="stylesheet" href="css/style.css?v=202609071248">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LodgingBusiness","name":"Elementa","description":"Refuge d’architecture pour deux dans la forêt de Rawdon, Lanaudière, Québec.","url":"https://elementademo.vercel.app/","email":"hello@elementa.ca","address":{"@type":"PostalAddress","addressLocality":"Rawdon","addressRegion":"QC","addressCountry":"CA"},"geo":{"@type":"GeoCoordinates","latitude":46.05,"longitude":-73.71},"image":"https://elementademo.vercel.app/assets/og.jpg"}
 </script>
@@ -150,20 +150,24 @@
       <p class="sec-body" data-i18n="el.body">Air, feu, eau, terre : quatre façons d’habiter le même lieu, chacune visible depuis la chambre.</p>
       <div class="el-grid">
         <a class="el-tile el-air" href="#vivre-terrasse">
-          <img src="assets/photos/deck-view.jpg" srcset="assets/photos/deck-view-800.jpg 800w, assets/photos/deck-view.jpg 1600w" sizes="(max-width: 767px) 100vw, 40vw" data-i18n-alt="alt.air" alt="La terrasse, ses chaises longues et la vue sur les collines" loading="lazy" decoding="async">
-          <figcaption><span data-i18n="el.air">Air</span><span data-i18n="el.airc">La terrasse et la vue sur les collines</span></figcaption>
+          <img class="el-icon" src="assets/el-air.jpg" alt="" loading="lazy" decoding="async">
+          <video class="el-photo" muted loop playsinline preload="none" poster="assets/gen/air.jpg" data-i18n-aria="alt.air" aria-label="Le refuge au lever du jour, dans la brume"><source src="assets/gen/air.mp4" type="video/mp4"></video>
+          <figcaption><span data-i18n="el.air">Air</span><span data-i18n="el.airc">La brume du matin sur la terrasse</span></figcaption>
         </a>
         <a class="el-tile el-fire" href="#vivre-chambre">
-          <img src="assets/photos/stove.jpg" srcset="assets/photos/stove-800.jpg 800w, assets/photos/stove.jpg 1600w" sizes="(max-width: 767px) 100vw, 50vw" data-i18n-alt="alt.fire" alt="Le poêle à bois près de la vitre, dans la chambre" loading="lazy" decoding="async">
-          <figcaption><span data-i18n="el.fire">Feu</span><span data-i18n="el.firec">Le poêle à bois, près de la vitre</span></figcaption>
+          <img class="el-icon" src="assets/el-fire.jpg" alt="" loading="lazy" decoding="async">
+          <video class="el-photo" muted loop playsinline preload="none" poster="assets/gen/fire.jpg" data-i18n-aria="alt.fire" aria-label="Le refuge au crépuscule, vitres allumées"><source src="assets/gen/fire.mp4" type="video/mp4"></video>
+          <figcaption><span data-i18n="el.fire">Feu</span><span data-i18n="el.firec">Le poêle allumé, les vitres qui rougeoient</span></figcaption>
         </a>
         <a class="el-tile el-water" href="#galerie" data-lightbox="5">
-          <img src="assets/photos/shower-window.jpg" srcset="assets/photos/shower-window-800.jpg 800w, assets/photos/shower-window.jpg 1600w" sizes="(max-width: 767px) 100vw, 50vw" data-i18n-alt="alt.water" alt="La douche en ardoise et son hublot sur les arbres" loading="lazy" decoding="async">
-          <figcaption><span data-i18n="el.water">Eau</span><span data-i18n="el.waterc">La douche en ardoise et son hublot</span></figcaption>
+          <img class="el-icon" src="assets/el-water.jpg" alt="" loading="lazy" decoding="async">
+          <video class="el-photo" muted loop playsinline preload="none" poster="assets/gen/water.jpg" data-i18n-aria="alt.water" aria-label="La pluie sur la fenêtre de la douche"><source src="assets/gen/water.mp4" type="video/mp4"></video>
+          <figcaption><span data-i18n="el.water">Eau</span><span data-i18n="el.waterc">La pluie sur la longue fenêtre de la douche</span></figcaption>
         </a>
         <a class="el-tile el-earth" href="#ou">
-          <img src="assets/photos/window.jpg" srcset="assets/photos/window-800.jpg 800w, assets/photos/window.jpg 1600w" sizes="(max-width: 767px) 100vw, 40vw" data-i18n-alt="alt.earth" alt="La façade noire et le hublot, sur le terrain boisé" loading="lazy" decoding="async">
-          <figcaption><span data-i18n="el.earth">Terre</span><span data-i18n="el.earthc">La façade noire sur son terrain boisé</span></figcaption>
+          <img class="el-icon" src="assets/el-earth.jpg" alt="" loading="lazy" decoding="async">
+          <video class="el-photo" muted loop playsinline preload="none" poster="assets/gen/earth.jpg" data-i18n-aria="alt.earth" aria-label="Le refuge sous la neige, vu du ciel"><source src="assets/gen/earth.mp4" type="video/mp4"></video>
+          <figcaption><span data-i18n="el.earth">Terre</span><span data-i18n="el.earthc">La neige sur le toit, la forêt en silence</span></figcaption>
         </a>
       </div>
     </div>
@@ -285,6 +289,6 @@
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="js/app.js?v=202609070001"></script>
+<script src="js/app.js?v=202609071248"></script>
 </body>
 </html>

@@ -22,12 +22,12 @@
       'lv1.title': 'S’éveiller <em>contre la vitre.</em>', 'lv1.body': 'Un lit king face à la forêt, un miroir rond, un plafond de cèdre tressé. Le matin, la lumière traverse les feuilles avant de vous atteindre.',
       'lv2.title': 'Ouvrir <em>sur la terrasse.</em>', 'lv2.body': 'La porte coulisse, la chambre continue dehors : deux chaises, une table basse, les pins à portée de main.',
       'lv3.title': 'Monter <em>sur le toit.</em>', 'lv3.body': 'Une échelle intérieure mène à la terrasse du toit : deux chaises longues, la cime des arbres et, le soir, plus d’étoiles que vous ne le pensiez.',
-      'el.title': 'Quatre éléments, <em>un seul refuge.</em>', 'el.body': 'Air, feu, eau, terre : quatre façons d’habiter le même lieu, chacune visible depuis la chambre.',
-      'el.air': 'Air', 'el.airc': 'La terrasse et la vue sur les collines', 'el.fire': 'Feu', 'el.firec': 'Le poêle à bois, près de la vitre', 'el.water': 'Eau', 'el.waterc': 'La douche en ardoise et son hublot', 'el.earth': 'Terre', 'el.earthc': 'La façade noire sur son terrain boisé',
+      'el.title': 'Quatre éléments, <em>quatre saisons.</em>', 'el.body': 'Le refuge change avec ce qui l’entoure : le feu du poêle en hiver, la pluie sur les vitres, la brume du matin, la neige sur le toit.',
+      'el.air': 'Air', 'el.airc': 'La brume du matin sur la terrasse', 'el.fire': 'Feu', 'el.firec': 'Le poêle allumé, les vitres qui rougeoient', 'el.water': 'Eau', 'el.waterc': 'La pluie sur la longue fenêtre de la douche', 'el.earth': 'Terre', 'el.earthc': 'La neige sur le toit, la forêt en silence',
       'ga.title': 'Ardoise, laiton, <em>verre, cèdre.</em>', 'ga.prev': 'Photo précédente', 'ga.next': 'Photo suivante', 'lb.close': 'Fermer',
       'ga.c1': 'La chambre, le coin vitré et la terrasse', 'ga.c2': 'La chambre, le miroir rond et le fauteuil', 'ga.c3': 'Le hublot sur la façade noire', 'ga.c4': 'De l’intérieur vers la terrasse', 'ga.c5': 'La terrasse sur le toit', 'ga.c6': 'La douche et son hublot', 'ga.c7': 'La cuisine, le bois et le laiton', 'ga.c8': 'Détail de la terrasse', 'ga.c9': 'L’échelle vers le toit', 'ga.c10': 'La terrasse et la vue', 'ga.c11': 'La salle de bain', 'ga.c12': 'Le hublot, vu de l’intérieur',
       'alt.enter': 'Le lit, le coin vitré et la terrasse, avec la forêt derrière', 'alt.bedroom': 'La chambre, le miroir rond et le fauteuil sculptural', 'alt.terrace': 'La porte coulissante ouverte sur la terrasse et les fauteuils', 'alt.rooftop': 'La terrasse sur le toit, ses chaises longues et la cheminée du poêle',
-      'alt.air': 'La terrasse, ses chaises longues et la vue sur les collines', 'alt.fire': 'Le poêle à bois près de la vitre, dans la chambre', 'alt.water': 'La douche en ardoise et son hublot sur les arbres', 'alt.earth': 'La façade noire et le hublot, sur le terrain boisé',
+      'alt.air': 'Le refuge au lever du jour, dans la brume', 'alt.fire': 'Le refuge au crépuscule, vitres allumées', 'alt.water': 'La pluie sur la fenêtre de la douche', 'alt.earth': 'Le refuge sous la neige, vu du ciel',
       'wh.title': 'Rawdon, <em>à 1 h 15 de Montréal.</em>', 'wh.body': 'Sur un terrain boisé privé de Lanaudière, à dix minutes des chutes Dorwin et du village. Autoroute 25, puis la 125 vers le nord.',
       'am.label': 'Commodités', 'am.list': ['Lit king', 'Terrasse sur le toit', 'Poêle à bois', 'Douche pluie', 'Cuisinette et espresso', 'Wi-Fi et télé', 'Planchers chauffants', 'Terrain boisé privé'],
       'kn.label': 'Bon à savoir', 'kn.list': ['Une seule pièce, pour deux personnes', 'Le toit se rejoint par une échelle intérieure', 'Stationnement sur place', 'Tarifs, arrivée et politiques : sur demande'],
@@ -49,12 +49,12 @@
       'lv1.title': 'Wake <em>by the glass.</em>', 'lv1.body': 'A king bed facing the forest, a round mirror, a woven-cedar ceiling. In the morning the light comes through the leaves before it reaches you.',
       'lv2.title': 'Open <em>to the terrace.</em>', 'lv2.body': 'The door slides, the room continues outside: two chairs, a low table, the pines within reach.',
       'lv3.title': 'Rise <em>to the rooftop.</em>', 'lv3.body': 'An indoor ladder leads to the roof terrace: two loungers, the treetops and, at night, more stars than you expect.',
-      'el.title': 'Four elements, <em>one cabin.</em>', 'el.body': 'Air, fire, water, earth: four ways of inhabiting the same place, each visible from the room.',
-      'el.air': 'Air', 'el.airc': 'The terrace and the view over the hills', 'el.fire': 'Fire', 'el.firec': 'The wood stove, by the glass', 'el.water': 'Water', 'el.waterc': 'The slate shower and its porthole', 'el.earth': 'Earth', 'el.earthc': 'The black facade on its wooded lot',
+      'el.title': 'Four elements, <em>four seasons.</em>', 'el.body': 'The cabin changes with what surrounds it: the stove in winter, rain on the glass, morning mist, snow on the roof.',
+      'el.air': 'Air', 'el.airc': 'Morning mist on the terrace', 'el.fire': 'Fire', 'el.firec': 'The stove lit, the glass glowing', 'el.water': 'Water', 'el.waterc': 'Rain on the long shower window', 'el.earth': 'Earth', 'el.earthc': 'Snow on the roof, the forest silent',
       'ga.title': 'Slate, brass, <em>glass, cedar.</em>', 'ga.prev': 'Previous photo', 'ga.next': 'Next photo', 'lb.close': 'Close',
       'ga.c1': 'The room, the glass corner and the terrace', 'ga.c2': 'The room, the round mirror and the chair', 'ga.c3': 'The porthole on the black facade', 'ga.c4': 'From inside to the terrace', 'ga.c5': 'The rooftop terrace', 'ga.c6': 'The shower and its porthole', 'ga.c7': 'The kitchen, wood and brass', 'ga.c8': 'Terrace detail', 'ga.c9': 'The ladder to the roof', 'ga.c10': 'The terrace and the view', 'ga.c11': 'The bathroom', 'ga.c12': 'The porthole, from inside',
       'alt.enter': 'The bed, the glass corner and the terrace, with the forest behind', 'alt.bedroom': 'The room, the round mirror and the sculptural chair', 'alt.terrace': 'The sliding door open onto the terrace and its chairs', 'alt.rooftop': 'The rooftop terrace, its loungers and the stove chimney',
-      'alt.air': 'The terrace, its loungers and the view over the hills', 'alt.fire': 'The wood stove by the glass, inside the room', 'alt.water': 'The slate shower and its porthole onto the trees', 'alt.earth': 'The black facade and the porthole, on the wooded lot',
+      'alt.air': 'The cabin at dawn, in the mist', 'alt.fire': 'The cabin at dusk, glass lit from inside', 'alt.water': 'Rain on the shower window', 'alt.earth': 'The cabin under snow, seen from above',
       'wh.title': 'Rawdon, <em>1 h 15 from Montréal.</em>', 'wh.body': 'On a private wooded lot in Lanaudière, ten minutes from the Dorwin falls and the village. Highway 25, then the 125 north.',
       'am.label': 'Amenities', 'am.list': ['King bed', 'Rooftop terrace', 'Wood stove', 'Rain shower', 'Kitchenette and espresso', 'Wi-Fi and TV', 'Heated floors', 'Private wooded lot'],
       'kn.label': 'Good to know', 'kn.list': ['A single room, for two guests', 'The roof is reached by an indoor ladder', 'Parking on site', 'Rates, check-in and policies: on request'],
@@ -310,6 +310,11 @@
     gsap.set(words, { yPercent: 110 });
     ScrollTrigger.create({ trigger: el, start: 'top 85%', once: true, onEnter: () => { el.dataset.shown = '1'; gsap.to(words, { yPercent: 0, duration: 0.7, stagger: 0.03, ease: 'expo.out' }); } });
   });
+  const tileOn = (el, on) => { el.classList.toggle('show', on); const v = $('video', el); if (!v) return; if (on) v.play().catch(() => {}); else v.pause(); };
+  $$('.el-tile video').forEach(v => v.addEventListener('pause', () => { const tile = v.closest('.el-tile'); if (tile.classList.contains('show') && !v.ended) setTimeout(() => { if (tile.classList.contains('show') && v.paused) v.play().catch(() => {}); }, 250); }));
+  if (reduce) { /* stills only */ }
+  else if (coarse) $$('.el-tile').forEach(el => ScrollTrigger.create({ trigger: el, start: 'top 55%', end: 'bottom 45%', onToggle: s => tileOn(el, s.isActive) }));
+  else $$('.el-tile').forEach(el => { el.addEventListener('pointerenter', () => tileOn(el, true)); el.addEventListener('pointerleave', () => tileOn(el, false)); el.addEventListener('focus', () => tileOn(el, true)); el.addEventListener('blur', () => tileOn(el, false)); });
   if (!reduce) $$('.sec-body, .plan-cols, .map-static, .book-body, .book-alt, .enquiry, .el-tile, .gallery-ctl').forEach(el => gsap.from(el, { y: 24, opacity: 0, duration: 0.7, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } }));
 
   /* ================= gallery: native scroller + controls + lightbox ================= */
