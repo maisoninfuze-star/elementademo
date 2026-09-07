@@ -18,7 +18,7 @@ def source(clip):
     return up if os.path.exists(up) else f"{V5}/{clip}.mp4"
 def extract(clip, n):
     if not glob.glob(f"{SEQ}/{clip}/d/*.webp"):
-        subprocess.run([sys.executable, EQ, source(clip), f"{SEQ}/{clip}", str(n), "--grade", "none", "--dq", dq, "--mq", mq, "--xw", XW, "--xq", "66"], check=True)
+        subprocess.run([sys.executable, EQ, source(clip), f"{SEQ}/{clip}", str(n), "--grade", "none", "--dq", dq, "--mq", mq, "--xw", XW, "--xq", "66", "--mw", "960"], check=True)
 def copy(clip, dst):
     os.makedirs(dst, exist_ok=True)
     for f in glob.glob(f"{dst}/*.webp"): os.remove(f)
