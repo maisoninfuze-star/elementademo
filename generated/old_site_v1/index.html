@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elementa · Rawdon</title>
+<meta name="description" content="Elementa, une chambre noire en porte-à-faux dans la forêt de Rawdon, Lanaudière. Une pièce, deux personnes, à 1 h 15 de Montréal.">
+<meta name="theme-color" content="#0B0B0A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="loader" aria-hidden="true">
+  <span class="loader-brand">Elementa</span>
+  <div class="loader-bar"><i></i></div>
+  <span class="loader-pct">0</span>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor-label"></span></div>
+<div class="progress" aria-hidden="true"><i></i></div>
+
+<header class="nav">
+  <a class="brand" href="#top" data-magnetic>Elementa</a>
+  <nav class="pills" aria-label="Sections">
+    <a href="#refuge" data-i18n="nav.refuge" data-section="refuge">Le refuge</a>
+    <a href="#pieces" data-i18n="nav.pieces" data-section="pieces">Les pièces</a>
+    <a href="#elements" data-i18n="nav.elements" data-section="elements">Les éléments</a>
+    <a href="#ou" data-i18n="nav.where" data-section="ou">Où</a>
+  </nav>
+  <div class="nav-right">
+    <button class="lang" type="button" aria-label="Switch to English">EN</button>
+    <a class="cta-pill" href="#reserver" data-i18n="nav.book" data-magnetic>Réserver</a>
+  </div>
+</header>
+
+<div class="stage" aria-hidden="true">
+  <canvas id="stage"></canvas>
+  <div class="stage-shade"></div>
+</div>
+
+<main id="top">
+
+  <div class="cinema" id="cinema">
+
+    <section class="chapter chapter-hero" id="refuge" data-seq="approach" data-frames="96" data-bridge="approach_bridge" data-bridge-frames="48">
+      <div class="panel">
+        <div class="hero-inner">
+          <h1 class="hero-title">Elementa</h1>
+          <p class="hero-sub" data-i18n="hero.sub">Une chambre noire, suspendue dans la forêt de Rawdon.</p>
+        </div>
+        <div class="hero-meta">
+          <span data-i18n="hero.m1">Une pièce · deux personnes</span>
+          <span data-i18n="hero.m2">Lanaudière, à 1 h 15 de Montréal</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" data-seq="exterior" data-frames="72" data-bridge="exterior_bridge" data-bridge-frames="48">
+      <div class="panel">
+        <div class="ch-inner">
+          <span class="ch-index">02 / 05</span>
+          <h2 class="ch-title" data-split data-i18n="ch2.title">Une boîte noire, suspendue sur le roc.</h2>
+          <p class="ch-body" data-i18n="ch2.body">Acier, ardoise, verre et cèdre. Une seule pièce en porte-à-faux, vitrée sur deux côtés, avec une terrasse sur le toit et la forêt en dessous.</p>
+          <ul class="tags" data-i18n-list="ch2.tags"><li>Acier</li><li>Ardoise</li><li>Verre</li><li>Cèdre</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="pieces" data-seq="room" data-frames="72" data-bridge="room_bridge" data-bridge-frames="48">
+      <div class="panel">
+        <div class="ch-inner">
+          <span class="ch-index">03 / 05</span>
+          <h2 class="ch-title" data-split data-i18n="ch3.title">Dormir dans les arbres.</h2>
+          <p class="ch-body" data-i18n="ch3.body">Vitrage du sol au plafond, un lit king face à la forêt et un plafond de cèdre tressé. Le matin, la lumière traverse les feuilles avant de vous atteindre.</p>
+          <ul class="tags" data-i18n-list="ch3.tags"><li>Lit king</li><li>Planchers chauffants</li><li>Douche pluie</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" data-seq="ladder" data-frames="82" data-bridge="ladder_bridge" data-bridge-frames="48">
+      <div class="panel">
+        <div class="ch-inner">
+          <span class="ch-index">04 / 05</span>
+          <h2 class="ch-title" data-split data-i18n="ch4.title">En haut de l’échelle, les Laurentides.</h2>
+          <p class="ch-body" data-i18n="ch4.body">Un hublot, une échelle de bois, puis le toit : un poêle, deux chaises longues et un garde-corps de verre. Le coucher du soleil sur les collines, puis les étoiles.</p>
+          <ul class="tags" data-i18n-list="ch4.tags"><li>Terrasse sur le toit</li><li>Poêle à bois</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" data-seq="creek" data-frames="72">
+      <div class="panel">
+        <div class="ch-inner">
+          <span class="ch-index">05 / 05</span>
+          <h2 class="ch-title" data-split data-i18n="ch5.title">Vous ne verrez personne.</h2>
+          <p class="ch-body" data-i18n="ch5.body">Un terrain boisé privé, un ruisseau, dix minutes des chutes Dorwin. Vous entendrez le vent et, à l’automne, les huards.</p>
+          <ul class="tags" data-i18n-list="ch5.tags"><li>Terrain privé</li><li>Ruisseau</li><li>Chutes Dorwin</li></ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <section class="elements" id="elements">
+    <div class="wrap">
+      <h2 class="sec-title" data-split data-i18n="el.title">Quatre éléments, <em>quatre saisons.</em></h2>
+      <p class="sec-body" data-i18n="el.body">Le refuge change avec ce qui l’entoure. Le feu du poêle en hiver, la pluie sur les vitres, la brume du matin, la neige sur le toit.</p>
+      <div class="el-grid">
+        <a class="el-tile el-air" href="#galerie" data-cursor-text="Air">
+          <img class="el-icon" src="assets/el-air.jpg" alt="">
+          <video class="el-photo" muted loop playsinline preload="none" poster="assets/gen/air.jpg" aria-label="Le refuge au lever du jour, dans la brume"><source src="assets/gen/air.mp4" type="video/mp4"></video>
+          <figcaption><span data-i18n="el.air">Air</span><span data-i18n="el.airc">La brume du matin sur la terrasse</span></figcaption>
+        </a>
+        <a class="el-tile el-fire" href="#galerie" data-cursor-text="Feu">
+          <img class="el-icon" src="assets/el-fire.jpg" alt="">
+          <video class="el-photo" muted loop playsinline preload="none" poster="assets/gen/fire.jpg" aria-label="Le refuge au crépuscule, vitres allumées"><source src="assets/gen/fire.mp4" type="video/mp4"></video>
+          <figcaption><span data-i18n="el.fire">Feu</span><span data-i18n="el.firec">Le poêle allumé, les vitres qui rougeoient</span></figcaption>
+        </a>
+        <a class="el-tile el-water" href="#galerie" data-cursor-text="Eau">
+          <img class="el-icon" src="assets/el-water.jpg" alt="">
+          <video class="el-photo" muted loop playsinline preload="none" poster="assets/gen/water.jpg" aria-label="La pluie sur la fenêtre de la douche"><source src="assets/gen/water.mp4" type="video/mp4"></video>
+          <figcaption><span data-i18n="el.water">Eau</span><span data-i18n="el.waterc">La pluie sur la longue fenêtre de la douche</span></figcaption>
+        </a>
+        <a class="el-tile el-earth" href="#galerie" data-cursor-text="Terre">
+          <img class="el-icon" src="assets/el-earth.jpg" alt="">
+          <video class="el-photo" muted loop playsinline preload="none" poster="assets/gen/earth.jpg" aria-label="Le refuge sous la neige, vu du ciel"><source src="assets/gen/earth.mp4" type="video/mp4"></video>
+          <figcaption><span data-i18n="el.earth">Terre</span><span data-i18n="el.earthc">La neige sur le toit, la forêt en silence</span></figcaption>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="galerie">
+    <div class="gallery-pin">
+      <div class="gallery-head">
+        <span data-i18n="ga.label">Détails</span>
+        <span class="gallery-count">01 / 09</span>
+      </div>
+      <div class="gallery-track">
+        <div class="gallery-title" data-i18n="ga.title">Ardoise, laiton, verre, cèdre.</div>
+        <img src="assets/e5762.jpg" alt="" class="g-tall">
+        <img src="assets/e5765.jpg" alt="" class="g-short g-top">
+        <img src="assets/p5756.jpg" alt="" class="g-tall">
+        <img src="assets/p5753.jpg" alt="" class="g-mid g-bottom">
+        <img src="assets/e5763.jpg" alt="" class="g-tall">
+        <img src="assets/e5761.jpg" alt="" class="g-mid">
+        <img src="assets/e5767.jpg" alt="" class="g-short g-top">
+        <img src="assets/gen/autumn.jpg" alt="" class="g-tall">
+        <img src="assets/e5769.jpg" alt="" class="g-mid g-top">
+      </div>
+      <div class="gallery-bar"><i></i></div>
+    </div>
+  </section>
+
+  <section class="where" id="ou">
+    <div class="wrap where-grid">
+      <div class="where-text">
+        <h2 class="sec-title" data-split data-i18n="wh.title">Rawdon, <em>à 1 h 15 de Montréal.</em></h2>
+        <p class="sec-body" data-i18n="wh.body">Sur un terrain boisé privé de Lanaudière, à dix minutes des chutes Dorwin et du village. Autoroute 25, puis la 125 vers le nord.</p>
+        <div class="amen">
+          <span class="amen-label" data-i18n="am.label">Commodités</span>
+          <ul class="amen-list" data-i18n-list="am.list">
+            <li>Lit king</li><li>Terrasse sur le toit</li><li>Poêle à bois</li><li>Douche pluie</li>
+            <li>Cuisinette et espresso</li><li>Wi-Fi et télé</li><li>Planchers chauffants</li><li>Terrain boisé privé</li>
+          </ul>
+        </div>
+      </div>
+      <div class="map" data-reveal>
+        <iframe title="Carte, Rawdon, Québec" loading="lazy" referrerpolicy="no-referrer" src="https://www.openstreetmap.org/export/embed.html?bbox=-73.80%2C46.00%2C-73.62%2C46.10&amp;layer=mapnik&amp;marker=46.05%2C-73.71"></iframe>
+        <div class="map-pin"><i></i><span>46.05° N, 73.71° O</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="book" id="reserver">
+    <div class="book-bg" data-parallax="0.18"><img src="assets/gen/night.jpg" alt=""></div>
+    <div class="book-inner">
+      <h2 class="book-title" data-split data-i18n="bk.title">Une nuit <em>dans la canopée.</em></h2>
+      <a class="book-cta" href="mailto:hello@elementa.ca" data-magnetic data-cursor-text="Réserver">
+        <span class="ring"></span>
+        <span data-i18n="bk.cta">Voir les disponibilités</span>
+      </a>
+      <div class="book-links">
+        <a href="mailto:hello@elementa.ca">hello@elementa.ca</a>
+        <a href="https://instagram.com/elementa.rawdon" rel="noopener">@elementa.rawdon</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>© 2026 Elementa, Rawdon, Québec</span>
+    <span data-i18n="ft.credit">Photos et vidéo par les propriétaires</span>
+    <a href="#top" data-i18n="ft.top">Haut de page</a>
+  </footer>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

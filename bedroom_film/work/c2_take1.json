@@ -1,0 +1,22 @@
+{
+ "args": {
+  "prompt": "Continuous cinematic architectural shot, one take. The camera drifts smoothly to the left and glides through the clear floor space beside the bed, rotating slowly until the black cylindrical wood stove beside the tall black-framed windows is framed in a flattering three-quarter view, with the forest windows and part of the room still visible. As the stove comes into frame a small flame appears on the logs inside the closed firebox and grows gradually into a warm, steady wood fire behind the glass door, casting soft amber reflections on the stove body and the stone floor. The flames stay entirely inside the stove. Slow stabilized gimbal movement, gentle ease-in and ease-out, natural parallax, level horizon. Daylight and the rest of the room's lighting stay constant. The stove keeps its exact shape, glass door, flue pipe and position. The ceiling-mounted television stays folded up against the ceiling. No smoke in the room, no sparks, no fire outside the stove, no people, no text.",
+  "image_url": "https://v3b.fal.media/files/b/0aa94748/_xcqfCmC3eRz68-dR8wJW_c1_last.png",
+  "aspect_ratio": "16:9",
+  "resolution": "1080p",
+  "duration": "7",
+  "generate_audio": false,
+  "camera_fixed": false,
+  "end_image_url": "https://v3b.fal.media/files/b/0aa94749/vS71IgXqzq7sXWero7pKt_k2_end.jpg",
+  "seed": 31
+ },
+ "result": {
+  "video": {
+   "url": "https://v3b.fal.media/files/b/0aa94754/6INodhS5zxRIqSXT7aYKE_video.mp4",
+   "content_type": "video/mp4",
+   "file_name": "video.mp4",
+   "file_size": 20573023
+  },
+  "seed": 31
+ }
+}

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elementa · Rawdon</title>
+<meta name="description" content="Elementa, une chambre noire en porte-à-faux dans la forêt de Rawdon, Lanaudière. Une pièce, deux personnes, à 1 h 15 de Montréal.">
+<meta name="theme-color" content="#0B0B0A">
+<meta property="og:title" content="Elementa · Rawdon">
+<meta property="og:description" content="Une chambre noire suspendue dans la forêt de Rawdon. Une pièce, deux personnes, à 1 h 15 de Montréal.">
+<meta property="og:image" content="assets/poster-invitation.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/poster-intro.jpg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#after-story" data-i18n="a11y.skip">Passer la séquence</a>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Elementa, retour au début">Elementa</a>
+  <nav class="pills" aria-label="Chapitres"></nav>
+  <div class="nav-right">
+    <button class="lang" type="button">EN</button>
+    <a class="cta-pill" href="#reserver" data-i18n="nav.book">Réserver</a>
+  </div>
+  <div class="loadbar" aria-hidden="true"><i></i></div>
+</header>
+
+<main id="top">
+
+  <section class="story" id="story" aria-label="Séquence cinématique">
+    <div class="stage">
+      <img class="stage-poster" src="assets/poster-intro.jpg" alt="" decoding="async">
+      <canvas class="stage-canvas" aria-hidden="true"></canvas>
+      <div class="stage-shade" aria-hidden="true"></div>
+      <div class="chapters"></div>
+    </div>
+  </section>
+  <div class="story-static" hidden></div>
+
+  <div id="after-story"></div>
+
+  <section class="elements" id="elements">
+    <div class="wrap">
+      <h2 class="sec-title" data-split data-i18n="el.title">Quatre éléments, <em>quatre saisons.</em></h2>
+      <p class="sec-body" data-i18n="el.body">Le refuge change avec ce qui l’entoure. Le feu du poêle en hiver, la pluie sur les vitres, la brume du matin, la neige sur le toit.</p>
+      <div class="el-grid">
+        <a class="el-tile el-air" href="#galerie">
+          <img class="el-icon" src="assets/el-air.jpg" alt="" loading="lazy">
+          <video class="el-photo" muted loop playsinline preload="none" poster="assets/gen/air.jpg" aria-label="Le refuge au lever du jour, dans la brume"><source src="assets/gen/air.mp4" type="video/mp4"></video>
+          <figcaption><span data-i18n="el.air">Air</span><span data-i18n="el.airc">La brume du matin sur la terrasse</span></figcaption>
+        </a>
+        <a class="el-tile el-fire" href="#galerie">
+          <img class="el-icon" src="assets/el-fire.jpg" alt="" loading="lazy">
+          <video class="el-photo" muted loop playsinline preload="none" poster="assets/gen/fire.jpg" aria-label="Le refuge au crépuscule, vitres allumées"><source src="assets/gen/fire.mp4" type="video/mp4"></video>
+          <figcaption><span data-i18n="el.fire">Feu</span><span data-i18n="el.firec">Le poêle allumé, les vitres qui rougeoient</span></figcaption>
+        </a>
+        <a class="el-tile el-water" href="#galerie">
+          <img class="el-icon" src="assets/el-water.jpg" alt="" loading="lazy">
+          <video class="el-photo" muted loop playsinline preload="none" poster="assets/gen/water.jpg" aria-label="La pluie sur la fenêtre de la douche"><source src="assets/gen/water.mp4" type="video/mp4"></video>
+          <figcaption><span data-i18n="el.water">Eau</span><span data-i18n="el.waterc">La pluie sur la longue fenêtre de la douche</span></figcaption>
+        </a>
+        <a class="el-tile el-earth" href="#galerie">
+          <img class="el-icon" src="assets/el-earth.jpg" alt="" loading="lazy">
+          <video class="el-photo" muted loop playsinline preload="none" poster="assets/gen/earth.jpg" aria-label="Le refuge sous la neige, vu du ciel"><source src="assets/gen/earth.mp4" type="video/mp4"></video>
+          <figcaption><span data-i18n="el.earth">Terre</span><span data-i18n="el.earthc">La neige sur le toit, la forêt en silence</span></figcaption>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="galerie" aria-label="Photos">
+    <div class="gallery-pin">
+      <div class="gallery-head"><span data-i18n="ga.label">Photos</span><span class="gallery-count">01 / 10</span></div>
+      <div class="gallery-track">
+        <div class="gallery-title" data-i18n="ga.title">Ardoise, laiton, verre, cèdre.</div>
+        <img src="assets/photos/bed-forest.jpg" alt="" class="g-tall">
+        <img src="assets/photos/porthole.jpg" alt="" class="g-short g-top">
+        <img src="assets/photos/deck-view.jpg" alt="" class="g-tall">
+        <img src="assets/photos/brass.jpg" alt="" class="g-mid g-bottom">
+        <img src="assets/photos/rooftop.jpg" alt="" class="g-tall">
+        <img src="assets/photos/ladder.jpg" alt="" class="g-mid">
+        <img src="assets/photos/bath.jpg" alt="" class="g-short g-top">
+        <img src="assets/photos/bed-front.jpg" alt="" class="g-tall">
+        <img src="assets/photos/kitchen.jpg" alt="" class="g-mid g-bottom">
+        <img src="assets/photos/cocoon.jpg" alt="" class="g-tall">
+      </div>
+      <div class="gallery-bar" aria-hidden="true"><i></i></div>
+    </div>
+  </section>
+
+  <section class="where" id="ou">
+    <div class="wrap where-grid">
+      <div class="where-text">
+        <h2 class="sec-title" data-split data-i18n="wh.title">Rawdon, <em>à 1 h 15 de Montréal.</em></h2>
+        <p class="sec-body" data-i18n="wh.body">Sur un terrain boisé privé de Lanaudière, à dix minutes des chutes Dorwin et du village. Autoroute 25, puis la 125 vers le nord.</p>
+        <div class="amen">
+          <span class="amen-label" data-i18n="am.label">Commodités</span>
+          <ul class="amen-list" data-i18n-list="am.list">
+            <li>Lit king</li><li>Terrasse sur le toit</li><li>Poêle à bois</li><li>Douche pluie</li>
+            <li>Cuisinette et espresso</li><li>Wi-Fi et télé</li><li>Planchers chauffants</li><li>Terrain boisé privé</li>
+          </ul>
+        </div>
+      </div>
+      <div class="map" data-reveal>
+        <iframe title="Carte, Rawdon, Québec" loading="lazy" referrerpolicy="no-referrer" src="https://www.openstreetmap.org/export/embed.html?bbox=-73.80%2C46.00%2C-73.62%2C46.10&amp;layer=mapnik&amp;marker=46.05%2C-73.71"></iframe>
+        <div class="map-pin"><i></i><span>46.05° N, 73.71° O</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="book" id="reserver">
+    <div class="book-bg" data-parallax="0.18"><img src="assets/poster-invitation.jpg" alt="" loading="lazy"></div>
+    <div class="book-inner">
+      <h2 class="book-title" data-split data-i18n="bk.title">Une nuit <em>dans la canopée.</em></h2>
+      <p class="book-body" data-i18n="bk.body">Une pièce, deux personnes, toute l’année. Écrivez-nous avec vos dates, nous répondons le jour même.</p>
+      <div class="book-actions">
+        <a class="btn btn-primary" href="mailto:hello@elementa.ca" data-i18n="bk.cta">Réserver</a>
+        <a class="btn btn-ghost" href="mailto:hello@elementa.ca">hello@elementa.ca</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>© 2026 Elementa, Rawdon, Québec</span>
+    <a href="https://instagram.com/elementa.rawdon" rel="noopener">@elementa.rawdon</a>
+    <span data-i18n="ft.credit">Images : WOLFILMZ</span>
+    <a href="#top" data-i18n="ft.top">Haut de page</a>
+  </footer>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

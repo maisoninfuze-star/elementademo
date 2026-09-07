@@ -1,0 +1,21 @@
+{
+ "args": {
+  "prompt": "Slow cinematic architectural drone shot, one continuous forward move. The camera glides gently forward and slightly upward, rising just high enough to clear the top of the glass balcony railing, then passes above the two wooden folding chairs and the small wooden table with believable clearance, and continues straight ahead through the existing open sliding-glass doorway into the dark wood-panelled bedroom. Once inside it slows naturally and comes to rest facing the foot of the bed, still short of the bed. Smooth stabilized gimbal motion, gentle acceleration and deceleration, natural parallax, level horizon, realistic perspective. Exposure adapts softly from the brighter exterior to the darker interior. The railing, chairs, table, plants, bedding, round mirror and all architecture stay fixed and unchanged. No people, no drone visible, no text.",
+  "image_url": "https://v3b.fal.media/files/b/0aa94714/IZ2XR61FxDH5S2p1coFDE_ref1_balcony.jpg",
+  "aspect_ratio": "16:9",
+  "resolution": "1080p",
+  "duration": "7",
+  "generate_audio": false,
+  "camera_fixed": false,
+  "seed": 11
+ },
+ "result": {
+  "video": {
+   "url": "https://v3b.fal.media/files/b/0aa9470f/lH8PppLYoJbv-S1IB8fUj_video.mp4",
+   "content_type": "video/mp4",
+   "file_name": "video.mp4",
+   "file_size": 17012349
+  },
+  "seed": 11
+ }
+}

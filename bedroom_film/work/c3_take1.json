@@ -1,0 +1,22 @@
+{
+ "args": {
+  "prompt": "One continuous cinematic architectural take inside this exact bedroom. The camera turns away from the lit wood stove and arcs smoothly through the clear floor space beside the bed, then tilts gently upward to reveal the flat black television mounted on the wooden ceiling, folded flat up against the ceiling beside the ceiling fan. Once the television is clearly framed, it pivots slowly downward on its fixed ceiling mount in one single controlled mechanical movement, swinging down until it hangs in its lowered viewing position over the room. The ceiling attachment stays fixed in place, the television stays rigid, rectangular and the same size and thickness, it never detaches or floats, and it clears the ceiling fan. Its screen stays dark with realistic reflections. The camera eases into a wide view looking across the grey bedding and white pillows toward the tall black-framed forest windows, the round pod chair and the deck, and holds steady. Slow stabilized gimbal movement, level horizon, natural parallax, gentle ease-in and ease-out. The real room never changes: textured wooden ceiling with recessed lights, ceiling fan, dark wall panels, grey stone floor, same furniture and daylight. No people, no drone, no text.",
+  "image_url": "https://v3b.fal.media/files/b/0aa947d7/bhW8aqeGHwLI8-FrPRh9w_c2_last.png",
+  "aspect_ratio": "16:9",
+  "resolution": "1080p",
+  "duration": "10",
+  "generate_audio": false,
+  "camera_fixed": false,
+  "end_image_url": "https://v3b.fal.media/files/b/0aa946fc/w-5z-ynmvhJLtKNWYYiiC_ref3_tvdown.jpg",
+  "seed": 515
+ },
+ "result": {
+  "video": {
+   "url": "https://v3b.fal.media/files/b/0aa947e3/-aRRX3_2XfN6qTwwnl8Fm_video.mp4",
+   "content_type": "video/mp4",
+   "file_name": "video.mp4",
+   "file_size": 34427158
+  },
+  "seed": 515
+ }
+}

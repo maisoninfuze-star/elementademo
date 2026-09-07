@@ -1,0 +1,11 @@
+.DS_Store
+# GitHub rejects single files over 100 MB (no Git LFS set up)
+generated/v6/hero0905_4k.mp4
+# frame-set caches, regenerable with site/tools/seq_extract.py + assemble_v5.py
+generated/seq/
+generated/seq5/
+generated/frames_v2/
+# incomplete downloads from a stalled job
+generated/v4/B1_orbit.mp4
+generated/v4/B2_enter.mp4
+generated/v4/B4_falls.mp4
