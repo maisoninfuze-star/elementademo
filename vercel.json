@@ -1,11 +1,14 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
+    { "source": "/vesplus", "destination": "/vesplus-demo/index.html" },
+    { "source": "/vesplus/", "destination": "/vesplus-demo/index.html" },
+    { "source": "/vesplus/(.*)", "destination": "/vesplus-demo/$1" },
     { "source": "/(.*)", "destination": "/site/$1" }
   ],
   "headers": [
     {
-      "source": "/(.*)\\.(webp|jpg|jpeg|png|mp4|webm)",
+      "source": "/(.*)\\.(webp|jpg|jpeg|png|mp4|webm|woff2)",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     }
   ]

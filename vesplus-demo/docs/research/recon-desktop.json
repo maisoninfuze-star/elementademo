@@ -1,0 +1,827 @@
+{
+ "title": "베스플러스 | 목표는 완벽한 분양 시장을 만드는 것입니다",
+ "lang": "ko",
+ "links": [
+  {
+   "rel": "stylesheet",
+   "href": "https://www.vesplus.co.kr/_nuxt/entry.oJWFy8Qj.css",
+   "as": ""
+  },
+  {
+   "rel": "stylesheet",
+   "href": "https://www.vesplus.co.kr/_nuxt/default.CKwRUjp_.css",
+   "as": ""
+  },
+  {
+   "rel": "stylesheet",
+   "href": "https://www.vesplus.co.kr/_nuxt/MANav.C38hR5_o.css",
+   "as": ""
+  },
+  {
+   "rel": "stylesheet",
+   "href": "https://www.vesplus.co.kr/_nuxt/Footer.BRNL43cU.css",
+   "as": ""
+  },
+  {
+   "rel": "stylesheet",
+   "href": "https://www.vesplus.co.kr/_nuxt/useSkins.endbex0h.css",
+   "as": ""
+  },
+  {
+   "rel": "stylesheet",
+   "href": "https://www.vesplus.co.kr/_nuxt/index.Rk5eMuX3.css",
+   "as": ""
+  },
+  {
+   "rel": "preload",
+   "href": "https://www.googletagmanager.com/gtag/js?id=G-GFK2C2DLWT",
+   "as": "script"
+  },
+  {
+   "rel": "modulepreload",
+   "href": "https://www.vesplus.co.kr/_nuxt/DEvfgKQY.js",
+   "as": "script"
+  },
+  {
+   "rel": "modulepreload",
+   "href": "https://www.vesplus.co.kr/_nuxt/vhtpTbsT.js",
+   "as": "script"
+  },
+  {
+   "rel": "modulepreload",
+   "href": "https://www.vesplus.co.kr/_nuxt/B_txIJPP.js",
+   "as": "script"
+  },
+  {
+   "rel": "modulepreload",
+   "href": "https://www.vesplus.co.kr/_nuxt/DlAUqK2U.js",
+   "as": "script"
+  },
+  {
+   "rel": "modulepreload",
+   "href": "https://www.vesplus.co.kr/_nuxt/BhG1gsiG.js",
+   "as": "script"
+  },
+  {
+   "rel": "modulepreload",
+   "href": "https://www.vesplus.co.kr/_nuxt/udEw_3Sy.js",
+   "as": "script"
+  },
+  {
+   "rel": "modulepreload",
+   "href": "https://www.vesplus.co.kr/_nuxt/BMRAm2b8.js",
+   "as": "script"
+  },
+  {
+   "rel": "modulepreload",
+   "href": "https://www.vesplus.co.kr/_nuxt/Cpj98o6Y.js",
+   "as": "script"
+  },
+  {
+   "rel": "modulepreload",
+   "href": "https://www.vesplus.co.kr/_nuxt/C7GfC3Ht.js",
+   "as": "script"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/titlePortfolio1.BTva3Lx0.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/titlePortfolio2.DLOaI66u.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/titlePortfolio3.BTmvxFLL.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/titlePortfolio4.mXF_O0aO.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/image%2025.CSz-HE3T.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/image%2046.Bvy31Oqm.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/image%2030.DhLlaLqY.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/KakaoTalk_20241110_140614610%202.Dd3aVhSe.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/image%2034.D3AOf9f-.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/KakaoTalk_20241105_170154185_01%201.3luHT51x.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/image%2018.CzmY_AJM.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/KakaoTalk_20241110_142234997%202.DO4PjP9V.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/image%2033.DBusNuLA.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/KakaoTalk_20250206_180001453%202.z_Gl9D8-.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/image%2032.CsRmKCeq.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/KakaoTalk_20241110_141039705%201.CvM7yfqJ.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/image%2029.ClU1aca-.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/image%2047.1udJTIj0.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/image%2020.CDyHiFM5.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/KakaoTalk_20241107_170032747_13%201.u5bA_UgD.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/image%2028.B_JxohRT.png",
+   "as": "image"
+  },
+  {
+   "rel": "prefetch",
+   "href": "https://www.vesplus.co.kr/_nuxt/SH1_5944%201.DmcBWTlV.png",
+   "as": "image"
+  },
+  {
+   "rel": "icon",
+   "href": "https://www.vesplus.co.kr/favicon_64.ico",
+   "as": ""
+  },
+  {
+   "rel": "icon",
+   "href": "https://www.vesplus.co.kr/favicon_16.ico",
+   "as": ""
+  },
+  {
+   "rel": "icon",
+   "href": "https://www.vesplus.co.kr/favicon_32.ico",
+   "as": ""
+  },
+  {
+   "rel": "icon",
+   "href": "https://www.vesplus.co.kr/favicon_128.ico",
+   "as": ""
+  },
+  {
+   "rel": "shortcut icon",
+   "href": "https://www.vesplus.co.kr/favicon_16.ico",
+   "as": ""
+  },
+  {
+   "rel": "stylesheet",
+   "href": "https://fonts.googleapis.com/css?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap",
+   "as": ""
+  },
+  {
+   "rel": "modulepreload",
+   "href": "https://www.vesplus.co.kr/_nuxt/CNAw-Hqz.js",
+   "as": "script"
+  }
+ ],
+ "scripts": [
+  "https://www.vesplus.co.kr/_nuxt/DEvfgKQY.js",
+  "https://www.googletagmanager.com/gtag/js?id=G-GFK2C2DLWT"
+ ],
+ "inlineScripts": [
+  "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"주식회사 베스플러스\",\"url\":\"https://www.vesplus.co.kr\",\"address\":\"서울특별시 강남구 영동대로 602, 6층\",\"contactPoint\":{\"@type\":\"ContactPoint\",\"telephone\":\"1833-2622\",\"contactType\":\"customer service\",\"areaServed\":\"KR\",\"availableLanguage\":\"ko\"},\"sameAs\":[\"https://www.instagram.com/vesplus_official\",\"https://www.youtube.com/channel/UC0o2DS4b32mPu1l5NhAMB7Q/fe",
+  "window.__NUXT__={};window.__NUXT__.config={public:{baseURL:\"https://api.vesplus.co.kr\",device:{defaultUserAgent:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36\",enabled:true,refreshOnResize:false},\"nuxt-scripts\":{version:\"\",defaultScriptOptions:{trigger:\"onNuxtReady\"}}},app:{baseURL:\"/\",buildId:\"446c6535-ca66-4087-99e4-726ad",
+  "[[\"ShallowReactive\",1],{\"data\":2,\"state\":63,\"once\":65,\"_errors\":66,\"serverRendered\":69,\"path\":70,\"pinia\":71},[\"ShallowReactive\",3],{\"main-page\":4,\"portfolios-featured\":27,\"news-featured\":46},[5,12,17,22],{\"id\":6,\"key\":7,\"name\":8,\"value\":9,\"created_at\":10,\"updated_at\":11},1,\"sales_agent\",\"분양대행\",25,\"2025-01-20T15:07:05.000000Z\",\"2025-04-24T01:23:49.000000Z\",{\"id\":13,\"key\":14,\"name\":15,\"value\":16,\"cr"
+ ],
+ "metas": [
+  {
+   "n": null,
+   "c": ""
+  },
+  {
+   "n": "viewport",
+   "c": "width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"
+  },
+  {
+   "n": "description",
+   "c": "목표는 막연히 잘 파는 것이 아닙니다. 완벽한 분양 시장을 만드는 것입니다. 철저한 교육을 바탕으로 양성된 전문가들에 움직이는 분양 시장을 만들기 위해 베스플러스는 분양 영업의 체계화에 나섰고, 독보적인 분양 성과로 증명하였습니다"
+  },
+  {
+   "n": "author",
+   "c": "admin@vesplus.co.kr"
+  },
+  {
+   "n": "og:title",
+   "c": "베스플러스 | 목표는 완벽한 분양 시장을 만드는 것입니다"
+  },
+  {
+   "n": "og:description",
+   "c": "목표는 막연히 잘 파는 것이 아닙니다. 완벽한 분양 시장을 만드는 것입니다. 철저한 교육을 바탕으로 양성된 전문가들에 움직이는 분양 시장을 만들기 위해 베스플러스는 분양 영업의 체계화에 나섰고, 독보적인 분양 성과로 증명하였습니다"
+  },
+  {
+   "n": "keywords",
+   "c": "베스플러스, 분양상담사, 부동산컨설팅, 분양대행, 부동산개발/투자, 부동산 마케팅"
+  },
+  {
+   "n": "naver-site-verification",
+   "c": "dfe70ae6412945f68e7bbd62e934d4dd1de6ea8a"
+  },
+  {
+   "n": "google-site-verification",
+   "c": "FPYIGbSvj4u_1PjKTdxBmgVQaMGBBLVBowdjmXPajgs"
+  },
+  {
+   "n": "image",
+   "c": ""
+  }
+ ],
+ "fonts": {
+  "\"Public Sans\", sans-serif, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"": 271,
+  "\"Public Sans\", sans-serif": 112,
+  "\"Public Sans\"": 36,
+  "Pretendard, sans-serif": 262,
+  "Pretendard": 4,
+  "monospace, monospace": 1
+ },
+ "colors": [
+  [
+   "rgb(255, 255, 255)",
+   367
+  ],
+  [
+   "rgba(47, 43, 61, 0.68)",
+   171
+  ],
+  [
+   "rgb(0, 0, 0)",
+   62
+  ],
+  [
+   "rgb(115, 103, 240)",
+   55
+  ],
+  [
+   "rgb(177, 152, 118)",
+   33
+  ],
+  [
+   "rgb(17, 17, 17)",
+   28
+  ],
+  [
+   "rgb(160, 160, 160)",
+   8
+  ],
+  [
+   "rgba(0, 0, 0, 0.8)",
+   3
+  ]
+ ],
+ "imgs": [
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/titlePortfolio1.BTva3Lx0.png",
+   "alt": "image",
+   "w": 1792,
+   "h": 1036,
+   "cls": "",
+   "parent": "image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/titlePortfolio2.DLOaI66u.png",
+   "alt": "image",
+   "w": 1792,
+   "h": 1036,
+   "cls": "",
+   "parent": "image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/titlePortfolio3.BTmvxFLL.png",
+   "alt": "image",
+   "w": 1792,
+   "h": 1036,
+   "cls": "",
+   "parent": "image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/titlePortfolio4.mXF_O0aO.png",
+   "alt": "image",
+   "w": 1792,
+   "h": 1036,
+   "cls": "",
+   "parent": "image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/image%2025.CSz-HE3T.png",
+   "alt": "",
+   "w": 624,
+   "h": 346,
+   "cls": "",
+   "parent": "image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/image%2046.Bvy31Oqm.png",
+   "alt": "",
+   "w": 1248,
+   "h": 692,
+   "cls": "",
+   "parent": "after-image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/image%2030.DhLlaLqY.png",
+   "alt": "",
+   "w": 625,
+   "h": 346,
+   "cls": "",
+   "parent": "image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/KakaoTalk_20241110_140614610%202.Dd3aVhSe.png",
+   "alt": "",
+   "w": 1248,
+   "h": 692,
+   "cls": "",
+   "parent": "after-image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/image%2034.D3AOf9f-.png",
+   "alt": "",
+   "w": 624,
+   "h": 346,
+   "cls": "",
+   "parent": "image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/KakaoTalk_20241105_170154185_01%201.3luHT51x.png",
+   "alt": "",
+   "w": 1248,
+   "h": 692,
+   "cls": "",
+   "parent": "after-image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/image%2018.CzmY_AJM.png",
+   "alt": "",
+   "w": 624,
+   "h": 346,
+   "cls": "",
+   "parent": "image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/KakaoTalk_20241110_142234997%202.DO4PjP9V.png",
+   "alt": "",
+   "w": 1246,
+   "h": 688,
+   "cls": "",
+   "parent": "after-image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/image%2033.DBusNuLA.png",
+   "alt": "",
+   "w": 624,
+   "h": 346,
+   "cls": "",
+   "parent": "image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/KakaoTalk_20250206_180001453%202.z_Gl9D8-.png",
+   "alt": "",
+   "w": 1248,
+   "h": 692,
+   "cls": "",
+   "parent": "after-image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/image%2032.CsRmKCeq.png",
+   "alt": "",
+   "w": 624,
+   "h": 346,
+   "cls": "",
+   "parent": "image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/KakaoTalk_20241110_141039705%201.CvM7yfqJ.png",
+   "alt": "",
+   "w": 1248,
+   "h": 692,
+   "cls": "",
+   "parent": "after-image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/image%2029.ClU1aca-.png",
+   "alt": "",
+   "w": 624,
+   "h": 346,
+   "cls": "",
+   "parent": "image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/image%2047.1udJTIj0.png",
+   "alt": "",
+   "w": 1248,
+   "h": 692,
+   "cls": "",
+   "parent": "after-image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/image%2020.CDyHiFM5.png",
+   "alt": "",
+   "w": 625,
+   "h": 346,
+   "cls": "",
+   "parent": "image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/KakaoTalk_20241107_170032747_13%201.u5bA_UgD.png",
+   "alt": "",
+   "w": 1248,
+   "h": 692,
+   "cls": "",
+   "parent": "after-image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/image%2028.B_JxohRT.png",
+   "alt": "",
+   "w": 624,
+   "h": 346,
+   "cls": "",
+   "parent": "image-wrapper"
+  },
+  {
+   "src": "https://www.vesplus.co.kr/_nuxt/SH1_5944%201.DmcBWTlV.png",
+   "alt": "",
+   "w": 1248,
+   "h": 692,
+   "cls": "",
+   "parent": "after-image-wrapper"
+  },
+  {
+   "src": "https://s3.ap-northeast-2.amazonaws.com/cdn.vesplus.co.kr/portfolios/April2025/qEXJETd1dE7mrIi2FIiz.jpg",
+   "alt": "신광교 클라우드 시티-thumbnail",
+   "w": 8000,
+   "h": 5372,
+   "cls": "portfolio-thumbnail",
+   "parent": "portfolio"
+  },
+  {
+   "src": "https://s3.ap-northeast-2.amazonaws.com/cdn.vesplus.co.kr/portfolios/April2025/b4KxRoJ4zWG4Cew7wknD.jpg",
+   "alt": "금강펜테리움 더시글로 코벤트워크 검단Ⅰ-thumbnail",
+   "w": 7000,
+   "h": 5599,
+   "cls": "portfolio-thumbnail",
+   "parent": "portfolio"
+  },
+  {
+   "src": "https://s3.ap-northeast-2.amazonaws.com/cdn.vesplus.co.kr/portfolios/April2025/6N345lVbuYoFtNWoRWVD.jpg",
+   "alt": "서울숲 아이파크 리버포레Ⅰ·Ⅱ-thumbnail",
+   "w": 1170,
+   "h": 700,
+   "cls": "portfolio-thumbnail",
+   "parent": "portfolio"
+  },
+  {
+   "src": "https://s3.ap-northeast-2.amazonaws.com/cdn.vesplus.co.kr/news/April2025/5epYVQXzzrDNcNjdnHme.jpg",
+   "alt": "[K-소비자브랜드 대상] (주)베스플러스-thumbnail",
+   "w": 1440,
+   "h": 1080,
+   "cls": "",
+   "parent": "news-thumbnail"
+  },
+  {
+   "src": "https://s3.ap-northeast-2.amazonaws.com/cdn.vesplus.co.kr/news/April2025/G2SkhKixXaMlMCl6C6tQ.jpg",
+   "alt": "창립 10주년 앞둔 베스플러스, ‘모두가 함께하는 100년 기업’ 목표 공유-thumbnail",
+   "w": 8629,
+   "h": 5753,
+   "cls": "",
+   "parent": "news-thumbnail"
+  },
+  {
+   "src": "https://s3.ap-northeast-2.amazonaws.com/cdn.vesplus.co.kr/news/July2025/Lie9V8TB8ujRW0XkG6Fl.png",
+   "alt": "베스플러스, 한국부동산마케팅협회(KREMA) 정회원 등록-thumbnail",
+   "w": 1280,
+   "h": 720,
+   "cls": "",
+   "parent": "news-thumbnail"
+  },
+  {
+   "src": "https://s3.ap-northeast-2.amazonaws.com/cdn.vesplus.co.kr/news/May2026/N4GbdUOZVrya4a1euqbS.png",
+   "alt": "베스플러스-엘에스엘플러스, 상권 활성화 위한 전략적 업무협약(MOU) 체결-thumbnail",
+   "w": 1402,
+   "h": 1122,
+   "cls": "",
+   "parent": "news-thumbnail"
+  },
+  {
+   "src": "data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='20'%20cy='20'%20r='20'%20fill='white'/%3e%3cg%20clip-path='url(%23clip0_1710_166)'%3e%3cpath%20d='M20.0002%2017.4185C19.2142%2017.4039%2018.4546%2017.7015%2017.8883%2018.2459C17.3221%2018.7904%2016.9955%2019.537%2016.9805%2020.3217C16.9956%2021.1064%2017.3221%2021.8531%2017.8884%2022.3975C18.4546%2022.9419%2019.2142%2023.2395%2020.0002%2023.2249C20.786%2023.2392%2021.5454%2022.9415%2022.1115%2022.3972C22.6776%2021.8528%2023.0041%2021.1063%2023.0192%2020.3217C23.0042%2019.5371%2022.6777%2018.7906%2022.1116%2018.2462C21.5455%2017.7018%2020.7861%2017.4041%2020.0002%2017.4185Z'%20fill='%23111111'/%3e%3cpath%20d='M24.6756%2012.2578H15.3253C14.3408%2012.2578%2013.3967%2012.6483%2012.7005%2013.3434C12.0044%2014.0384%2011.6133%2014.981%2011.6133%2015.964V24.6807C11.6133%2025.6636%2012.0044%2026.6063%2012.7005%2027.3013C13.3966%2027.9964%2014.3408%2028.3868%2015.3253%2028.3868H24.6756C25.163%2028.3868%2025.6457%2028.291%2026.0961%2028.1047C26.5464%2027.9185%2026.9556%2027.6455%2027.3003%2027.3013C27.645%2026.9572%2027.9184%2026.5486%2028.105%2026.099C28.2915%2025.6493%2028.3875%2025.1674%2028.3875%2024.6807V15.964C28.3875%2014.981%2027.9964%2014.0384%2027.3003%2013.3434C26.6042%2012.6483%2025.66%2012.2578%2024.6756%2012.2578ZM20.0032%2024.5169C18.868%2024.5379%2017.771%2024.1079%2016.9531%2023.3216C16.1353%2022.5353%2015.6637%2021.457%2015.6418%2020.3237C15.6637%2019.1903%2016.1353%2018.112%2016.9531%2017.3257C17.771%2016.5394%2018.868%2016.1095%2020.0032%2016.1304C21.1383%2016.1095%2022.2354%2016.5394%2023.0532%2017.3257C23.871%2018.112%2024.3427%2019.1903%2024.3645%2020.3237C24.3427%2021.457%2023.871%2022.5353%2023.0532%2023.3216C22.2354%2024.1079%2021.1383%2024.5379%2020.0032%2024.5169ZM24.8649%2016.775C24.5593%2016.7806%2024.264%2016.6648%2024.0438%2016.4531C23.8237%2016.2414%2023.6968%2015.9511%2023.6909%2015.646C23.7027%2015.3429%2023.8315%2015.0561%2024.0504%2014.8458C24.2693%2014.6355%2024.5613%2014.5181%2024.8651%2014.5181C25.1689%2014.5181%2025.4609%2014.6355%2025.6798%2014.8458C25.8987%2015.0561%2026.0275%2015.3429%2026.0393%2015.646C26.0334%2015.9511%2025.9064%2016.2415%2025.6862%2016.4532C25.466%2016.6649%2025.1706%2016.7806%2024.8649%2016.775Z'%20fill='%23111111'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1710_166'%3e%3crect%20width='16.7742'%20height='16.129'%20fill='white'%20transform='translate(11.6133%2012.2578)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e",
+   "alt": "Instagram",
+   "w": 40,
+   "h": 40,
+   "cls": "",
+   "parent": "social-circle"
+  },
+  {
+   "src": "data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='20'%20cy='20'%20r='20'%20fill='white'/%3e%3cg%20clip-path='url(%23clip0_1710_159)'%3e%3cpath%20d='M30.535%2014.7832C30.2744%2013.7886%2029.509%2013.0071%2028.5352%2012.7408C26.772%2012.2578%2019.6983%2012.2578%2019.6983%2012.2578C19.6983%2012.2578%2012.6247%2012.2578%2010.8614%2012.7408C9.88757%2013.0071%209.12229%2013.7886%208.86161%2014.7832C8.38867%2016.5841%208.38867%2020.3436%208.38867%2020.3436C8.38867%2020.3436%208.38867%2024.1032%208.86161%2025.904C9.12229%2026.8986%209.88757%2027.6802%2010.8614%2027.9464C12.6247%2028.4294%2019.6983%2028.4294%2019.6983%2028.4294C19.6983%2028.4294%2026.772%2028.4294%2028.5352%2027.9464C29.509%2027.6802%2030.2744%2026.8986%2030.535%2025.904C31.008%2024.1032%2031.008%2020.3436%2031.008%2020.3436C31.008%2020.3436%2031.0061%2016.5841%2030.535%2014.7832Z'%20fill='%23111111'/%3e%3cpath%20d='M17.4355%2023.8065L23.312%2020.3418L17.4355%2016.877V23.8065Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1710_159'%3e%3crect%20width='22.5806'%20height='16.129'%20fill='white'%20transform='translate(8.38867%2012.2578)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e",
+   "alt": "YouTube",
+   "w": 40,
+   "h": 40,
+   "cls": "",
+   "parent": "social-circle"
+  },
+  {
+   "src": "data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='20'%20cy='20'%20r='20'%20fill='white'/%3e%3cg%20clip-path='url(%23clip0_1710_171)'%3e%3cpath%20d='M19.6784%2010.1699C14.3656%2010.1699%2010.0586%2014.1457%2010.0586%2019.05C10.0586%2022.6721%2011.5787%2024.4012%2013.6606%2025.9775L13.6706%2025.9818V30.2325C13.6707%2030.2778%2013.6833%2030.3221%2013.7071%2030.3605C13.7309%2030.399%2013.765%2030.4301%2013.8055%2030.4504C13.846%2030.4707%2013.8913%2030.4793%2013.9364%2030.4754C13.9816%2030.4715%2014.0247%2030.4551%2014.0611%2030.4282L17.709%2027.7241L17.7875%2027.7581C18.4113%2027.8727%2019.0442%2027.9302%2019.6784%2027.93C24.9913%2027.93%2029.2981%2023.9542%2029.2981%2019.05C29.2981%2014.1458%2024.9913%2010.1699%2019.6784%2010.1699ZM16.4537%2021.3002C17.3964%2021.3002%2018.2033%2020.7369%2018.4457%2019.8665H19.8406C19.4994%2021.5415%2018.1934%2022.6393%2016.4537%2022.6393C14.4319%2022.6393%2012.8287%2021.1345%2012.8287%2019.0399C12.8287%2016.9454%2014.4319%2015.4407%2016.4537%2015.4407C18.211%2015.4407%2019.5261%2016.5604%2019.851%2018.2641H18.4604C18.2488%2017.3378%2017.415%2016.7605%2016.4537%2016.7605C15.0942%2016.7605%2014.19%2017.7284%2014.19%2019.0399C14.1858%2019.3378%2014.2414%2019.6336%2014.3537%2019.9096C14.4659%2020.1857%2014.6325%2020.4365%2014.8435%2020.6472C15.0546%2020.8579%2015.3058%2021.0242%2015.5824%2021.1364C15.8589%2021.2486%2016.1552%2021.3043%2016.4537%2021.3002ZM25.6439%2022.5011H24.3657V19.6237C24.3657%2018.9611%2023.9793%2018.6051%2023.3847%2018.6051C22.7209%2018.6051%2022.2949%2019.0104%2022.2949%2019.8311V22.5011H21.0162V15.4631H22.2949V18.1105C22.6019%2017.6458%2023.0975%2017.4184%2023.7711%2017.4184C24.3161%2017.4184%2024.762%2017.5963%2025.1088%2017.9622C25.4656%2018.3281%2025.6439%2018.8225%2025.6439%2019.4652V22.5011Z'%20fill='%23111111'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1710_171'%3e%3crect%20width='20'%20height='21.2903'%20fill='white'%20transform='translate(9.67773%209.67773)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e",
+   "alt": "Kakao",
+   "w": 40,
+   "h": 40,
+   "cls": "",
+   "parent": "social-circle"
+  },
+  {
+   "src": "",
+   "alt": "",
+   "w": 0,
+   "h": 0,
+   "cls": "",
+   "parent": "thumbnail-image"
+  }
+ ],
+ "vids": [],
+ "bgs": [],
+ "iframes": [],
+ "svgs": 20,
+ "canvases": 0,
+ "sections": [
+  {
+   "tag": "div",
+   "id": "__nuxt",
+   "cls": "",
+   "top": 0,
+   "h": 0,
+   "w": 1440,
+   "pos": "static",
+   "kids": [
+    {
+     "tag": "div",
+     "id": "",
+     "cls": "layout",
+     "top": 0,
+     "h": 900,
+     "w": 1440,
+     "pos": "fixed",
+     "kids": [
+      {
+       "tag": "nav",
+       "id": "",
+       "cls": "",
+       "top": 0,
+       "h": 70,
+       "w": 1440,
+       "pos": "fixed",
+       "kids": 3
+      },
+      {
+       "tag": "div",
+       "id": "",
+       "cls": "route-list-menu",
+       "top": 0,
+       "h": 0,
+       "w": 0,
+       "pos": "static",
+       "kids": 5
+      },
+      {
+       "tag": "div",
+       "id": "",
+       "cls": "content",
+       "top": 0,
+       "h": 12227,
+       "w": 1440,
+       "pos": "static",
+       "kids": 4
+      },
+      {
+       "tag": "div",
+       "id": "portfolioOverlay",
+       "cls": "portfolio-overlay",
+       "top": 0,
+       "h": 900,
+       "w": 1440,
+       "pos": "fixed",
+       "kids": 1
+      },
+      {
+       "tag": "div",
+       "id": "",
+       "cls": "term-modal",
+       "top": 0,
+       "h": 900,
+       "w": 1440,
+       "pos": "fixed",
+       "kids": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "tag": "div",
+   "id": "teleports",
+   "cls": "",
+   "top": 0,
+   "h": 0,
+   "w": 1440,
+   "pos": "static",
+   "kids": []
+  },
+  {
+   "tag": "div",
+   "id": "",
+   "cls": "",
+   "top": 0,
+   "h": 0,
+   "w": 1440,
+   "pos": "static",
+   "kids": [
+    {
+     "tag": "div",
+     "id": "",
+     "cls": "",
+     "top": 0,
+     "h": 0,
+     "w": 1440,
+     "pos": "static",
+     "kids": [
+      {
+       "tag": "div",
+       "id": "",
+       "cls": "Vue-Toastification__container top-left",
+       "top": 15,
+       "h": 900,
+       "w": 600,
+       "pos": "fixed",
+       "kids": 0
+      }
+     ]
+    },
+    {
+     "tag": "div",
+     "id": "",
+     "cls": "",
+     "top": 0,
+     "h": 0,
+     "w": 1440,
+     "pos": "static",
+     "kids": [
+      {
+       "tag": "div",
+       "id": "",
+       "cls": "Vue-Toastification__container top-center",
+       "top": 15,
+       "h": 900,
+       "w": 600,
+       "pos": "fixed",
+       "kids": 0
+      }
+     ]
+    },
+    {
+     "tag": "div",
+     "id": "",
+     "cls": "",
+     "top": 0,
+     "h": 0,
+     "w": 1440,
+     "pos": "static",
+     "kids": [
+      {
+       "tag": "div",
+       "id": "",
+       "cls": "Vue-Toastification__container top-right",
+       "top": 15,
+       "h": 900,
+       "w": 600,
+       "pos": "fixed",
+       "kids": 0
+      }
+     ]
+    },
+    {
+     "tag": "div",
+     "id": "",
+     "cls": "",
+     "top": 0,
+     "h": 0,
+     "w": 1440,
+     "pos": "static",
+     "kids": [
+      {
+       "tag": "div",
+       "id": "",
+       "cls": "Vue-Toastification__container bottom-left",
+       "top": -15,
+       "h": 900,
+       "w": 600,
+       "pos": "fixed",
+       "kids": 0
+      }
+     ]
+    },
+    {
+     "tag": "div",
+     "id": "",
+     "cls": "",
+     "top": 0,
+     "h": 0,
+     "w": 1440,
+     "pos": "static",
+     "kids": [
+      {
+       "tag": "div",
+       "id": "",
+       "cls": "Vue-Toastification__container bottom-center",
+       "top": -15,
+       "h": 900,
+       "w": 600,
+       "pos": "fixed",
+       "kids": 0
+      }
+     ]
+    },
+    {
+     "tag": "div",
+     "id": "",
+     "cls": "",
+     "top": 0,
+     "h": 0,
+     "w": 1440,
+     "pos": "static",
+     "kids": [
+      {
+       "tag": "div",
+       "id": "",
+       "cls": "Vue-Toastification__container bottom-right",
+       "top": -15,
+       "h": 900,
+       "w": 600,
+       "pos": "fixed",
+       "kids": 0
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "scrollHeight": 12227,
+ "bodyBg": "rgba(0, 0, 0, 0)",
+ "bodyColor": "rgba(47, 43, 61, 0.68)",
+ "bodyFont": "\"Public Sans\", sans-serif, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+ "htmlOverflow": "hidden scroll/visible",
+ "lenis": false,
+ "gsap": false,
+ "swiper": false,
+ "jquery": false,
+ "classesHtml": "wf-publicsans-n4-active wf-active",
+ "classesBody": "skin--default"
+}

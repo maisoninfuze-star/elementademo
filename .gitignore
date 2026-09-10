@@ -9,3 +9,9 @@ generated/frames_v2/
 generated/v4/B1_orbit.mp4
 generated/v4/B2_enter.mp4
 generated/v4/B4_falls.mp4
+
+# vesplus demo clone: research originals and downloaded bundles stay local
+vesplus-demo/docs/research/originals/
+vesplus-demo/docs/research/raw/
+vesplus-demo/docs/design-references/original-*-full.png
+vesplus-demo/docs/design-references/original-*-crop-*.jpg

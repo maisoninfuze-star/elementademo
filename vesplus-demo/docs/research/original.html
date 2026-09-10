@@ -1,0 +1,857 @@
+<!DOCTYPE html><html lang="ko" dir="ltr" class="wf-publicsans-n4-active wf-active" style="scroll-behavior: auto;"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+<title>베스플러스 | 목표는 완벽한 분양 시장을 만드는 것입니다</title>
+<style id="vuetify-theme-stylesheet">:root {
+      --v-theme-background: 248,247,250;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 255,255,255;
+      --v-theme-surface-bright-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 115,103,240;
+      --v-theme-primary-overlay-multiplier: 1;
+      --v-theme-primary-darken-1: 55,0,179;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 168,170,174;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 234,84,85;
+      --v-theme-error-overlay-multiplier: 1;
+      --v-theme-info: 0,207,232;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 40,199,111;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 255,159,67;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-theme-on-background: 47,43,61;
+      --v-theme-on-surface: 47,43,61;
+      --v-theme-grey-50: 250,250,250;
+      --v-theme-grey-50-overlay-multiplier: 1;
+      --v-theme-grey-100: 245,245,245;
+      --v-theme-grey-100-overlay-multiplier: 1;
+      --v-theme-grey-200: 238,238,238;
+      --v-theme-grey-200-overlay-multiplier: 1;
+      --v-theme-grey-300: 224,224,224;
+      --v-theme-grey-300-overlay-multiplier: 1;
+      --v-theme-grey-400: 189,189,189;
+      --v-theme-grey-400-overlay-multiplier: 1;
+      --v-theme-grey-500: 158,158,158;
+      --v-theme-grey-500-overlay-multiplier: 1;
+      --v-theme-grey-600: 117,117,117;
+      --v-theme-grey-600-overlay-multiplier: 2;
+      --v-theme-grey-700: 97,97,97;
+      --v-theme-grey-700-overlay-multiplier: 2;
+      --v-theme-grey-800: 66,66,66;
+      --v-theme-grey-800-overlay-multiplier: 2;
+      --v-theme-grey-900: 33,33,33;
+      --v-theme-grey-900-overlay-multiplier: 2;
+      --v-theme-perfect-scrollbar-thumb: 219,218,222;
+      --v-theme-perfect-scrollbar-thumb-overlay-multiplier: 1;
+      --v-theme-skin-bordered-background: 255,255,255;
+      --v-theme-skin-bordered-background-overlay-multiplier: 1;
+      --v-theme-skin-bordered-surface: 255,255,255;
+      --v-theme-skin-bordered-surface-overlay-multiplier: 1;
+      --v-theme-skin-default-background: 248,247,250;
+      --v-theme-skin-default-background-overlay-multiplier: 1;
+      --v-theme-skin-default-surface: 255,255,255;
+      --v-theme-skin-default-surface-overlay-multiplier: 1;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-grey-50: 0,0,0;
+      --v-theme-on-grey-100: 0,0,0;
+      --v-theme-on-grey-200: 0,0,0;
+      --v-theme-on-grey-300: 0,0,0;
+      --v-theme-on-grey-400: 0,0,0;
+      --v-theme-on-grey-500: 255,255,255;
+      --v-theme-on-grey-600: 255,255,255;
+      --v-theme-on-grey-700: 255,255,255;
+      --v-theme-on-grey-800: 255,255,255;
+      --v-theme-on-grey-900: 255,255,255;
+      --v-theme-on-perfect-scrollbar-thumb: 0,0,0;
+      --v-theme-on-skin-bordered-background: 0,0,0;
+      --v-theme-on-skin-bordered-surface: 0,0,0;
+      --v-theme-on-skin-default-background: 0,0,0;
+      --v-theme-on-skin-default-surface: 0,0,0;
+      --v-border-color: 47, 43, 61;
+      --v-border-opacity: 0.16;
+      --v-high-emphasis-opacity: 0.78;
+      --v-medium-emphasis-opacity: 0.68;
+      --v-disabled-opacity: 0.42;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.06;
+      --v-activated-opacity: 0.16;
+      --v-pressed-opacity: 0.14;
+      --v-dragged-opacity: 0.1;
+      --v-theme-kbd: 33, 37, 41;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+      --v-code-color: 212, 0, 255;
+      --v-overlay-scrim-background: 76, 78, 100;
+      --v-tooltip-background: 74, 80, 114;
+      --v-overlay-scrim-opacity: 0.5;
+      --v-switch-opacity: 0.2;
+      --v-switch-disabled-track-opacity: 0.3;
+      --v-switch-disabled-thumb-opacity: 0.4;
+      --v-switch-checked-disabled-opacity: 0.3;
+      --v-shadow-key-umbra-color: 47, 43, 61;
+    }
+    .v-theme--light {
+      color-scheme: normal;
+      --v-theme-background: 248,247,250;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 255,255,255;
+      --v-theme-surface-bright-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 115,103,240;
+      --v-theme-primary-overlay-multiplier: 1;
+      --v-theme-primary-darken-1: 55,0,179;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 168,170,174;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 234,84,85;
+      --v-theme-error-overlay-multiplier: 1;
+      --v-theme-info: 0,207,232;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 40,199,111;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 255,159,67;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-theme-on-background: 47,43,61;
+      --v-theme-on-surface: 47,43,61;
+      --v-theme-grey-50: 250,250,250;
+      --v-theme-grey-50-overlay-multiplier: 1;
+      --v-theme-grey-100: 245,245,245;
+      --v-theme-grey-100-overlay-multiplier: 1;
+      --v-theme-grey-200: 238,238,238;
+      --v-theme-grey-200-overlay-multiplier: 1;
+      --v-theme-grey-300: 224,224,224;
+      --v-theme-grey-300-overlay-multiplier: 1;
+      --v-theme-grey-400: 189,189,189;
+      --v-theme-grey-400-overlay-multiplier: 1;
+      --v-theme-grey-500: 158,158,158;
+      --v-theme-grey-500-overlay-multiplier: 1;
+      --v-theme-grey-600: 117,117,117;
+      --v-theme-grey-600-overlay-multiplier: 2;
+      --v-theme-grey-700: 97,97,97;
+      --v-theme-grey-700-overlay-multiplier: 2;
+      --v-theme-grey-800: 66,66,66;
+      --v-theme-grey-800-overlay-multiplier: 2;
+      --v-theme-grey-900: 33,33,33;
+      --v-theme-grey-900-overlay-multiplier: 2;
+      --v-theme-perfect-scrollbar-thumb: 219,218,222;
+      --v-theme-perfect-scrollbar-thumb-overlay-multiplier: 1;
+      --v-theme-skin-bordered-background: 255,255,255;
+      --v-theme-skin-bordered-background-overlay-multiplier: 1;
+      --v-theme-skin-bordered-surface: 255,255,255;
+      --v-theme-skin-bordered-surface-overlay-multiplier: 1;
+      --v-theme-skin-default-background: 248,247,250;
+      --v-theme-skin-default-background-overlay-multiplier: 1;
+      --v-theme-skin-default-surface: 255,255,255;
+      --v-theme-skin-default-surface-overlay-multiplier: 1;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-grey-50: 0,0,0;
+      --v-theme-on-grey-100: 0,0,0;
+      --v-theme-on-grey-200: 0,0,0;
+      --v-theme-on-grey-300: 0,0,0;
+      --v-theme-on-grey-400: 0,0,0;
+      --v-theme-on-grey-500: 255,255,255;
+      --v-theme-on-grey-600: 255,255,255;
+      --v-theme-on-grey-700: 255,255,255;
+      --v-theme-on-grey-800: 255,255,255;
+      --v-theme-on-grey-900: 255,255,255;
+      --v-theme-on-perfect-scrollbar-thumb: 0,0,0;
+      --v-theme-on-skin-bordered-background: 0,0,0;
+      --v-theme-on-skin-bordered-surface: 0,0,0;
+      --v-theme-on-skin-default-background: 0,0,0;
+      --v-theme-on-skin-default-surface: 0,0,0;
+      --v-border-color: 47, 43, 61;
+      --v-border-opacity: 0.16;
+      --v-high-emphasis-opacity: 0.78;
+      --v-medium-emphasis-opacity: 0.68;
+      --v-disabled-opacity: 0.42;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.06;
+      --v-activated-opacity: 0.16;
+      --v-pressed-opacity: 0.14;
+      --v-dragged-opacity: 0.1;
+      --v-theme-kbd: 33, 37, 41;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+      --v-code-color: 212, 0, 255;
+      --v-overlay-scrim-background: 76, 78, 100;
+      --v-tooltip-background: 74, 80, 114;
+      --v-overlay-scrim-opacity: 0.5;
+      --v-switch-opacity: 0.2;
+      --v-switch-disabled-track-opacity: 0.3;
+      --v-switch-disabled-thumb-opacity: 0.4;
+      --v-switch-checked-disabled-opacity: 0.3;
+      --v-shadow-key-umbra-color: 47, 43, 61;
+    }
+    .v-theme--dark {
+      color-scheme: dark;
+      --v-theme-background: 37,41,60;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 47,51,73;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 204,191,214;
+      --v-theme-surface-bright-overlay-multiplier: 2;
+      --v-theme-surface-variant: 163,163,163;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 66,66,66;
+      --v-theme-primary: 115,103,240;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 55,0,179;
+      --v-theme-primary-darken-1-overlay-multiplier: 1;
+      --v-theme-secondary: 168,170,174;
+      --v-theme-secondary-overlay-multiplier: 2;
+      --v-theme-secondary-darken-1: 3,218,197;
+      --v-theme-secondary-darken-1-overlay-multiplier: 2;
+      --v-theme-error: 234,84,85;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 0,207,232;
+      --v-theme-info-overlay-multiplier: 2;
+      --v-theme-success: 40,199,111;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 255,159,67;
+      --v-theme-warning-overlay-multiplier: 2;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-theme-on-background: 208,212,241;
+      --v-theme-on-surface: 208,212,241;
+      --v-theme-grey-50: 38,41,58;
+      --v-theme-grey-50-overlay-multiplier: 1;
+      --v-theme-grey-100: 47,51,73;
+      --v-theme-grey-100-overlay-multiplier: 1;
+      --v-theme-grey-200: 38,41,58;
+      --v-theme-grey-200-overlay-multiplier: 1;
+      --v-theme-grey-300: 74,80,114;
+      --v-theme-grey-300-overlay-multiplier: 1;
+      --v-theme-grey-400: 94,102,146;
+      --v-theme-grey-400-overlay-multiplier: 1;
+      --v-theme-grey-500: 121,131,187;
+      --v-theme-grey-500-overlay-multiplier: 2;
+      --v-theme-grey-600: 170,179,222;
+      --v-theme-grey-600-overlay-multiplier: 2;
+      --v-theme-grey-700: 182,190,227;
+      --v-theme-grey-700-overlay-multiplier: 2;
+      --v-theme-grey-800: 207,211,236;
+      --v-theme-grey-800-overlay-multiplier: 2;
+      --v-theme-grey-900: 231,233,246;
+      --v-theme-grey-900-overlay-multiplier: 2;
+      --v-theme-perfect-scrollbar-thumb: 74,80,114;
+      --v-theme-perfect-scrollbar-thumb-overlay-multiplier: 1;
+      --v-theme-skin-bordered-background: 47,51,73;
+      --v-theme-skin-bordered-background-overlay-multiplier: 1;
+      --v-theme-skin-bordered-surface: 47,51,73;
+      --v-theme-skin-bordered-surface-overlay-multiplier: 1;
+      --v-theme-skin-default-background: 37,41,60;
+      --v-theme-skin-default-background-overlay-multiplier: 1;
+      --v-theme-skin-default-surface: 47,51,73;
+      --v-theme-skin-default-surface-overlay-multiplier: 1;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary-darken-1: 0,0,0;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-grey-50: 255,255,255;
+      --v-theme-on-grey-100: 255,255,255;
+      --v-theme-on-grey-200: 255,255,255;
+      --v-theme-on-grey-300: 255,255,255;
+      --v-theme-on-grey-400: 255,255,255;
+      --v-theme-on-grey-500: 255,255,255;
+      --v-theme-on-grey-600: 0,0,0;
+      --v-theme-on-grey-700: 0,0,0;
+      --v-theme-on-grey-800: 0,0,0;
+      --v-theme-on-grey-900: 0,0,0;
+      --v-theme-on-perfect-scrollbar-thumb: 255,255,255;
+      --v-theme-on-skin-bordered-background: 255,255,255;
+      --v-theme-on-skin-bordered-surface: 255,255,255;
+      --v-theme-on-skin-default-background: 255,255,255;
+      --v-theme-on-skin-default-surface: 255,255,255;
+      --v-border-color: 208, 212, 241;
+      --v-border-opacity: 0.16;
+      --v-high-emphasis-opacity: 0.78;
+      --v-medium-emphasis-opacity: 0.68;
+      --v-disabled-opacity: 0.42;
+      --v-idle-opacity: 0.1;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.06;
+      --v-activated-opacity: 0.16;
+      --v-pressed-opacity: 0.14;
+      --v-dragged-opacity: 0.1;
+      --v-theme-kbd: 33, 37, 41;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 52, 52, 52;
+      --v-theme-on-code: 204, 204, 204;
+      --v-code-color: 212, 0, 255;
+      --v-overlay-scrim-background: 16, 17, 33;
+      --v-tooltip-background: 94, 102, 146;
+      --v-overlay-scrim-opacity: 0.6;
+      --v-switch-opacity: 0.4;
+      --v-switch-disabled-track-opacity: 0.4;
+      --v-switch-disabled-thumb-opacity: 0.8;
+      --v-switch-checked-disabled-opacity: 0.3;
+      --v-shadow-key-umbra-color: 15, 20, 34;
+    }
+    .bg-background {
+      --v-theme-overlay-multiplier: var(--v-theme-background-overlay-multiplier);
+      background-color: rgb(var(--v-theme-background)) !important;
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .bg-surface {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface)) !important;
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .bg-surface-bright {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-bright-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-bright)) !important;
+      color: rgb(var(--v-theme-on-surface-bright)) !important;
+    }
+    .bg-surface-variant {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-variant-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-variant)) !important;
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .bg-primary {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary)) !important;
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .bg-primary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .bg-secondary {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary)) !important;
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .bg-secondary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .bg-error {
+      --v-theme-overlay-multiplier: var(--v-theme-error-overlay-multiplier);
+      background-color: rgb(var(--v-theme-error)) !important;
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .bg-info {
+      --v-theme-overlay-multiplier: var(--v-theme-info-overlay-multiplier);
+      background-color: rgb(var(--v-theme-info)) !important;
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .bg-success {
+      --v-theme-overlay-multiplier: var(--v-theme-success-overlay-multiplier);
+      background-color: rgb(var(--v-theme-success)) !important;
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .bg-warning {
+      --v-theme-overlay-multiplier: var(--v-theme-warning-overlay-multiplier);
+      background-color: rgb(var(--v-theme-warning)) !important;
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+    .bg-grey-50 {
+      --v-theme-overlay-multiplier: var(--v-theme-grey-50-overlay-multiplier);
+      background-color: rgb(var(--v-theme-grey-50)) !important;
+      color: rgb(var(--v-theme-on-grey-50)) !important;
+    }
+    .bg-grey-100 {
+      --v-theme-overlay-multiplier: var(--v-theme-grey-100-overlay-multiplier);
+      background-color: rgb(var(--v-theme-grey-100)) !important;
+      color: rgb(var(--v-theme-on-grey-100)) !important;
+    }
+    .bg-grey-200 {
+      --v-theme-overlay-multiplier: var(--v-theme-grey-200-overlay-multiplier);
+      background-color: rgb(var(--v-theme-grey-200)) !important;
+      color: rgb(var(--v-theme-on-grey-200)) !important;
+    }
+    .bg-grey-300 {
+      --v-theme-overlay-multiplier: var(--v-theme-grey-300-overlay-multiplier);
+      background-color: rgb(var(--v-theme-grey-300)) !important;
+      color: rgb(var(--v-theme-on-grey-300)) !important;
+    }
+    .bg-grey-400 {
+      --v-theme-overlay-multiplier: var(--v-theme-grey-400-overlay-multiplier);
+      background-color: rgb(var(--v-theme-grey-400)) !important;
+      color: rgb(var(--v-theme-on-grey-400)) !important;
+    }
+    .bg-grey-500 {
+      --v-theme-overlay-multiplier: var(--v-theme-grey-500-overlay-multiplier);
+      background-color: rgb(var(--v-theme-grey-500)) !important;
+      color: rgb(var(--v-theme-on-grey-500)) !important;
+    }
+    .bg-grey-600 {
+      --v-theme-overlay-multiplier: var(--v-theme-grey-600-overlay-multiplier);
+      background-color: rgb(var(--v-theme-grey-600)) !important;
+      color: rgb(var(--v-theme-on-grey-600)) !important;
+    }
+    .bg-grey-700 {
+      --v-theme-overlay-multiplier: var(--v-theme-grey-700-overlay-multiplier);
+      background-color: rgb(var(--v-theme-grey-700)) !important;
+      color: rgb(var(--v-theme-on-grey-700)) !important;
+    }
+    .bg-grey-800 {
+      --v-theme-overlay-multiplier: var(--v-theme-grey-800-overlay-multiplier);
+      background-color: rgb(var(--v-theme-grey-800)) !important;
+      color: rgb(var(--v-theme-on-grey-800)) !important;
+    }
+    .bg-grey-900 {
+      --v-theme-overlay-multiplier: var(--v-theme-grey-900-overlay-multiplier);
+      background-color: rgb(var(--v-theme-grey-900)) !important;
+      color: rgb(var(--v-theme-on-grey-900)) !important;
+    }
+    .bg-perfect-scrollbar-thumb {
+      --v-theme-overlay-multiplier: var(--v-theme-perfect-scrollbar-thumb-overlay-multiplier);
+      background-color: rgb(var(--v-theme-perfect-scrollbar-thumb)) !important;
+      color: rgb(var(--v-theme-on-perfect-scrollbar-thumb)) !important;
+    }
+    .bg-skin-bordered-background {
+      --v-theme-overlay-multiplier: var(--v-theme-skin-bordered-background-overlay-multiplier);
+      background-color: rgb(var(--v-theme-skin-bordered-background)) !important;
+      color: rgb(var(--v-theme-on-skin-bordered-background)) !important;
+    }
+    .bg-skin-bordered-surface {
+      --v-theme-overlay-multiplier: var(--v-theme-skin-bordered-surface-overlay-multiplier);
+      background-color: rgb(var(--v-theme-skin-bordered-surface)) !important;
+      color: rgb(var(--v-theme-on-skin-bordered-surface)) !important;
+    }
+    .bg-skin-default-background {
+      --v-theme-overlay-multiplier: var(--v-theme-skin-default-background-overlay-multiplier);
+      background-color: rgb(var(--v-theme-skin-default-background)) !important;
+      color: rgb(var(--v-theme-on-skin-default-background)) !important;
+    }
+    .bg-skin-default-surface {
+      --v-theme-overlay-multiplier: var(--v-theme-skin-default-surface-overlay-multiplier);
+      background-color: rgb(var(--v-theme-skin-default-surface)) !important;
+      color: rgb(var(--v-theme-on-skin-default-surface)) !important;
+    }
+    .text-background {
+      color: rgb(var(--v-theme-background)) !important;
+    }
+    .border-background {
+      --v-border-color: var(--v-theme-background);
+    }
+    .text-surface {
+      color: rgb(var(--v-theme-surface)) !important;
+    }
+    .border-surface {
+      --v-border-color: var(--v-theme-surface);
+    }
+    .text-surface-bright {
+      color: rgb(var(--v-theme-surface-bright)) !important;
+    }
+    .border-surface-bright {
+      --v-border-color: var(--v-theme-surface-bright);
+    }
+    .text-surface-variant {
+      color: rgb(var(--v-theme-surface-variant)) !important;
+    }
+    .border-surface-variant {
+      --v-border-color: var(--v-theme-surface-variant);
+    }
+    .on-surface-variant {
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .text-primary {
+      color: rgb(var(--v-theme-primary)) !important;
+    }
+    .border-primary {
+      --v-border-color: var(--v-theme-primary);
+    }
+    .text-primary-darken-1 {
+      color: rgb(var(--v-theme-primary-darken-1)) !important;
+    }
+    .border-primary-darken-1 {
+      --v-border-color: var(--v-theme-primary-darken-1);
+    }
+    .text-secondary {
+      color: rgb(var(--v-theme-secondary)) !important;
+    }
+    .border-secondary {
+      --v-border-color: var(--v-theme-secondary);
+    }
+    .text-secondary-darken-1 {
+      color: rgb(var(--v-theme-secondary-darken-1)) !important;
+    }
+    .border-secondary-darken-1 {
+      --v-border-color: var(--v-theme-secondary-darken-1);
+    }
+    .text-error {
+      color: rgb(var(--v-theme-error)) !important;
+    }
+    .border-error {
+      --v-border-color: var(--v-theme-error);
+    }
+    .text-info {
+      color: rgb(var(--v-theme-info)) !important;
+    }
+    .border-info {
+      --v-border-color: var(--v-theme-info);
+    }
+    .text-success {
+      color: rgb(var(--v-theme-success)) !important;
+    }
+    .border-success {
+      --v-border-color: var(--v-theme-success);
+    }
+    .text-warning {
+      color: rgb(var(--v-theme-warning)) !important;
+    }
+    .border-warning {
+      --v-border-color: var(--v-theme-warning);
+    }
+    .on-primary {
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .on-secondary {
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .on-success {
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .on-info {
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .on-warning {
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+    .on-background {
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .on-surface {
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .text-grey-50 {
+      color: rgb(var(--v-theme-grey-50)) !important;
+    }
+    .border-grey-50 {
+      --v-border-color: var(--v-theme-grey-50);
+    }
+    .text-grey-100 {
+      color: rgb(var(--v-theme-grey-100)) !important;
+    }
+    .border-grey-100 {
+      --v-border-color: var(--v-theme-grey-100);
+    }
+    .text-grey-200 {
+      color: rgb(var(--v-theme-grey-200)) !important;
+    }
+    .border-grey-200 {
+      --v-border-color: var(--v-theme-grey-200);
+    }
+    .text-grey-300 {
+      color: rgb(var(--v-theme-grey-300)) !important;
+    }
+    .border-grey-300 {
+      --v-border-color: var(--v-theme-grey-300);
+    }
+    .text-grey-400 {
+      color: rgb(var(--v-theme-grey-400)) !important;
+    }
+    .border-grey-400 {
+      --v-border-color: var(--v-theme-grey-400);
+    }
+    .text-grey-500 {
+      color: rgb(var(--v-theme-grey-500)) !important;
+    }
+    .border-grey-500 {
+      --v-border-color: var(--v-theme-grey-500);
+    }
+    .text-grey-600 {
+      color: rgb(var(--v-theme-grey-600)) !important;
+    }
+    .border-grey-600 {
+      --v-border-color: var(--v-theme-grey-600);
+    }
+    .text-grey-700 {
+      color: rgb(var(--v-theme-grey-700)) !important;
+    }
+    .border-grey-700 {
+      --v-border-color: var(--v-theme-grey-700);
+    }
+    .text-grey-800 {
+      color: rgb(var(--v-theme-grey-800)) !important;
+    }
+    .border-grey-800 {
+      --v-border-color: var(--v-theme-grey-800);
+    }
+    .text-grey-900 {
+      color: rgb(var(--v-theme-grey-900)) !important;
+    }
+    .border-grey-900 {
+      --v-border-color: var(--v-theme-grey-900);
+    }
+    .text-perfect-scrollbar-thumb {
+      color: rgb(var(--v-theme-perfect-scrollbar-thumb)) !important;
+    }
+    .border-perfect-scrollbar-thumb {
+      --v-border-color: var(--v-theme-perfect-scrollbar-thumb);
+    }
+    .text-skin-bordered-background {
+      color: rgb(var(--v-theme-skin-bordered-background)) !important;
+    }
+    .border-skin-bordered-background {
+      --v-border-color: var(--v-theme-skin-bordered-background);
+    }
+    .text-skin-bordered-surface {
+      color: rgb(var(--v-theme-skin-bordered-surface)) !important;
+    }
+    .border-skin-bordered-surface {
+      --v-border-color: var(--v-theme-skin-bordered-surface);
+    }
+    .text-skin-default-background {
+      color: rgb(var(--v-theme-skin-default-background)) !important;
+    }
+    .border-skin-default-background {
+      --v-border-color: var(--v-theme-skin-default-background);
+    }
+    .text-skin-default-surface {
+      color: rgb(var(--v-theme-skin-default-surface)) !important;
+    }
+    .border-skin-default-surface {
+      --v-border-color: var(--v-theme-skin-default-surface);
+    }
+    .on-surface-bright {
+      color: rgb(var(--v-theme-on-surface-bright)) !important;
+    }
+    .on-primary-darken-1 {
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .on-secondary-darken-1 {
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .on-error {
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .on-grey-50 {
+      color: rgb(var(--v-theme-on-grey-50)) !important;
+    }
+    .on-grey-100 {
+      color: rgb(var(--v-theme-on-grey-100)) !important;
+    }
+    .on-grey-200 {
+      color: rgb(var(--v-theme-on-grey-200)) !important;
+    }
+    .on-grey-300 {
+      color: rgb(var(--v-theme-on-grey-300)) !important;
+    }
+    .on-grey-400 {
+      color: rgb(var(--v-theme-on-grey-400)) !important;
+    }
+    .on-grey-500 {
+      color: rgb(var(--v-theme-on-grey-500)) !important;
+    }
+    .on-grey-600 {
+      color: rgb(var(--v-theme-on-grey-600)) !important;
+    }
+    .on-grey-700 {
+      color: rgb(var(--v-theme-on-grey-700)) !important;
+    }
+    .on-grey-800 {
+      color: rgb(var(--v-theme-on-grey-800)) !important;
+    }
+    .on-grey-900 {
+      color: rgb(var(--v-theme-on-grey-900)) !important;
+    }
+    .on-perfect-scrollbar-thumb {
+      color: rgb(var(--v-theme-on-perfect-scrollbar-thumb)) !important;
+    }
+    .on-skin-bordered-background {
+      color: rgb(var(--v-theme-on-skin-bordered-background)) !important;
+    }
+    .on-skin-bordered-surface {
+      color: rgb(var(--v-theme-on-skin-bordered-surface)) !important;
+    }
+    .on-skin-default-background {
+      color: rgb(var(--v-theme-on-skin-default-background)) !important;
+    }
+    .on-skin-default-surface {
+      color: rgb(var(--v-theme-on-skin-default-surface)) !important;
+    }
+</style>
+<link rel="stylesheet" href="/_nuxt/entry.oJWFy8Qj.css" crossorigin="">
+<link rel="stylesheet" href="/_nuxt/default.CKwRUjp_.css" crossorigin="">
+<link rel="stylesheet" href="/_nuxt/MANav.C38hR5_o.css" crossorigin="">
+<link rel="stylesheet" href="/_nuxt/Footer.BRNL43cU.css" crossorigin="">
+<link rel="stylesheet" href="/_nuxt/useSkins.endbex0h.css" crossorigin="">
+<link rel="stylesheet" href="/_nuxt/index.Rk5eMuX3.css" crossorigin="">
+<link href="https://www.googletagmanager.com/gtag/js?id=G-GFK2C2DLWT" rel="preload" crossorigin="anonymous" referrerpolicy="no-referrer" fetchpriority="low" as="script">
+<link rel="modulepreload" as="script" crossorigin="" href="/_nuxt/DEvfgKQY.js">
+<link rel="modulepreload" as="script" crossorigin="" href="/_nuxt/vhtpTbsT.js">
+<link rel="modulepreload" as="script" crossorigin="" href="/_nuxt/B_txIJPP.js">
+<link rel="modulepreload" as="script" crossorigin="" href="/_nuxt/DlAUqK2U.js">
+<link rel="modulepreload" as="script" crossorigin="" href="/_nuxt/BhG1gsiG.js">
+<link rel="modulepreload" as="script" crossorigin="" href="/_nuxt/udEw_3Sy.js">
+<link rel="modulepreload" as="script" crossorigin="" href="/_nuxt/BMRAm2b8.js">
+<link rel="modulepreload" as="script" crossorigin="" href="/_nuxt/Cpj98o6Y.js">
+<link rel="modulepreload" as="script" crossorigin="" href="/_nuxt/C7GfC3Ht.js">
+<script type="module" src="/_nuxt/DEvfgKQY.js" crossorigin=""></script>
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/titlePortfolio1.BTva3Lx0.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/titlePortfolio2.DLOaI66u.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/titlePortfolio3.BTmvxFLL.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/titlePortfolio4.mXF_O0aO.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/image 25.CSz-HE3T.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/image 46.Bvy31Oqm.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/image 30.DhLlaLqY.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/KakaoTalk_20241110_140614610 2.Dd3aVhSe.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/image 34.D3AOf9f-.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/KakaoTalk_20241105_170154185_01 1.3luHT51x.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/image 18.CzmY_AJM.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/KakaoTalk_20241110_142234997 2.DO4PjP9V.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/image 33.DBusNuLA.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/KakaoTalk_20250206_180001453 2.z_Gl9D8-.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/image 32.CsRmKCeq.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/KakaoTalk_20241110_141039705 1.CvM7yfqJ.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/image 29.ClU1aca-.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/image 47.1udJTIj0.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/image 20.CDyHiFM5.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/KakaoTalk_20241107_170032747_13 1.u5bA_UgD.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/image 28.B_JxohRT.png">
+<link rel="prefetch" as="image" type="image/png" href="/_nuxt/SH1_5944 1.DmcBWTlV.png">
+<meta name="description" content="목표는 막연히 잘 파는 것이 아닙니다. 완벽한 분양 시장을 만드는 것입니다. 철저한 교육을 바탕으로 양성된 전문가들에 움직이는 분양 시장을 만들기 위해 베스플러스는 분양 영업의 체계화에 나섰고, 독보적인 분양 성과로 증명하였습니다">
+<meta name="author" content="admin@vesplus.co.kr">
+<meta property="og:title" content="베스플러스 | 목표는 완벽한 분양 시장을 만드는 것입니다">
+<meta property="og:description" content="목표는 막연히 잘 파는 것이 아닙니다. 완벽한 분양 시장을 만드는 것입니다. 철저한 교육을 바탕으로 양성된 전문가들에 움직이는 분양 시장을 만들기 위해 베스플러스는 분양 영업의 체계화에 나섰고, 독보적인 분양 성과로 증명하였습니다">
+<meta name="keywords" content="베스플러스, 분양상담사, 부동산컨설팅, 분양대행, 부동산개발/투자, 부동산 마케팅">
+<meta name="naver-site-verification" content="dfe70ae6412945f68e7bbd62e934d4dd1de6ea8a">
+<meta name="google-site-verification" content="FPYIGbSvj4u_1PjKTdxBmgVQaMGBBLVBowdjmXPajgs">
+<link rel="icon" type="image/x-icon" sizes="64x64" href="/favicon_64.ico">
+<link rel="icon" type="image/x-icon" sizes="16x16" href="/favicon_16.ico">
+<link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon_32.ico">
+<link rel="icon" type="image/x-icon" sizes="128x128" href="/favicon_128.ico">
+<link rel="shortcut icon" type="image/x-icon" href="/favicon_16.ico">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"주식회사 베스플러스","url":"https://www.vesplus.co.kr","address":"서울특별시 강남구 영동대로 602, 6층","contactPoint":{"@type":"ContactPoint","telephone":"1833-2622","contactType":"customer service","areaServed":"KR","availableLanguage":"ko"},"sameAs":["https://www.instagram.com/vesplus_official","https://www.youtube.com/channel/UC0o2DS4b32mPu1l5NhAMB7Q/featured","https://accounts.kakao.com/login?continue=http%3A%2F%2Fpf.kakao.com%2F_GKcaj%2Fchat"]}</script>
+<meta name="image" content=""><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" media="all"><link rel="modulepreload" as="script" crossorigin="" href="https://www.vesplus.co.kr/_nuxt/CNAw-Hqz.js"><script defer="" fetchpriority="low" crossorigin="anonymous" referrerpolicy="no-referrer" src="https://www.googletagmanager.com/gtag/js?id=G-GFK2C2DLWT" data-onload="" data-onerror="" data-hid="googleAnalytics"></script></head><body class="skin--default" style="height: 12227px; scroll-behavior: auto;"><div id="__nuxt"><div class="layout" style="inset: 0px; width: 100%; height: 100%; position: fixed; overflow: hidden;"><!--[--><nav data-v-704885e5="" style="opacity: 1; visibility: inherit;"><a aria-current="page" href="/" class="router-link-active router-link-exact-active logo-home" data-v-704885e5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126 18" fill="none" data-v-704885e5=""><path d="M25.6484 14.3408V10.4239H35.8084V7.11972H25.6484V3.45634H36.0375V0H21.0542V17.7972H36.1393V14.3408H25.6484Z" fill="white" data-v-704885e5=""></path><path d="M38.0479 14.2394H47.9533C49.1793 14.2394 49.2302 13.4535 49.2302 13.0183C49.2302 12.4099 48.9247 11.8986 47.8515 11.569L40.8562 9.48592C38.5315 8.80141 37.8442 6.99296 37.8442 4.50423C37.8485 1.82958 39.0193 0 41.9803 0H53.0057V3.55775H43.7663C43.1003 3.55775 42.5148 3.81127 42.5148 4.72817C42.5148 5.41268 42.8712 5.89859 43.9444 6.22817L50.2228 8.05775C52.8784 8.82254 53.9262 10.1408 53.9262 13.0648C53.9262 15.9887 52.8784 17.793 49.841 17.793H38.0479V14.231V14.2394Z" fill="white" data-v-704885e5=""></path><path d="M89.9123 14.2394H79.5191V0H74.9248V17.7972H89.9123V14.2394Z" fill="white" data-v-704885e5=""></path><path d="M110.126 14.2394H120.031C121.257 14.2394 121.308 13.4535 121.308 13.0183C121.308 12.4099 121.003 11.8986 119.929 11.569L112.938 9.48592C110.614 8.80141 109.926 6.99296 109.926 4.50423C109.922 1.82958 111.097 0 114.054 0H125.079V3.55775H115.84C115.174 3.55775 114.588 3.81127 114.588 4.72817C114.588 5.41268 114.945 5.89859 116.018 6.22817L122.296 8.05775C124.952 8.82254 126 10.1408 126 13.0648C126 15.9887 124.952 17.793 121.915 17.793H110.121V14.231L110.126 14.2394Z" fill="white" data-v-704885e5=""></path><path d="M107.899 0H103.305V14.4423H95.8511V0H91.2568V14.4845C91.2568 16.4239 92.8392 18 94.7863 18H107.899V0Z" fill="white" data-v-704885e5=""></path><path d="M15.1614 0L10.0327 14.2099L4.89968 0H0L7.21589 17.7972H12.8155L20.0654 0H15.1614Z" fill="white" data-v-704885e5=""></path><path d="M63.0215 8.54366V12.1056H70.3816C71.8324 12.1056 73.0075 10.9352 73.0075 9.49014V2.61549C73.0075 1.17042 71.8324 0 70.3816 0H55.9795V17.7972H60.5737V3.56197H67.9339C68.1417 3.56197 68.3072 3.73099 68.3072 3.9338V8.17183C68.3072 8.37887 68.1375 8.54366 67.9339 8.54366H63.0172H63.0215Z" fill="white" data-v-704885e5=""></path></svg></a><div class="route-list" data-v-704885e5=""><div class="route" data-v-704885e5=""><a href="/about" class="" data-v-704885e5=""> About <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none" data-v-704885e5=""><path d="M0 6.36637H13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path><path d="M6.5 0L6.5 13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path></svg></a></div><div class="route" data-v-704885e5=""><a href="/portfolios/sales" class="" data-v-704885e5=""> Portfolios <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none" data-v-704885e5=""><path d="M0 6.36637H13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path><path d="M6.5 0L6.5 13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path></svg></a></div><div class="route" data-v-704885e5=""><a href="/careers" class="" data-v-704885e5=""> Careers <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none" data-v-704885e5=""><path d="M0 6.36637H13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path><path d="M6.5 0L6.5 13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path></svg></a></div><div class="route" data-v-704885e5=""><a href="/pr-center/news" class="" data-v-704885e5=""> PR Center <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none" data-v-704885e5=""><path d="M0 6.36637H13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path><path d="M6.5 0L6.5 13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path></svg></a></div><div class="route" data-v-704885e5=""><a href="/contact" class="" data-v-704885e5=""> Contact <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none" data-v-704885e5=""><path d="M0 6.36637H13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path><path d="M6.5 0L6.5 13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path></svg></a></div></div><div class="hamburger" data-v-704885e5=""><span data-v-704885e5=""></span><span data-v-704885e5=""></span><span data-v-704885e5=""></span><span data-v-704885e5=""></span><span data-v-704885e5=""></span><span data-v-704885e5=""></span></div></nav><div class="route-list-menu" data-v-704885e5=""><div class="route" data-v-704885e5=""><a href="/about" class="" data-v-704885e5=""> About <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none" data-v-704885e5=""><path d="M0 6.36637H13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path><path d="M6.5 0L6.5 13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path></svg></a></div><div class="route" data-v-704885e5=""><a href="/portfolios/sales" class="" data-v-704885e5=""> Portfolios <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none" data-v-704885e5=""><path d="M0 6.36637H13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path><path d="M6.5 0L6.5 13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path></svg></a></div><div class="route" data-v-704885e5=""><a href="/careers" class="" data-v-704885e5=""> Careers <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none" data-v-704885e5=""><path d="M0 6.36637H13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path><path d="M6.5 0L6.5 13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path></svg></a></div><div class="route" data-v-704885e5=""><a href="/pr-center/news" class="" data-v-704885e5=""> PR Center <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none" data-v-704885e5=""><path d="M0 6.36637H13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path><path d="M6.5 0L6.5 13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path></svg></a></div><div class="route" data-v-704885e5=""><a href="/contact" class="" data-v-704885e5=""> Contact <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none" data-v-704885e5=""><path d="M0 6.36637H13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path><path d="M6.5 0L6.5 13" stroke="#B19876" stroke-width="2" data-v-704885e5=""></path></svg></a></div></div><!--]--><div class="content" style="translate: none; rotate: none; scale: none; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); box-sizing: border-box; width: 100%; overflow: visible;"><!--[--><!--[--><div class="loading" style="display: none;"><div class="loading-wrapper"><div class="loading-content"><div class="loading-title text-center"> Challenges </div><div class="desc"> for a Perfect Sale Market </div></div></div></div><main class="home"><div class="pin-spacer" style="order: 0; place-self: auto; grid-area: auto; z-index: auto; float: none; flex-shrink: 1; display: block; margin: 0px; inset: 0px; position: relative; flex-basis: auto; overflow: visible; box-sizing: border-box; width: 1440px; height: 10800px; padding: 0px 0px 9900px;"><div class="content-wrapper" style="translate: none; rotate: none; scale: none; inset: 0px auto auto 0px; margin: 0px; max-width: 1440px; width: 1440px; max-height: 900px; height: 900px; padding: 0px; transform: translate(0px, 0.001px);"><div class="title-animation-texts" style="opacity: 1;"><div class="title-wrapper" style="opacity: 0; visibility: hidden;"><div class="text-rail" style="translate: none; rotate: none; scale: none; transform: translate(-634.469px, -423px);"><div class="text-train first" style="translate: none; rotate: none; scale: none; transform: translate(0%, -100%);"> Challenges </div><div class="text-train second" style="translate: none; rotate: none; scale: none; transform: translate(0%, -100%);"> Innovation </div><div class="text-train main" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);"><svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126 18" fill="none" style="width: 8.698vw;"><path d="M25.6484 14.3408V10.4239H35.8084V7.11972H25.6484V3.45634H36.0375V0H21.0542V17.7972H36.1393V14.3408H25.6484Z" fill="white"></path><path d="M38.0479 14.2394H47.9533C49.1793 14.2394 49.2302 13.4535 49.2302 13.0183C49.2302 12.4099 48.9247 11.8986 47.8515 11.569L40.8562 9.48592C38.5315 8.80141 37.8442 6.99296 37.8442 4.50423C37.8485 1.82958 39.0193 0 41.9803 0H53.0057V3.55775H43.7663C43.1003 3.55775 42.5148 3.81127 42.5148 4.72817C42.5148 5.41268 42.8712 5.89859 43.9444 6.22817L50.2228 8.05775C52.8784 8.82254 53.9262 10.1408 53.9262 13.0648C53.9262 15.9887 52.8784 17.793 49.841 17.793H38.0479V14.231V14.2394Z" fill="white"></path><path d="M89.9123 14.2394H79.5191V0H74.9248V17.7972H89.9123V14.2394Z" fill="white"></path><path d="M110.126 14.2394H120.031C121.257 14.2394 121.308 13.4535 121.308 13.0183C121.308 12.4099 121.003 11.8986 119.929 11.569L112.938 9.48592C110.614 8.80141 109.926 6.99296 109.926 4.50423C109.922 1.82958 111.097 0 114.054 0H125.079V3.55775H115.84C115.174 3.55775 114.588 3.81127 114.588 4.72817C114.588 5.41268 114.945 5.89859 116.018 6.22817L122.296 8.05775C124.952 8.82254 126 10.1408 126 13.0648C126 15.9887 124.952 17.793 121.915 17.793H110.121V14.231L110.126 14.2394Z" fill="white"></path><path d="M107.899 0H103.305V14.4423H95.8511V0H91.2568V14.4845C91.2568 16.4239 92.8392 18 94.7863 18H107.899V0Z" fill="white"></path><path d="M15.1614 0L10.0327 14.2099L4.89968 0H0L7.21589 17.7972H12.8155L20.0654 0H15.1614Z" fill="white"></path><path d="M63.0215 8.54366V12.1056H70.3816C71.8324 12.1056 73.0075 10.9352 73.0075 9.49014V2.61549C73.0075 1.17042 71.8324 0 70.3816 0H55.9795V17.7972H60.5737V3.56197H67.9339C68.1417 3.56197 68.3072 3.73099 68.3072 3.9338V8.17183C68.3072 8.37887 68.1375 8.54366 67.9339 8.54366H63.0172H63.0215Z" fill="white"></path></svg></div></div><div class="description" style="height: 0px; opacity: 1;">creates a perfect real estate market</div></div><div class="title-top"><div class="title-first" aria-label="WE CREATE THE PERFECT"> <div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 0.0296%) translate3d(0px, 0px, 0px);">W</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 0.3115%) translate3d(0px, 0px, 0px);">E</div> <div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 1.1453%) translate3d(0px, 0px, 0px);">C</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 2.8312%) translate3d(0px, 0px, 0px);">R</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 5.669%) translate3d(0px, 0px, 0px);">E</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 9.9588%) translate3d(0px, 0px, 0px);">A</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 16.0007%) translate3d(0px, 0px, 0px);">T</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 24.0945%) translate3d(0px, 0px, 0px);">E</div> <div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 34.5404%) translate3d(0px, 0px, 0px);">T</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 47.6382%) translate3d(0px, 0px, 0px);">H</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 61.5712%) translate3d(0px, 0px, 0px);">E</div> <div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 72.8331%) translate3d(0px, 0px, 0px);">P</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 81.6469%) translate3d(0px, 0px, 0px);">E</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 88.3128%) translate3d(0px, 0px, 0px);">R</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 93.1306%) translate3d(0px, 0px, 0px);">F</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 96.4004%) translate3d(0px, 0px, 0px);">E</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 98.4223%) translate3d(0px, 0px, 0px);">C</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 99.4961%) translate3d(0px, 0px, 0px);">T</div> </div><div class="title-second" aria-label="REAL ESTATE MARKET"> <div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 99.922%) translate3d(0px, 0px, 0px);">R</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 99.9998%) translate3d(0px, 0px, 0px);">E</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">A</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">L</div> <div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">E</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">S</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">T</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">A</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">T</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">E</div> <div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">M</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">A</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">R</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">K</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">E</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">T</div> </div></div><div class="title-bottom" style="height: 50vh;"><div class="script-second" aria-label="A LEADING CONSULTING FIRM&nbsp; &nbsp;  FOR SALES"><div class="line"> <div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 0.0296%) translate3d(0px, 0px, 0px);">A</div> <div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 0.3115%) translate3d(0px, 0px, 0px);">L</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 1.1453%) translate3d(0px, 0px, 0px);">E</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 2.8312%) translate3d(0px, 0px, 0px);">A</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 5.669%) translate3d(0px, 0px, 0px);">D</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 9.9588%) translate3d(0px, 0px, 0px);">I</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 16.0007%) translate3d(0px, 0px, 0px);">N</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 24.0945%) translate3d(0px, 0px, 0px);">G</div> <div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 34.5404%) translate3d(0px, 0px, 0px);">C</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 47.6382%) translate3d(0px, 0px, 0px);">O</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 61.5712%) translate3d(0px, 0px, 0px);">N</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 72.8331%) translate3d(0px, 0px, 0px);">S</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 81.6469%) translate3d(0px, 0px, 0px);">U</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 88.3128%) translate3d(0px, 0px, 0px);">L</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 93.1306%) translate3d(0px, 0px, 0px);">T</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 96.4004%) translate3d(0px, 0px, 0px);">I</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 98.4223%) translate3d(0px, 0px, 0px);">N</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 99.4961%) translate3d(0px, 0px, 0px);">G</div> <div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 99.922%) translate3d(0px, 0px, 0px);">F</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 99.9998%) translate3d(0px, 0px, 0px);">I</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">R</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">M</div> </div> <br class="only-mobile"><div class="line"> <div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">F</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">O</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">R</div> <div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">S</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">A</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">L</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">E</div><div class="char" aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">S</div> </div></div><div class="image-rail"><div class="images" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);"><div class="image" style="translate: none; rotate: none; scale: none; opacity: 0.9997; transform: translate(0%, 0.0296%) translate3d(0px, 0px, 0px);"><div class="image-wrapper"><img src="/_nuxt/titlePortfolio1.BTva3Lx0.png" alt="image"></div><div class="image-title-wrapper"><div class="image-title"> 신광교 클라우드 시티 </div><div class="image-desc"> 경기도 용인시 기흥구 영덕동 774 외 9개필지 </div></div></div><div class="image" style="translate: none; rotate: none; scale: none; opacity: 0.9969; transform: translate(0%, 0.3115%) translate3d(0px, 0px, 0px);"><div class="image-wrapper"><img src="/_nuxt/titlePortfolio2.DLOaI66u.png" alt="image"></div><div class="image-title-wrapper"><div class="image-title"> 검단역 금강펜테리움 더시글로 코벤트워크 </div><div class="image-desc"> 인천광역시 서구 당하동 검단신도시 RC3블록 </div></div></div><div class="image" style="translate: none; rotate: none; scale: none; opacity: 0.9885; transform: translate(0%, 1.1453%) translate3d(0px, 0px, 0px);"><div class="image-wrapper"><img src="/_nuxt/titlePortfolio3.BTmvxFLL.png" alt="image"></div><div class="image-title-wrapper"><div class="image-title"> 힐스테이트 고덕 어반그로브 </div><div class="image-desc"> 경기도 평택시 평택 고덕국제화지구 EBC-1 블록 </div></div></div><div class="image" style="translate: none; rotate: none; scale: none; opacity: 0.9717; transform: translate(0%, 2.8312%) translate3d(0px, 0px, 0px);"><div class="image-wrapper"><img src="/_nuxt/titlePortfolio4.mXF_O0aO.png" alt="image"></div><div class="image-title-wrapper"><div class="image-title"> 서울숲 아이파크 리버포레 </div><div class="image-desc"> 서울특별시 성동구 성수동1가 670-27번지 일원 </div></div></div></div><div class="scroll-indicator" style="opacity: 0.9997;"> ( SCROLL FOR MORE ) </div></div></div></div><div class="image-animation-group" style="opacity: 0; z-index: 4;"><div class="image-grid-group" style="translate: none; rotate: none; scale: none; transform: scale(0.4, 0.4); height: 2250px; width: 250%;"><div class="image-wrapper" style="translate: none; rotate: none; scale: none; opacity: 0; visibility: hidden; transform-origin: 50% 0%; transform: translate3d(0px, 900px, -900px) rotateX(-70deg); border: 1px solid rgb(17, 17, 17);"><img src="/_nuxt/image 25.CSz-HE3T.png" alt=""><div class="after-image-wrapper" style="translate: none; rotate: none; scale: none; transform: translate(100%, 0%);"><img src="/_nuxt/image 46.Bvy31Oqm.png" alt="" style="translate: none; rotate: none; scale: none; transform: translate(-100%, 0%); opacity: 1; visibility: inherit;"></div></div><div class="image-wrapper" style="translate: none; rotate: none; scale: none; opacity: 0; visibility: hidden; transform-origin: 50% 0%; transform: translate3d(0px, 900px, -900px) rotateX(-70deg); border: 1px solid rgb(17, 17, 17);"><img src="/_nuxt/image 30.DhLlaLqY.png" alt=""><div class="after-image-wrapper" style="translate: none; rotate: none; scale: none; transform: translate(100%, 0%);"><img src="/_nuxt/KakaoTalk_20241110_140614610 2.Dd3aVhSe.png" alt="" style="translate: none; rotate: none; scale: none; transform: translate(-100%, 0%); opacity: 1; visibility: inherit;"></div></div><div class="image-wrapper" style="translate: none; rotate: none; scale: none; opacity: 0; visibility: hidden; transform-origin: 50% 0%; transform: translate3d(0px, 900px, -900px) rotateX(-70deg); border: 1px solid rgb(17, 17, 17);"><img src="/_nuxt/image 34.D3AOf9f-.png" alt=""><div class="after-image-wrapper" style="translate: none; rotate: none; scale: none; transform: translate(100%, 0%);"><img src="/_nuxt/KakaoTalk_20241105_170154185_01 1.3luHT51x.png" alt="" style="translate: none; rotate: none; scale: none; transform: translate(-100%, 0%); opacity: 1; visibility: inherit;"></div></div><div class="image-wrapper" style="translate: none; rotate: none; scale: none; opacity: 0; visibility: hidden; transform-origin: 50% 0%; transform: translate3d(0px, 900px, -900px) rotateX(-70deg); border: 1px solid rgb(17, 17, 17);"><img src="/_nuxt/image 18.CzmY_AJM.png" alt=""><div class="after-image-wrapper" style="translate: none; rotate: none; scale: none; transform: translate(100%, 0%);"><img src="/_nuxt/KakaoTalk_20241110_142234997 2.DO4PjP9V.png" alt="" style="translate: none; rotate: none; scale: none; transform: translate(-100%, 0%); opacity: 1; visibility: inherit;"></div></div><div class="image-wrapper" style="translate: none; rotate: none; scale: none; opacity: 0; visibility: hidden; transform-origin: 50% 0%; transform: translate3d(0px, 900px, -900px) rotateX(-70deg); border: 1px solid rgb(17, 17, 17);"><img src="/_nuxt/image 33.DBusNuLA.png" alt=""><div class="after-image-wrapper" style="translate: none; rotate: none; scale: none; transform: translate(100%, 0%);"><img src="/_nuxt/KakaoTalk_20250206_180001453 2.z_Gl9D8-.png" alt="" style="translate: none; rotate: none; scale: none; transform: translate(-100%, 0%); opacity: 1; visibility: inherit;"></div></div><div class="image-wrapper" style="translate: none; rotate: none; scale: none; opacity: 0; visibility: hidden; transform-origin: 50% 0%; transform: translate3d(0px, 900px, -900px) rotateX(-70deg); border: 1px solid rgb(17, 17, 17);"><img src="/_nuxt/image 32.CsRmKCeq.png" alt=""><div class="after-image-wrapper" style="translate: none; rotate: none; scale: none; transform: translate(100%, 0%);"><img src="/_nuxt/KakaoTalk_20241110_141039705 1.CvM7yfqJ.png" alt="" style="translate: none; rotate: none; scale: none; transform: translate(-100%, 0%); opacity: 1; visibility: inherit;"></div></div><div class="image-wrapper" style="translate: none; rotate: none; scale: none; opacity: 0; visibility: hidden; transform-origin: 50% 0%; transform: translate3d(0px, 900px, -900px) rotateX(-70deg); border: 1px solid rgb(17, 17, 17);"><img src="/_nuxt/image 29.ClU1aca-.png" alt=""><div class="after-image-wrapper" style="translate: none; rotate: none; scale: none; transform: translate(100%, 0%);"><img src="/_nuxt/image 47.1udJTIj0.png" alt="" style="translate: none; rotate: none; scale: none; transform: translate(-100%, 0%); opacity: 1; visibility: inherit;"></div></div><div class="image-wrapper" style="translate: none; rotate: none; scale: none; opacity: 0; visibility: hidden; transform-origin: 50% 0%; transform: translate3d(0px, 900px, -900px) rotateX(-70deg); border: 1px solid rgb(17, 17, 17);"><img src="/_nuxt/image 20.CDyHiFM5.png" alt=""><div class="after-image-wrapper" style="translate: none; rotate: none; scale: none; transform: translate(100%, 0%);"><img src="/_nuxt/KakaoTalk_20241107_170032747_13 1.u5bA_UgD.png" alt="" style="translate: none; rotate: none; scale: none; transform: translate(-100%, 0%); opacity: 1; visibility: inherit;"></div></div><div class="image-wrapper" style="translate: none; rotate: none; scale: none; opacity: 0; visibility: hidden; transform-origin: 50% 0%; transform: translate3d(0px, 900px, -900px) rotateX(-70deg); border: 1px solid rgb(17, 17, 17);"><img src="/_nuxt/image 28.B_JxohRT.png" alt=""><div class="after-image-wrapper" style="translate: none; rotate: none; scale: none; transform: translate(100%, 0%);"><img src="/_nuxt/SH1_5944 1.DmcBWTlV.png" alt="" style="translate: none; rotate: none; scale: none; transform: translate(-100%, 0%); opacity: 1; visibility: inherit;"></div></div></div><div class="pre-text-wrapper first" style="opacity: 0; visibility: hidden;"><div class="pre-text-center-wrapper"><div class="opacity-text-animation"> 아직 분양 시장은 <span class="opacity-text" style="color: rgb(255, 255, 255); opacity: 0; visibility: hidden;">완벽</span>하지 않습니다 </div></div></div><div class="pre-text-wrapper second" style="opacity: 0; visibility: hidden;"><div class="pre-text-center-wrapper"><div class="pre-text-left"><div class="p" aria-label="목표는"> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">목</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">표</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">는</div> </div><div class="p" aria-label="막연히 잘 파는 것이 아닙니다"> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">막</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">연</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">히</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">잘</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">파</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">는</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">것</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">이</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">아</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">닙</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">니</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">다</div> </div><div class="p" aria-label="완벽한 분양 시장을 만드는 것입니다"><span class="text-primary" style="display: inline-block;"><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">완</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">벽</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">한</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">분</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">양</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">시</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">장</div></span><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">을</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">만</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">드</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">는</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">것</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">입</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">니</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">다</div> </div></div><div class="pre-text-right"><div class="p-group"><div class="p" aria-label="대한민국에서"> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">대</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">한</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">민</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">국</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">에</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">서</div> </div><div class="p" aria-label="가장 값비싼 물건을 판매하는 일임에도 불구하고"> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">가</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">장</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">값</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">비</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">싼</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">물</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">건</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">을</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">판</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">매</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">하</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">는</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">일</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">임</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">에</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">도</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">불</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">구</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">하</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">고</div> </div><div class="p" aria-label="정확한 체계에 따른 영업을 하는 전문가는 찾아볼 수 없었습니다"> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">정</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">확</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">한</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">체</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">계</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">에</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">따</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">른</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">영</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">업</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">을</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">하</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">는</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">전</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">문</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">가</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">는</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">찾</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">아</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">볼</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">수</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">없</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">었</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">습</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">니</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">다</div> </div></div><div class="p-group"><div class="p" aria-label="철저한 교육을 바탕으로"> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">철</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">저</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">한</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">교</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">육</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">을</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">바</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">탕</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">으</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">로</div> </div><div class="p" aria-label="양성된 전문가들에 움직이는 분양 시장을 만들기 위해"> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">양</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">성</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">된</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">전</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">문</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">가</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">들</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">에</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">움</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">직</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">이</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">는</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">분</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">양</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">시</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">장</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">을</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">만</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">들</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">기</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">위</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">해</div> </div><div class="p" aria-label="베스플러스는 분양 영업의 체계화에 나섰고,"> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">베</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">스</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">플</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">러</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">스</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">는</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">분</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">양</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">영</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">업</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">의</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">체</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">계</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">화</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">에</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">나</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">섰</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">고</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">,</div> </div><div class="p" aria-label="독보적인 분양 성과로 증명하였습니다"> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">독</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">보</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">적</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">인</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">분</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">양</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">성</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">과</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">로</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">증</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">명</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">하</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">였</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">습</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">니</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%); opacity: 1; visibility: inherit;">다</div> </div></div><div class="animation-btn-wrapper"><div class="animation-btn"><span aria-label="완벽한 분양 시장 만들어 가는 과정 보기"><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">완</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">벽</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">한</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">분</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">양</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">시</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">장</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">만</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">들</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">어</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">가</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">는</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">과</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">정</div> <div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">보</div><div aria-hidden="true" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0%, 100%);">기</div></span><svg class="plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19" fill="none"><path d="M0 9.30469H19" stroke="white" stroke-width="2"></path><path d="M9.5 0L9.5 19" stroke="white" stroke-width="2"></path></svg><svg class="svg-border" viewBox="0 0 467 63" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="465" height="61" rx="30.5" stroke="white" style="stroke-dashoffset: 0.002; stroke-dasharray: 0px, 999999px;"></rect></svg></div></div></div></div></div><div class="info-wrapper" style="opacity: 0; visibility: hidden;"><div class="info-group" style="translate: none; rotate: none; scale: none; height: 33%; width: 32.9992%; left: 50%; transform: translate(-50%, -50%); top: 50%;"><div class="info-title" style="opacity: 0; visibility: hidden;"> 분양대행 </div><div class="info-val" style="opacity: 0; visibility: hidden;"><div class="value-wrapper"><span class="value anima-increment" data-index="0">0</span>건 </div><div class="value-desc"> 체계화된 분양 대행 시스템을 기반으로<br> 지속적인 성과를 쌓고 있습니다 </div></div></div><div class="info-group" style="translate: none; rotate: none; scale: none; height: 33%; width: 32.9992%; left: 50%; transform: translate(-50%, -50%); top: 50%;"><div class="info-title" style="opacity: 0; visibility: hidden;"> 마케팅 기획 </div><div class="info-val" style="opacity: 0; visibility: hidden;"><div class="value-wrapper"><span class="value anima-increment" data-index="1">0</span>건 </div><div class="value-desc"> 각 분양 프로젝트의 특성에 맞춘 효과적인 전략을<br> 수립하여 목표 고객에게 최적화된 메시지를 전달합니다 </div></div></div><div class="info-group" style="translate: none; rotate: none; scale: none; height: 33%; width: 32.9992%; left: 50%; transform: translate(-50%, -50%); top: 50%;"><div class="info-title" style="opacity: 0; visibility: hidden;"> 매출 총액 </div><div class="info-val" style="opacity: 0; visibility: hidden;"><div class="value-wrapper"><span class="value anima-increment" data-index="2">0</span>억+ </div><div class="value-desc"> 체계화된 분양 대행 시스템을 기반으로<br> 지속적인 성과를 쌓고 있습니다 </div></div></div><div class="info-group" style="translate: none; rotate: none; scale: none; height: 33%; width: 32.9992%; left: 50%; transform: translate(-50%, -50%); top: 50%;"><div class="info-title" style="opacity: 0; visibility: hidden;"> 영업이익 </div><div class="info-val" style="opacity: 0; visibility: hidden;"><div class="value-wrapper"><span class="value anima-increment" data-index="3">0</span>억+ </div><div class="value-desc"> 뛰어난 분양대행 전략과 마케팅 기획으로<br> 꾸준한 영업이익 성장을 기록하고 있습니다 </div></div></div><div class="wrapper-title" style="opacity: 0; visibility: hidden;"><div class="p"> 베스플러스는 독자적인 체계를 통해 </div><div class="p"> 대한민국 최고의 분양대행사로 자리매김하고 있습니다 </div></div></div></div><div class="portfolios"><!--[--><div class="portfolio-wrapper" style="translate: none; rotate: none; scale: none; transform: translate(0%, 100%);"><div class="portfolio" style="translate: none; rotate: none; scale: none; transform: translate(0%, -100%);"><img class="portfolio-thumbnail" src="https://s3.ap-northeast-2.amazonaws.com/cdn.vesplus.co.kr/portfolios/April2025/qEXJETd1dE7mrIi2FIiz.jpg" alt="신광교 클라우드 시티-thumbnail"><div class="info-wrapper" style="opacity: 0; visibility: hidden;"><div class="info"><div class="constructor">현대엔지니어링(주)</div><div class="title">신광교 클라우드 시티</div><div class="location">경기도 용인시 기흥구 영덕동 784외 9개필지</div><a href="/portfolios/sales/40" class="btn-wrapper sm"><div class="btn"><span>자세히 보기</span><svg class="plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19" fill="none"><path d="M0 9.30469H19" stroke="white" stroke-width="2"></path><path d="M9.5 0L9.5 19" stroke="white" stroke-width="2"></path></svg></div></a></div><div class="indicator">01 <div class="indicator-line"></div> 03</div></div></div></div><div class="portfolio-wrapper" style="translate: none; rotate: none; scale: none; transform: translate(0%, 100%);"><div class="portfolio" style="translate: none; rotate: none; scale: none; transform: translate(0%, -100%);"><img class="portfolio-thumbnail" src="https://s3.ap-northeast-2.amazonaws.com/cdn.vesplus.co.kr/portfolios/April2025/b4KxRoJ4zWG4Cew7wknD.jpg" alt="금강펜테리움 더시글로 코벤트워크 검단Ⅰ-thumbnail"><div class="info-wrapper" style="opacity: 0; visibility: hidden;"><div class="info"><div class="constructor">(주)금강주택</div><div class="title">금강펜테리움 더시글로 코벤트워크 검단Ⅰ</div><div class="location">인천광역시 서구 당하동 검단신도시 RC3블록</div><a href="/portfolios/sales/37" class="btn-wrapper sm"><div class="btn"><span>자세히 보기</span><svg class="plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19" fill="none"><path d="M0 9.30469H19" stroke="white" stroke-width="2"></path><path d="M9.5 0L9.5 19" stroke="white" stroke-width="2"></path></svg></div></a></div><div class="indicator">02 <div class="indicator-line"></div> 03</div></div></div></div><div class="portfolio-wrapper" style="translate: none; rotate: none; scale: none; transform: translate(0%, 100%);"><div class="portfolio" style="translate: none; rotate: none; scale: none; transform: translate(0%, -100%);"><img class="portfolio-thumbnail" src="https://s3.ap-northeast-2.amazonaws.com/cdn.vesplus.co.kr/portfolios/April2025/6N345lVbuYoFtNWoRWVD.jpg" alt="서울숲 아이파크 리버포레Ⅰ·Ⅱ-thumbnail"><div class="info-wrapper" style="opacity: 0; visibility: hidden;"><div class="info"><div class="constructor">HDC현대산업개발(주)</div><div class="title">서울숲 아이파크 리버포레Ⅰ·Ⅱ</div><div class="location">서울특별시 성동구 성수동1가 670-27번지 일원</div><a href="/portfolios/sales/35" class="btn-wrapper sm"><div class="btn"><span>자세히 보기</span><svg class="plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19" fill="none"><path d="M0 9.30469H19" stroke="white" stroke-width="2"></path><path d="M9.5 0L9.5 19" stroke="white" stroke-width="2"></path></svg></div></a></div><div class="indicator">03 <div class="indicator-line"></div> 03</div></div></div></div><!--]--></div></div></div><div class="news-list-wrapper"><div class="news-list-title"> NEWS </div><div class="news-list"><!--[--><a href="/pr-center/news/24" class="news"><div class="news-thumbnail"><img src="https://s3.ap-northeast-2.amazonaws.com/cdn.vesplus.co.kr/news/April2025/5epYVQXzzrDNcNjdnHme.jpg" alt="[K-소비자브랜드 대상] (주)베스플러스-thumbnail"></div><div class="news-info">[K-소비자브랜드 대상] (주)베스플러스</div></a><a href="/pr-center/news/30" class="news"><div class="news-thumbnail"><img src="https://s3.ap-northeast-2.amazonaws.com/cdn.vesplus.co.kr/news/April2025/G2SkhKixXaMlMCl6C6tQ.jpg" alt="창립 10주년 앞둔 베스플러스, ‘모두가 함께하는 100년 기업’ 목표 공유-thumbnail"></div><div class="news-info">창립 10주년 앞둔 베스플러스, ‘모두가 함께하는 100년 기업’ 목표 공유</div></a><a href="/pr-center/news/43" class="news"><div class="news-thumbnail"><img src="https://s3.ap-northeast-2.amazonaws.com/cdn.vesplus.co.kr/news/July2025/Lie9V8TB8ujRW0XkG6Fl.png" alt="베스플러스, 한국부동산마케팅협회(KREMA) 정회원 등록-thumbnail"></div><div class="news-info">베스플러스, 한국부동산마케팅협회(KREMA) 정회원 등록</div></a><a href="/pr-center/news/56" class="news"><div class="news-thumbnail"><img src="https://s3.ap-northeast-2.amazonaws.com/cdn.vesplus.co.kr/news/May2026/N4GbdUOZVrya4a1euqbS.png" alt="베스플러스-엘에스엘플러스, 상권 활성화 위한 전략적 업무협약(MOU) 체결-thumbnail"></div><div class="news-info">베스플러스-엘에스엘플러스, 상권 활성화 위한 전략적 업무협약(MOU) 체결</div></a><!--]--></div><div class="more"><a href="/pr-center/news" class="btn-wrapper sm"><div class="btn"><span class="font-public">See more</span><svg class="plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19" fill="none"><path d="M0 9.30469H19" stroke="white" stroke-width="2"></path><path d="M9.5 0L9.5 19" stroke="white" stroke-width="2"></path></svg></div></a></div></div></main><!--]--><div class="nuxt-loading-indicator" style="position: fixed; top: 0px; right: 0px; left: 0px; pointer-events: none; width: auto; height: 3px; opacity: 0; background-image: ; background-position-x: ; background-position-y: ; background-repeat: ; background-attachment: ; background-origin: ; background-clip: ; background-color: ; background-size: 0% auto; transform: scaleX(0); transform-origin: left center; transition: transform 0.1s, height 0.4s, opacity 0.4s; z-index: 999999;"></div><!--]--><footer class="p-content" data-v-bee77122=""><div class="footer-content" data-v-bee77122=""><div class="logo-section" data-v-bee77122=""><svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 27" fill="none" data-v-bee77122=""><g clip-path="url(#clip0_339_877)" data-v-bee77122=""><path d="M37.5933 21.5113V15.6359H52.4849V10.6796H37.5933V5.18451H52.8206V0H30.8594V26.6958H52.9699V21.5113H37.5933Z" fill="white" data-v-bee77122=""></path><path d="M55.7672 21.3592H70.2858C72.0827 21.3592 72.1573 20.1803 72.1573 19.5275C72.1573 18.6148 71.7096 17.8479 70.1365 17.3535L59.8834 14.2289C56.476 13.2021 55.4688 10.4894 55.4688 6.75634C55.475 2.74437 57.1911 0 61.5311 0H77.6912V5.33662H64.1488C63.1726 5.33662 62.3146 5.7169 62.3146 7.09225C62.3146 8.11901 62.8368 8.84789 64.4099 9.34225L73.6123 12.0866C77.5046 13.2338 79.0404 15.2113 79.0404 19.5972C79.0404 23.9831 77.5046 26.6894 73.0527 26.6894H55.7672V21.3465V21.3592Z" fill="white" data-v-bee77122=""></path><path d="M131.786 21.3592H116.552V0H109.818V26.6958H131.786V21.3592Z" fill="white" data-v-bee77122=""></path><path d="M161.414 21.3592H175.933C177.73 21.3592 177.804 20.1803 177.804 19.5275C177.804 18.6148 177.357 17.8479 175.784 17.3535L165.537 14.2289C162.129 13.2021 161.122 10.4894 161.122 6.75634C161.116 2.74437 162.838 0 167.172 0H183.332V5.33662H169.79C168.814 5.33662 167.955 5.7169 167.955 7.09225C167.955 8.11901 168.478 8.84789 170.051 9.34225L179.253 12.0866C183.146 13.2338 184.681 15.2113 184.681 19.5972C184.681 23.9831 183.146 26.6894 178.694 26.6894H161.408V21.3465L161.414 21.3592Z" fill="white" data-v-bee77122=""></path><path d="M158.15 0H151.416V21.6634H140.492V0H133.758V21.7268C133.758 24.6359 136.077 27 138.931 27H158.15V0Z" fill="white" data-v-bee77122=""></path><path d="M22.2224 0L14.7051 21.3148L7.18156 0H0L10.5765 26.6958H18.784L29.4102 0H22.2224Z" fill="white" data-v-bee77122=""></path><path d="M92.3713 12.8155V18.1585H103.159C105.286 18.1585 107.008 16.4028 107.008 14.2352V3.92324C107.008 1.75563 105.286 0 103.159 0H82.0498V26.6958H88.7837V5.34296H99.5716C99.8762 5.34296 100.119 5.59648 100.119 5.9007V12.2577C100.119 12.5683 99.87 12.8155 99.5716 12.8155H92.3651H92.3713Z" fill="white" data-v-bee77122=""></path><path d="M198.416 0H195.276V26.6958H198.416V0Z" fill="white" data-v-bee77122=""></path><path d="M202.682 9.8055C202.682 7.70762 203.54 6.48438 205.71 6.48438H212.817C217.119 6.48438 219.513 8.39212 219.513 13.0442V26.6963H216.373V13.6147C216.373 10.8703 215.397 9.07663 212.406 9.07663H206.978C206.232 9.07663 205.822 9.34283 205.822 10.3759V26.6963H202.682V9.8055Z" fill="white" data-v-bee77122=""></path><path d="M230.997 26.6949C224.263 26.6949 222.578 22.8414 222.578 16.5477C222.578 10.254 224.263 6.47656 230.997 6.47656H238.521V9.06882H231.563C226.626 9.06882 225.874 11.9653 225.874 16.5414C225.874 21.1174 226.62 24.0899 231.563 24.0899H238.931V26.6822H230.997V26.6949Z" fill="white" data-v-bee77122=""></path><path d="M245 22.5742H241.593V26.6939H245V22.5742Z" fill="white" data-v-bee77122=""></path></g><defs data-v-bee77122=""><clipPath id="clip0_339_877" data-v-bee77122=""><rect width="245" height="27" fill="white" data-v-bee77122=""></rect></clipPath></defs></svg><div class="social-section" data-v-bee77122=""><a target="_blank" href="https://www.instagram.com/vesplus_official/" class="social-link" data-v-bee77122=""><div class="social-circle" data-v-bee77122=""><img src="data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='20'%20cy='20'%20r='20'%20fill='white'/%3e%3cg%20clip-path='url(%23clip0_1710_166)'%3e%3cpath%20d='M20.0002%2017.4185C19.2142%2017.4039%2018.4546%2017.7015%2017.8883%2018.2459C17.3221%2018.7904%2016.9955%2019.537%2016.9805%2020.3217C16.9956%2021.1064%2017.3221%2021.8531%2017.8884%2022.3975C18.4546%2022.9419%2019.2142%2023.2395%2020.0002%2023.2249C20.786%2023.2392%2021.5454%2022.9415%2022.1115%2022.3972C22.6776%2021.8528%2023.0041%2021.1063%2023.0192%2020.3217C23.0042%2019.5371%2022.6777%2018.7906%2022.1116%2018.2462C21.5455%2017.7018%2020.7861%2017.4041%2020.0002%2017.4185Z'%20fill='%23111111'/%3e%3cpath%20d='M24.6756%2012.2578H15.3253C14.3408%2012.2578%2013.3967%2012.6483%2012.7005%2013.3434C12.0044%2014.0384%2011.6133%2014.981%2011.6133%2015.964V24.6807C11.6133%2025.6636%2012.0044%2026.6063%2012.7005%2027.3013C13.3966%2027.9964%2014.3408%2028.3868%2015.3253%2028.3868H24.6756C25.163%2028.3868%2025.6457%2028.291%2026.0961%2028.1047C26.5464%2027.9185%2026.9556%2027.6455%2027.3003%2027.3013C27.645%2026.9572%2027.9184%2026.5486%2028.105%2026.099C28.2915%2025.6493%2028.3875%2025.1674%2028.3875%2024.6807V15.964C28.3875%2014.981%2027.9964%2014.0384%2027.3003%2013.3434C26.6042%2012.6483%2025.66%2012.2578%2024.6756%2012.2578ZM20.0032%2024.5169C18.868%2024.5379%2017.771%2024.1079%2016.9531%2023.3216C16.1353%2022.5353%2015.6637%2021.457%2015.6418%2020.3237C15.6637%2019.1903%2016.1353%2018.112%2016.9531%2017.3257C17.771%2016.5394%2018.868%2016.1095%2020.0032%2016.1304C21.1383%2016.1095%2022.2354%2016.5394%2023.0532%2017.3257C23.871%2018.112%2024.3427%2019.1903%2024.3645%2020.3237C24.3427%2021.457%2023.871%2022.5353%2023.0532%2023.3216C22.2354%2024.1079%2021.1383%2024.5379%2020.0032%2024.5169ZM24.8649%2016.775C24.5593%2016.7806%2024.264%2016.6648%2024.0438%2016.4531C23.8237%2016.2414%2023.6968%2015.9511%2023.6909%2015.646C23.7027%2015.3429%2023.8315%2015.0561%2024.0504%2014.8458C24.2693%2014.6355%2024.5613%2014.5181%2024.8651%2014.5181C25.1689%2014.5181%2025.4609%2014.6355%2025.6798%2014.8458C25.8987%2015.0561%2026.0275%2015.3429%2026.0393%2015.646C26.0334%2015.9511%2025.9064%2016.2415%2025.6862%2016.4532C25.466%2016.6649%2025.1706%2016.7806%2024.8649%2016.775Z'%20fill='%23111111'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1710_166'%3e%3crect%20width='16.7742'%20height='16.129'%20fill='white'%20transform='translate(11.6133%2012.2578)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="Instagram" data-v-bee77122=""></div></a><a target="_blank" href="https://www.youtube.com/channel/UC0o2DS4b32mPu1l5NhAMB7Q/featured" class="social-link" data-v-bee77122=""><div class="social-circle" data-v-bee77122=""><img src="data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='20'%20cy='20'%20r='20'%20fill='white'/%3e%3cg%20clip-path='url(%23clip0_1710_159)'%3e%3cpath%20d='M30.535%2014.7832C30.2744%2013.7886%2029.509%2013.0071%2028.5352%2012.7408C26.772%2012.2578%2019.6983%2012.2578%2019.6983%2012.2578C19.6983%2012.2578%2012.6247%2012.2578%2010.8614%2012.7408C9.88757%2013.0071%209.12229%2013.7886%208.86161%2014.7832C8.38867%2016.5841%208.38867%2020.3436%208.38867%2020.3436C8.38867%2020.3436%208.38867%2024.1032%208.86161%2025.904C9.12229%2026.8986%209.88757%2027.6802%2010.8614%2027.9464C12.6247%2028.4294%2019.6983%2028.4294%2019.6983%2028.4294C19.6983%2028.4294%2026.772%2028.4294%2028.5352%2027.9464C29.509%2027.6802%2030.2744%2026.8986%2030.535%2025.904C31.008%2024.1032%2031.008%2020.3436%2031.008%2020.3436C31.008%2020.3436%2031.0061%2016.5841%2030.535%2014.7832Z'%20fill='%23111111'/%3e%3cpath%20d='M17.4355%2023.8065L23.312%2020.3418L17.4355%2016.877V23.8065Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1710_159'%3e%3crect%20width='22.5806'%20height='16.129'%20fill='white'%20transform='translate(8.38867%2012.2578)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="YouTube" data-v-bee77122=""></div></a><a target="_blank" href="https://accounts.kakao.com/login?continue=http%3A%2F%2Fpf.kakao.com%2F_GKcaj%2Fchat" class="social-link" data-v-bee77122=""><div class="social-circle" data-v-bee77122=""><img src="data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='20'%20cy='20'%20r='20'%20fill='white'/%3e%3cg%20clip-path='url(%23clip0_1710_171)'%3e%3cpath%20d='M19.6784%2010.1699C14.3656%2010.1699%2010.0586%2014.1457%2010.0586%2019.05C10.0586%2022.6721%2011.5787%2024.4012%2013.6606%2025.9775L13.6706%2025.9818V30.2325C13.6707%2030.2778%2013.6833%2030.3221%2013.7071%2030.3605C13.7309%2030.399%2013.765%2030.4301%2013.8055%2030.4504C13.846%2030.4707%2013.8913%2030.4793%2013.9364%2030.4754C13.9816%2030.4715%2014.0247%2030.4551%2014.0611%2030.4282L17.709%2027.7241L17.7875%2027.7581C18.4113%2027.8727%2019.0442%2027.9302%2019.6784%2027.93C24.9913%2027.93%2029.2981%2023.9542%2029.2981%2019.05C29.2981%2014.1458%2024.9913%2010.1699%2019.6784%2010.1699ZM16.4537%2021.3002C17.3964%2021.3002%2018.2033%2020.7369%2018.4457%2019.8665H19.8406C19.4994%2021.5415%2018.1934%2022.6393%2016.4537%2022.6393C14.4319%2022.6393%2012.8287%2021.1345%2012.8287%2019.0399C12.8287%2016.9454%2014.4319%2015.4407%2016.4537%2015.4407C18.211%2015.4407%2019.5261%2016.5604%2019.851%2018.2641H18.4604C18.2488%2017.3378%2017.415%2016.7605%2016.4537%2016.7605C15.0942%2016.7605%2014.19%2017.7284%2014.19%2019.0399C14.1858%2019.3378%2014.2414%2019.6336%2014.3537%2019.9096C14.4659%2020.1857%2014.6325%2020.4365%2014.8435%2020.6472C15.0546%2020.8579%2015.3058%2021.0242%2015.5824%2021.1364C15.8589%2021.2486%2016.1552%2021.3043%2016.4537%2021.3002ZM25.6439%2022.5011H24.3657V19.6237C24.3657%2018.9611%2023.9793%2018.6051%2023.3847%2018.6051C22.7209%2018.6051%2022.2949%2019.0104%2022.2949%2019.8311V22.5011H21.0162V15.4631H22.2949V18.1105C22.6019%2017.6458%2023.0975%2017.4184%2023.7711%2017.4184C24.3161%2017.4184%2024.762%2017.5963%2025.1088%2017.9622C25.4656%2018.3281%2025.6439%2018.8225%2025.6439%2019.4652V22.5011Z'%20fill='%23111111'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1710_171'%3e%3crect%20width='20'%20height='21.2903'%20fill='white'%20transform='translate(9.67773%209.67773)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="Kakao" data-v-bee77122=""></div></a></div></div><div class="content-section" data-v-bee77122=""><div class="sitemap-section" data-v-bee77122=""><div class="section-title" data-v-bee77122="">Sitemap</div><div class="links-wrapper" data-v-bee77122=""><a href="/about" class="nav-link" data-v-bee77122="">About</a><a href="/portfolios/sales" class="nav-link" data-v-bee77122="">Portfolios </a><a href="/careers" class="nav-link" data-v-bee77122="">Careers</a><a href="/pr-center/news" class="nav-link" data-v-bee77122="">PR Center </a><a href="/contact" class="nav-link" data-v-bee77122="">Contact</a></div></div><div class="info-section" data-v-bee77122=""><div class="info-group" data-v-bee77122=""><div class="info-title" data-v-bee77122="">Office</div><div class="info-value" data-v-bee77122="">서울특별시 금천구 가산디지털2로 144, 현대테라타워 가산DK 509, 510호</div></div><div class="divider" data-v-bee77122=""></div><div class="info-group" data-v-bee77122=""><div class="info-title" data-v-bee77122="">Contact</div><a href="tel:1833-2622" class="info-value" data-v-bee77122="">1833-2622</a></div><div class="divider" data-v-bee77122=""></div><div class="info-group" data-v-bee77122=""><div class="info-title" data-v-bee77122="">Fax</div><div class="info-value" data-v-bee77122="">0504-435-8431</div></div><div class="divider" data-v-bee77122=""></div><div class="info-group" data-v-bee77122=""><div class="info-title" data-v-bee77122="">Email</div><a href="mailto:admin@vesplus.co.kr" class="info-value" data-v-bee77122="">admin@vesplus.co.kr</a></div></div><div class="copyright" data-v-bee77122="">©2024 VESPLUS All rights reserved</div></div></div></footer></div><div id="portfolioOverlay" class="portfolio-overlay"><div class="portfolio-overlay-wrapper"><div class="portfolio-title-section"></div><div class="thumbnail-image"><img alt=""></div></div></div><div class="term-modal"><div class="terms-modal-bg"></div><div class="terms-modal-main"><div class="terms-modal-title"> 개인정보처리방침 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 20" fill="none"><g clip-path="url(#clip0_425_256)"><path d="M1.51471 1.48535L18.4853 18.4559" stroke="white" stroke-width="1.33333"></path><path d="M18.4853 1.48535L1.51473 18.4559" stroke="white" stroke-width="1.33333"></path></g><defs><clipPath id="clip0_425_256"><rect width="21" height="20" fill="white"></rect></clipPath></defs></svg></div><div class="terms-modal-content"><pre>개인정보처리방침
+
+주식회사 베스플러스 고객님의 개인정보를 중요시하며, "정보통신망 이용촉진 및 정보보호"에 관한 법률을 준수하고 있습니다.
+
+회사는 개인정보처리방침을 통하여 고객님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
+
+■ 수집하는 개인정보 항목 및 수집방법
+
+1) 수집하는 개인정보의 항목
+
+     회사는 상담, 서비스신청을 위해 아래와 같은 개인정보를 수집하고 있습니다.
+     - 성명, 회사명, 연락처, 이메일, 문의내용
+     서비스 이용 과정이나 사업 처리 과정에서 서비스이용기록, 접속로그, 쿠키, 접속 IP, 결제 기록, 불량이용 기록이 생성되어 수집될 수 있습니다.
+
+2) 수집방법 - 홈페이지 내 대행문의, 제휴문의, 채용문의
+
+■ 개인정보의 수집 및 이용목적
+     회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.
+     - 성명: 정확한 상담 진행을 위한 기본적인 사용자 정보
+     - 전화번호, 이메일: 문의 사항에 대한 답변 전달을 위한 연락처 정보
+
+■ 개인정보의 보유 및 이용기간
+     원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다.
+     단, 관련 법령에 의한 정보 보유 사유 전자상거래 등에서의 소비자보호에 관한법률 등 관계법령의 규정에 의하여 보존할 필요가 있는 경우 회사는 아래와 같이 관계법령에서 정한 일정한 기간 동안 회원정보를 보관합니다.
+
+1) 계약 또는 청약철회 등에 관한 기록
+     -보존이유 : 전자상거래등에서의 소비자보호에 관한법률
+     -보존기간 : 5년
+
+2) 대금 결제 및 재화 등의 공급에 관한 기록
+     -보존이유: 전자상거래등에서의 소비자보호에 관한법률
+     -보존기간 : 5년
+
+3) 소비자 불만 또는 분쟁처리에 관한 기록
+     -보존이유 : 전자상거래등에서의 소비자보호에 관한법률
+     -보존기간 : 3년
+
+4) 로그 기록
+     -보존이유 : 통신비밀보호법
+     -보존기간 : 3개월
+
+■ 개인정보의 파기절차 및 방법
+     회사는 원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다.      파기절차 및 방법은 다음과 같습니다.
+
+1) 파기절차회원님이 상담을 위해 입력하신 정보는 목적이 달성된 후 별도의 DB로 옮겨져(종이의 경우 별도의 서류함) 내부 방침 및 기타 관련 법령에 의한 정보보호 사유에 따라(보유 및 이용기간 참조) 일정 기간 저장된 후 파기되어집니다. 별도 DB로 옮겨진 개인정보는 법률에 의한 경우가 아니고서는 보유되어지는 이외의 다른 목적으로 이용되지 않습니다.
+
+2) 파기방법: 전자적 파일형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다.
+
+■ 개인정보 제공
+     회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.
+
+1) 이용자들이 사전에 동의한 경우
+
+2) 법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우
+
+■ 이용자 및 법정대리인의 권리와 그 행사방법
+
+1) 이용자의 개인정보를 최신의 상태로 정확하게 입력하여 불의의 사고를 예방해 주시기 바랍니다. 이용자가 입력한 부정확한 정보로 인해 발생하는 사고의 책임은 이용자 자신에게 있습니다.
+2) 이용자는 개인정보를 보호받을 권리와 함께 스스로를 보호하고 타인의 정보를 침해하지 않을 의무도 가지고 있습니다. 비밀번호를 포함한 개인정보가 유출되지 않도록 조심하시고 게시물을 포함한 타인의 개인정보를 훼손하지 않도록 유의해 주십시오. 만약 이 같은 책임을 다하지 못하고 타인의 정보 및 존엄성을 훼손할 시에는 「정보통신망이용촉진및정보보호등에관한법률」 등에 의해 처벌받을 수 있습니다.
+3) 이용자는 언제든지 등록되어 있는 자신의 개인정보를 조회하거나 수정할 수 있습니다. 혹은 개인정보관리책임자에게 서면, 전화 또는 이메일로 연락하시면 지체 없이 조치하겠습니다.
+4) 만14세미만 아동의 경우, 법정대리인이 아동의 개인정보를 조회하거나 수정할 권리, 수집 및 이용 동의를 철회할 권리를 가집니다.
+5) 귀하가 개인정보의 오류에 대한 정정을 요청하신 경우에는 정정을 완료하기 전까지 당해 개인정보를 이용 또는 제공하지 않습니다. 또한 잘못된 개인정보를 제3자에게 이미 제공한 경우에는 정정 처리결과를 제3자에게 지체 없이 통지하여 정정이 이루어지도록 하겠습니다.
+6) 회사는 이용자의 요청에 의해 해지 또는 삭제된 개인정보는 "회사가 수집하는 개인정보의 보유 및 이용기간"에 명시된 바에 따라 처리하고 그 외의 용도로 열람 또는 이용할 수 없도록 처리하고 있습니다.
+7) 만 14세 미만 아동의 경우 법정 대리인이 아동의 개인정보를 조회하거나 수정할 권리, 수집 및 이용 동의를 철회할 권리를 가집니다.
+
+■ 개인정보 자동수집 장치의 설치, 운영 및 그 거부에 관한 사항 회사는 귀하의 정보를 수시로 저장하고 찾아내는 "쿠키(cookie)" 등을 운용합니다. 쿠키란 웹사이트를 운영하는데 이용되는 서버가 귀하의 브라우저에 보내는 아주 작은 텍스트 파일로서 귀하의 컴퓨터 하드디스크에 저장됩니다. 회사는 다음과 같은 목적을 위해 쿠키를 사용합니다.
+
+1) 접속 빈도나 방문 시간 등을 분석, 이용자의 취향과 관심분야를 파악 및 자취 추적, 각종 이벤트 참여 정도 및 방문 회수 파악 등을 통한 타겟 마케팅 및 개인 맞춤 서비스 제공
+2) 귀하는 쿠키 설치에 대한 선택권을 가지고 있습니다. 따라서 귀하는 웹브라우저에서 옵션을 설정함으로써 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다 확인을 거치거나, 아니면 모든 쿠키의 저장을 거부할 수도 있습니다.
+3) 쿠키 설정을 거부하는 방법으로는 회원님이 사용하시는 웹 브라우저의 옵션을 선택함으로써 모든 쿠키를 허용하거나 쿠키를 저장할 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수 있습니다.
+4) 설정방법 예(인터넷 익스플로어의 경우) : 웹 브라우저 상단의 도구 &gt; 인터넷 옵션 &gt; 개인정보
+5) 단, 귀하께서 쿠키 설치를 거부하였을 경우 서비스 제공에 어려움이 있을 수 있습니다.
+
+■ 개인정보에 관한 민원서비스
+회사는 고객의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 관련 부서 및 개인정보관리책임자를 지정하고 있습니다.
+
+1) 개인정보관리담당자
+     성명 : 이슬기
+     소속 : 마케팅기획부
+     전화번호 : 010-8402-8431
+
+2) 개인정보관리책임자
+     성명 : 류동우
+     소속 : 마케팅기획부
+     전화번호 : 010-4940-3180
+
+3) 귀하께서는 회사의 서비스를 이용하시며 발생하는 모든 개인정보보호 관련 민원을 개인정보관리책임자 혹은 담당부서로 신고하실 수 있습니다.
+
+4) 회사는 이용자들의 신고사항에 대해 신속하게 충분한 답변을 드릴 것입니다.
+
+5) 기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에는 아래 기관에 문의하시기 바랍니다.
+
+개인정보침해신고센터 (privacy.kisa.or.kr / 국번 없이 118)
+대검찰청 사이버범죄수사단 (www.spo.go.kr / 02-3480-2000)
+경찰청 사이버안전국 (www.ctrc.go.kr/ 국번 없이 182)
+</pre></div></div></div></div></div><div id="teleports"></div><script>window.__NUXT__={};window.__NUXT__.config={public:{baseURL:"https://api.vesplus.co.kr",device:{defaultUserAgent:"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36",enabled:true,refreshOnResize:false},"nuxt-scripts":{version:"",defaultScriptOptions:{trigger:"onNuxtReady"}}},app:{baseURL:"/",buildId:"446c6535-ca66-4087-99e4-726addf0001f",buildAssetsDir:"/_nuxt/",cdnURL:""}}</script>
+<script type="application/json" data-nuxt-data="nuxt-app" data-ssr="true" id="__NUXT_DATA__">[["ShallowReactive",1],{"data":2,"state":63,"once":65,"_errors":66,"serverRendered":69,"path":70,"pinia":71},["ShallowReactive",3],{"main-page":4,"portfolios-featured":27,"news-featured":46},[5,12,17,22],{"id":6,"key":7,"name":8,"value":9,"created_at":10,"updated_at":11},1,"sales_agent","분양대행",25,"2025-01-20T15:07:05.000000Z","2025-04-24T01:23:49.000000Z",{"id":13,"key":14,"name":15,"value":16,"created_at":10,"updated_at":10},2,"sales_marketing","마케팅 기획",19,{"id":18,"key":19,"name":20,"value":21,"created_at":10,"updated_at":10},3,"sales_total","매출 총액",5600,{"id":23,"key":24,"name":25,"value":26,"created_at":10,"updated_at":10},4,"sales_profit","영업이익",200,[28,34,40],{"id":29,"title":30,"location":31,"construction_company":32,"thumbnail":33},40,"신광교 클라우드 시티","경기도 용인시 기흥구 영덕동 784외 9개필지","현대엔지니어링(주)","https:\u002F\u002Fs3.ap-northeast-2.amazonaws.com\u002Fcdn.vesplus.co.kr\u002Fportfolios\u002FApril2025\u002FqEXJETd1dE7mrIi2FIiz.jpg",{"id":35,"title":36,"location":37,"construction_company":38,"thumbnail":39},37,"금강펜테리움 더시글로 코벤트워크 검단Ⅰ","인천광역시 서구 당하동 검단신도시 RC3블록","(주)금강주택","https:\u002F\u002Fs3.ap-northeast-2.amazonaws.com\u002Fcdn.vesplus.co.kr\u002Fportfolios\u002FApril2025\u002Fb4KxRoJ4zWG4Cew7wknD.jpg",{"id":41,"title":42,"location":43,"construction_company":44,"thumbnail":45},35,"서울숲 아이파크 리버포레Ⅰ·Ⅱ","서울특별시 성동구 성수동1가 670-27번지 일원","HDC현대산업개발(주)","https:\u002F\u002Fs3.ap-northeast-2.amazonaws.com\u002Fcdn.vesplus.co.kr\u002Fportfolios\u002FApril2025\u002F6N345lVbuYoFtNWoRWVD.jpg",[47,51,55,59],{"id":48,"title":49,"thumbnail":50},24,"[K-소비자브랜드 대상] (주)베스플러스","https:\u002F\u002Fs3.ap-northeast-2.amazonaws.com\u002Fcdn.vesplus.co.kr\u002Fnews\u002FApril2025\u002F5epYVQXzzrDNcNjdnHme.jpg",{"id":52,"title":53,"thumbnail":54},30,"창립 10주년 앞둔 베스플러스, ‘모두가 함께하는 100년 기업’ 목표 공유","https:\u002F\u002Fs3.ap-northeast-2.amazonaws.com\u002Fcdn.vesplus.co.kr\u002Fnews\u002FApril2025\u002FG2SkhKixXaMlMCl6C6tQ.jpg",{"id":56,"title":57,"thumbnail":58},43,"베스플러스, 한국부동산마케팅협회(KREMA) 정회원 등록","https:\u002F\u002Fs3.ap-northeast-2.amazonaws.com\u002Fcdn.vesplus.co.kr\u002Fnews\u002FJuly2025\u002FLie9V8TB8ujRW0XkG6Fl.png",{"id":60,"title":61,"thumbnail":62},56,"베스플러스-엘에스엘플러스, 상권 활성화 위한 전략적 업무협약(MOU) 체결","https:\u002F\u002Fs3.ap-northeast-2.amazonaws.com\u002Fcdn.vesplus.co.kr\u002Fnews\u002FMay2026\u002FN4GbdUOZVrya4a1euqbS.png",["Reactive",64],{},["Set"],["ShallowReactive",67],{"main-page":68,"portfolios-featured":68,"news-featured":68},null,true,"\u002F",["Reactive",72],{"layoutConfig":73,"config":87},{"appContentWidth":74,"appContentLayoutNav":76,"navbarType":78,"isNavbarBlurEnabled":80,"isVerticalNavCollapsed":81,"horizontalNavType":83,"footerType":84,"isAppRTL":86},["Ref",75],"boxed",["Ref",77],"vertical",["Ref",79],"sticky",["Ref",69],["EmptyRef",82],"false",["Ref",79],["Ref",85],"static",["EmptyRef",82],{"theme":88,"isVerticalNavSemiDark":90,"skin":91,"appContentWidth":93,"navbarType":94,"isNavbarBlurEnabled":95,"appContentLayoutNav":96,"isVerticalNavCollapsed":97,"footerType":98,"isAppRTL":99},["Ref",89],"system",["EmptyRef",82],["Ref",92],"default",["Ref",75],["Ref",79],["Ref",69],["Ref",77],["EmptyRef",82],["Ref",85],["EmptyRef",82]]</script><div><div><div class="Vue-Toastification__container top-left"></div></div><div><div class="Vue-Toastification__container top-center"></div></div><div><div class="Vue-Toastification__container top-right"></div></div><div><div class="Vue-Toastification__container bottom-left"></div></div><div><div class="Vue-Toastification__container bottom-center"></div></div><div><div class="Vue-Toastification__container bottom-right"></div></div></div></body></html>
