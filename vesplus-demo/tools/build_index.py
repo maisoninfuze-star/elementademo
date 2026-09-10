@@ -44,7 +44,7 @@ html = f'''<!DOCTYPE html>
 <div class="title-animation-texts">
 <div class="title-wrapper"><div class="text-rail"><div class="text-train first"> Challenges </div><div class="text-train second"> Innovation </div><div class="text-train main">{logo_svg}</div></div><div class="description">for a perfect real estate market</div></div>
 <div class="title-top"><div class="title-first"> WE CREATE THE PERFECT </div><div class="title-second"> REAL ESTATE MARKET </div></div>
-<div class="title-bottom"><div class="script-second"><div class="line"> A LEADING CONSULTING FIRM  </div>  <br class="only-mobile"><div class="line"> FOR SALES </div></div><div class="image-rail"><div class="images">{rail}</div><div class="scroll-indicator"> ( SCROLL FOR MORE ) </div></div></div>
+<div class="title-bottom"><div class="script-second"><div class="line"> A LEADING CONSULTING FIRM&nbsp; </div>&nbsp; <br class="only-mobile"><div class="line"> FOR SALES </div></div><div class="image-rail"><div class="images">{rail}</div><div class="scroll-indicator"> ( SCROLL FOR MORE ) </div></div></div>
 </div>
 <div class="image-animation-group">
 {grid}

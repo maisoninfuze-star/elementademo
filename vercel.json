@@ -1,7 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/vesplus", "destination": "/vesplus/", "permanent": false }
+  ],
   "rewrites": [
-    { "source": "/vesplus", "destination": "/vesplus-demo/index.html" },
     { "source": "/vesplus/", "destination": "/vesplus-demo/index.html" },
     { "source": "/vesplus/(.*)", "destination": "/vesplus-demo/$1" },
     { "source": "/(.*)", "destination": "/site/$1" }
