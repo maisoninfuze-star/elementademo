@@ -27,7 +27,7 @@
       'lang': 'EN', 'langAria': 'Switch to English', 'langAlt': 'English',
       'nav.retreat': 'Le refuge', 'nav.spaces': 'Les espaces', 'nav.gallery': 'Galerie', 'nav.location': 'Localisation', 'cta.availability': 'Vérifier les disponibilités',
       'hero.frameAria': 'Visite filmée du refuge, contrôlée par le défilement', 'hero.c0': 'Au-dessus de la forêt', 'hero.c1': 'La terrasse', 'hero.c2': 'La chambre', 'hero.c3': 'Le poêle', 'hero.c4': 'La cuisinette', 'hero.c5': 'Le miroir rond', 'hero.c6': 'L’échelle', 'hero.c7': 'Vers la terrasse', 'hero.c8': 'Le toit', 'hero.c9': 'Le refuge', 'hero.c10': 'La douche',
-      'hero.kicker': 'Découvrir Elementa.', 'hero.title': 'Une échappée façonnée par les éléments.', 'hero.skip': 'Passer l’exploration', 'hero.scroll': 'Défilez pour explorer', 'hero.watch': 'Voir l’expérience',
+      'hero.kicker': 'Découvrir Elementa.', 'hero.title': 'Une échappée façonnée par les <em>éléments</em>.', 'hero.skip': 'Passer l’exploration', 'hero.scroll': 'Défilez pour explorer', 'hero.watch': 'Voir l’expérience',
       'story.first': 'Hors du quotidien.', 'story.title': 'Un refuge en forêt où une architecture pensée vous rapproche du paysage.',
       'story.body1': 'Une seule pièce, vitrée sur deux côtés, en porte-à-faux sur un terrain boisé privé de Rawdon, dans Lanaudière. Le lit fait face aux arbres, la terrasse s’ouvre juste derrière la vitre, une échelle intérieure mène au toit.',
       'story.body2': 'Ardoise, laiton, verre et cèdre. Un poêle à bois pour l’hiver, une douche pluie avec sa longue fenêtre sur la forêt, une terrasse sur le toit pour le soir.', 'story.cta': 'Voir les espaces',
@@ -52,7 +52,7 @@
       'lang': 'FR', 'langAria': 'Passer au français', 'langAlt': 'Français',
       'nav.retreat': 'The Retreat', 'nav.spaces': 'The Spaces', 'nav.gallery': 'Gallery', 'nav.location': 'Location', 'cta.availability': 'Check availability',
       'hero.frameAria': 'Filmed walk through the cabin, controlled by scrolling', 'hero.c0': 'Above the forest', 'hero.c1': 'The terrace', 'hero.c2': 'The room', 'hero.c3': 'The stove', 'hero.c4': 'The kitchen', 'hero.c5': 'The round mirror', 'hero.c6': 'The ladder', 'hero.c7': 'Out to the terrace', 'hero.c8': 'The rooftop', 'hero.c9': 'The cabin', 'hero.c10': 'The shower',
-      'hero.kicker': 'Discover Elementa.', 'hero.title': 'An escape shaped by the elements.', 'hero.skip': 'Skip exploration', 'hero.scroll': 'Scroll to explore', 'hero.watch': 'Watch the experience',
+      'hero.kicker': 'Discover Elementa.', 'hero.title': 'An escape shaped by the <em>elements</em>.', 'hero.skip': 'Skip exploration', 'hero.scroll': 'Scroll to explore', 'hero.watch': 'Watch the experience',
       'story.first': 'Outside the everyday.', 'story.title': 'A forest retreat where thoughtful architecture brings you closer to the landscape.',
       'story.body1': 'One room, glazed on two sides, cantilevered over a private wooded lot in Rawdon, Lanaudière. The bed faces the trees, the terrace opens just past the glass, and an indoor ladder leads to the roof.',
       'story.body2': 'Slate, brass, glass and cedar. A wood stove for winter, a rain shower with a long window onto the forest, and a rooftop terrace for the evening.', 'story.cta': 'See the spaces',
@@ -312,7 +312,7 @@
       const title = new SplitText('.pre-text-left .p', { type: 'lines,words', linesClass: 'line' }); splits.push(title);
       gsap.set('.pre-text-left .line', { overflow: 'hidden' });
       const story = gsap.timeline({ scrollTrigger: { trigger: '.story', start: 'top top', end: () => '+=' + vh() * (mobile ? 3.6 : 4.4), pin: true, scrub: 1, invalidateOnRefresh: true } })
-        .fromTo('.image-grid-group .image-wrapper', { y: () => vh(), rotationX: -70, transformOrigin: '50% 0%', z: -900, autoAlpha: 0 }, { y: 0, z: 0, rotationX: 0, autoAlpha: 1, duration: 1, ease: 'sine', stagger: { amount: 0.4, from: 'random', grid: [3, 3] } }, 0)
+        .fromTo('.image-grid-group .image-wrapper', { y: () => vh() * 0.55, rotationX: -62, transformOrigin: '50% 0%', z: -700, autoAlpha: 0.35 }, { y: 0, z: 0, rotationX: 0, autoAlpha: 1, duration: 0.9, ease: 'sine', stagger: { amount: 0.3, from: 'random', grid: [3, 3] } }, 0)
         .fromTo('.image-grid-group', { scale: 0.86 }, { scale: 1, duration: 1, ease: 'none' }, 0)
         .fromTo('.pre-text-wrapper.first', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.5 }, 1.0)
         .fromTo(first.chars, { yPercent: 100 }, { yPercent: 0, duration: 0.6, stagger: 0.02, ease: 'power2.out' }, 1.05)
