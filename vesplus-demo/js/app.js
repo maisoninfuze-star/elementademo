@@ -322,13 +322,15 @@
   watch.addEventListener('click', () => { const src = (isMobile() && hero.dataset.videoSrcMobile) || hero.dataset.videoSrc; if (canvas) canvas.hidden = true; poster.classList.add('is-off'); video.hidden = false; video.controls = true; video.muted = false; video.src = src; video.play().catch(() => {}); watch.hidden = true; });
 
   /* ---------------- scroll storytelling (each section pins itself; rebuilt per breakpoint and on language change) ---------------- */
-  let mm = null;
+  let mm = null; const buildState = { bp: null };
   function rebuildScroll() { if (!hasGsap) return; if (mm) mm.revert(); mm = buildScroll(); requestAnimationFrame(() => ScrollTrigger.refresh()); }
   function buildScroll() {
     const ctxMM = gsap.matchMedia();
     ctxMM.add({ desktop: '(min-width: 1025px)', mobile: '(max-width: 1024px)' }, ctx => {
       const mobile = ctx.conditions.mobile; const splits = []; const vh = () => window.innerHeight;
-      if (introStarted && !introDone) finishIntro();           // a breakpoint change never leaves the page locked
+      const bp = mobile ? 'm' : 'd';                              // a real breakpoint change never leaves the page locked (programmatic rebuilds keep the intro running)
+      if (buildState.bp && buildState.bp !== bp && introStarted && !introDone) finishIntro();
+      buildState.bp = bp;
       // nav: active link + solid background once the film is behind us
       const links = $$('.route-list a');
       [['retreat', '.story', '.chapters'], ['spaces', '.chapters', '.gallery'], ['gallery', '.gallery', '.stay'], ['location', '.stay', '.site-footer']].forEach(([id, start, end]) => {
