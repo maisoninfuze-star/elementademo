@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20260910a">
+<link rel="stylesheet" href="css/style.css?v=20260910b">
 <script>document.documentElement.classList.replace('no-js','js')</script>
 </head>
 <body>
@@ -89,21 +89,27 @@
 
 <div class="content">
 <main id="top">
-  <section class="hero" id="hero" data-video-src="" data-video-src-mobile="" data-poster="" data-scroll-vh="5" data-scroll-vh-mobile="3">
-    <div class="hero-stage" aria-hidden="true">
-      <video class="hero-video" muted playsinline preload="metadata" hidden></video>
-      <div class="hero-poster"></div>
-    </div>
-    <div class="hero-copy">
-      <p class="hero-kicker" data-i18n="hero.kicker">Découvrir Elementa.</p>
-      <h1 class="hero-title" data-i18n="hero.title" data-split>Une échappée façonnée par les éléments.</h1>
-      <div class="hero-actions">
-        <a class="btn btn-solid" href="#availability" data-i18n="cta.availability">Vérifier les disponibilités</a>
-        <a class="btn btn-outline" href="#retreat" data-i18n="hero.skip">Passer l’exploration</a>
+  <section class="hero has-film" id="hero" data-video-src="assets/film/walkthrough-720.mp4" data-video-src-mobile="assets/film/walkthrough-360.mp4" data-poster="assets/film/poster.jpg" data-scroll-vh="8" data-scroll-vh-mobile="5">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="hero-kicker" data-i18n="hero.kicker">Découvrir Elementa.</p>
+        <h1 class="hero-title" data-i18n="hero.title" data-split>Une échappée façonnée par les éléments.</h1>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#availability" data-i18n="cta.availability">Vérifier les disponibilités</a>
+          <a class="btn btn-outline" href="#retreat" data-i18n="hero.skip">Passer l’exploration</a>
+        </div>
+        <p class="hero-scroll" data-i18n="hero.scroll">Défilez pour explorer</p>
       </div>
-      <p class="hero-scroll" data-i18n="hero.scroll">Défilez pour explorer</p>
+      <figure class="hero-frame" data-i18n-aria="hero.frameAria" aria-label="Visite filmée du refuge, contrôlée par le défilement">
+        <div class="frame-top"><span class="frame-label">Elementa · Rawdon</span><span class="frame-caption" aria-live="off"></span></div>
+        <div class="frame-media">
+          <video class="hero-video" muted playsinline preload="metadata" hidden></video>
+          <div class="hero-poster" aria-hidden="true"></div>
+          <button type="button" class="btn btn-outline hero-watch" data-i18n="hero.watch" hidden>Voir l’expérience</button>
+        </div>
+        <div class="frame-bottom"><span class="frame-progress" aria-hidden="true"><i></i></span><span class="frame-hint" data-i18n="hero.scroll">Défilez pour explorer</span></div>
+      </figure>
     </div>
-    <button type="button" class="btn btn-outline hero-watch" data-i18n="hero.watch" hidden>Voir l’expérience</button>
   </section>
 
   <section class="story" id="retreat" data-i18n-aria="a11y.retreat" aria-label="Le refuge">
@@ -261,6 +267,6 @@
 <script src="js/vendor/SplitText.min.js"></script>
 <script src="js/vendor/DrawSVGPlugin.min.js"></script>
 <script src="js/vendor/MotionPathPlugin.min.js"></script>
-<script src="js/app.js?v=20260910a"></script>
+<script src="js/app.js?v=20260910b"></script>
 </body>
 </html>

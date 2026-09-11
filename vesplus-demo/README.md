@@ -19,15 +19,13 @@ tools/trace_logo.py   vectoriser (needs numpy, opencv, pypotrace); tools/inject_
 
 Sun (rays drawn) → fire/mountain → tree/leaf → water (four rows) → convergence into the emblem while the oval draws → the exact master emblem replaces the parts → wordmark wipe, "Experiences" → the emblem and wordmark fly into the compact navigation lockup. Each sign parks in its final position at reduced scale and opacity after its moment. The water sign's fourth row dissolves during convergence so the result matches the master. Skip button (focused on start), `sessionStorage` flag `elementa-intro`, reduced motion shows the finished logo for 1.4 s, a 12 s watchdog and the window error handler release the scroll lock, a breakpoint change during the intro ends it.
 
-## Hero film (empty until the approved video is supplied)
+## Hero film
 
-Set on `<section class="hero">`:
+The approved walkthrough (`assets/film/`, from the WhatsApp export of 2026-09-10: 464×832 portrait container with the 16:9 footage letterboxed inside, 60 fps, 69 s) is cropped to the footage and encoded twice with `ffmpeg`: `walkthrough-720.mp4` (960×550, H.264 high, CRF 23, 30 fps, keyframe every second, faststart, no audio, 12.8 MB) for ≥1025 px and `walkthrough-360.mp4` (640×366, CRF 27, keyframe every half second, 5 MB) for phones, plus `poster.jpg` (first frame). The film sits inside a square framed card beside the copy (below it on phones), uncropped apart from a 16:10 letterbox, with a scene caption (`hero.c0`…`hero.c10`, keyed to seconds in `app.js`) and a progress line in the frame.
 
-- `data-video-src` (desktop), `data-video-src-mobile` (optional smaller encode), `data-poster` (first frame, shown immediately).
-- `data-scroll-vh="5"` / `data-scroll-vh-mobile="3"`: pin length in viewport heights; tune to the film.
-- Preview any same-origin film without editing the markup: `/vesplus/?video=assets/film.mp4`.
+Attributes on `<section class="hero">`: `data-video-src`, `data-video-src-mobile`, `data-poster`, `data-scroll-vh="8"` (desktop pin length in viewport heights, about 104 px of scroll per second of film at 900 px tall), `data-scroll-vh-mobile="5"`. Preview another same-origin film with `/vesplus/?video=assets/film/other.mp4`.
 
-Behaviour: the hero pins after the intro, scroll progress maps to `currentTime` (clamped, seeks coalesced through `seeked`, 600 ms guard), scrolling up reverses, stopping holds the frame, autoplay never runs. Without a source the hero is a single screen with the copy. If metadata never arrives or the file errors, the poster stays and a "Watch the experience" button plays the film normally. Use an MP4 with `moov` at the front (`ffmpeg -movflags +faststart`) and a keyframe interval of about one second so seeking is cheap; test on Safari/iPhone before launch.
+Behaviour: the hero pins after the intro, the scrubbed timeline progress maps to `currentTime` (clamped, seeks coalesced through `seeked` with a 600 ms guard, no seek for the same frame), scrolling up reverses, stopping lets the frame settle (scrub 0.6), autoplay never runs, the poster fades once metadata is in. If metadata never arrives or the file errors, the poster stays and a "Watch the experience" button inside the frame plays the film normally. Re-encode with `-movflags +faststart` and a short keyframe interval if the source changes; test on Safari/iPhone before launch.
 
 ## Sections
 
