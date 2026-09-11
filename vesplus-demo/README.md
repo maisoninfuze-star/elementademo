@@ -15,9 +15,9 @@ assets/img/           Elementa photos (WOLFILMZ, web-sized, with -800 variants),
 tools/trace_logo.py   vectoriser (needs numpy, opencv, pypotrace); tools/inject_logo.py rewrites the SVG into index.html (idempotent)
 ```
 
-## Intro (about 5.5 s, once per session)
+## Intro (about 5.5 s, every visit)
 
-Sun (rays drawn) → fire/mountain → tree/leaf → water (four rows) → convergence into the emblem while the oval draws → the exact master emblem replaces the parts → wordmark wipe, "Experiences" → the emblem and wordmark fly into the compact navigation lockup. Each sign parks in its final position at reduced scale and opacity after its moment. The water sign's fourth row dissolves during convergence so the result matches the master. Skip button (focused on start), `sessionStorage` flag `elementa-intro`, reduced motion shows the finished logo for 1.4 s, a 12 s watchdog and the window error handler release the scroll lock, a breakpoint change during the intro ends it.
+Sun (rays drawn) → fire/mountain → tree/leaf → water (four rows) → convergence into the emblem while the oval draws → the exact master emblem replaces the parts → wordmark wipe, "Experiences" → the emblem and wordmark fly into the compact navigation lockup. Each sign parks in its final position at reduced scale and opacity after its moment. The water sign's fourth row dissolves during convergence so the result matches the master. Skip button (focused on start); plays on every visit, only back/forward history navigation skips it (`sessionStorage` flag `elementa-intro`); reduced motion shows the finished logo for 1.4 s, a 12 s watchdog and the window error handler release the scroll lock, a breakpoint change during the intro ends it.
 
 ## Hero film
 

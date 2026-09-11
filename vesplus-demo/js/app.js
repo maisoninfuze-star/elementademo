@@ -114,7 +114,8 @@
   window.addEventListener('error', () => { try { finishIntro(); unlock(); } catch (e) {} });
 
   /* ---------------- intro: the four signs, then the emblem, then the wordmark, then the flight to the nav ---------------- */
-  const introSeen = (() => { try { return sessionStorage.getItem('elementa-intro') === '1'; } catch (e) { return false; } })();
+  // the intro plays on every visit; only history navigation (back/forward) skips it
+  const introSeen = (() => { try { const nav = performance.getEntriesByType('navigation')[0]; return !!nav && nav.type === 'back_forward' && sessionStorage.getItem('elementa-intro') === '1'; } catch (e) { return false; } })();
   let introDone = false, introStarted = false, introTl = null, watchdog = null;
   function finishIntro() {
     if (introDone) return; introDone = true; clearTimeout(watchdog);
