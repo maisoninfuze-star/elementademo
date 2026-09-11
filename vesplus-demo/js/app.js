@@ -354,13 +354,16 @@
           const p = this.progress(); heroState.seekTo(p);
           if (bar) bar.style.width = (p * 100).toFixed(2) + '%';
           const sec = p * heroState.duration; let i = 0; while (i + 1 < CAPS.length && CAPS[i + 1][0] <= sec) i++;
-          if (i !== capIdx && caption) { capIdx = i; caption.textContent = t(CAPS[i][1]); gsap.fromTo(caption, { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.4, overwrite: true }); if (scenes) $$('li', scenes).forEach((li, k) => li.classList.toggle('is-on', k === i)); }
+          if (i !== capIdx && caption) { capIdx = i; caption.textContent = t(CAPS[i][1]); gsap.fromTo(caption, { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.4, overwrite: true }); const cnt = $('.frame-count'); if (cnt) cnt.textContent = `${String(i + 1).padStart(2, '0')} / ${String(CAPS.length).padStart(2, '0')}`; if (scenes) $$('li', scenes).forEach((li, k) => li.classList.toggle('is-on', k === i)); }
         } });
-        heroTl.to('.frame-hint', { autoAlpha: 0, duration: 0.12, ease: 'none' }, 0.06).to({}, { duration: 0.82 });
+        heroTl.to('.frame-hint', { autoAlpha: 0, duration: 0.1, ease: 'none' }, 0.05).to({}, { duration: 0.82 });
+        if (!mobile) heroTl.to('.hero-copy', { autoAlpha: 0, y: -28, duration: 0.14, ease: 'none' }, 0.04);
       }
       const heroTitle = new SplitText('.hero-title', { type: 'words,chars', charsClass: 'char' }); splits.push(heroTitle);
       gsap.set(heroTitle.words, { overflow: 'hidden', display: 'inline-block', verticalAlign: 'top' });
-      heroState.reveal = gsap.from(heroTitle.chars, { yPercent: 100, opacity: 0, duration: 0.7, stagger: 0.012, ease: 'power3.out', paused: true });
+      heroState.reveal = gsap.timeline({ paused: true });
+      if (!introDone) heroState.reveal.from('.frame-media', { autoAlpha: 0, scale: 1.04, duration: 1.2, ease: 'power3.out' }, 0);
+      heroState.reveal.from(heroTitle.chars, { yPercent: 100, opacity: 0, duration: 0.7, stagger: 0.012, ease: 'power3.out' }, 0.25).from(['.hero-kicker', '.hero-links', '.frame-text'], { autoAlpha: 0, y: 12, duration: 0.6, stagger: 0.08, ease: 'power3.out' }, 0.55);
       if (introDone) heroState.reveal.play();
       // story: dimensional grid reveal → "Outside the everyday." → colour wipes → brand copy → stay features
       const first = new SplitText('.pre-text-wrapper.first .opacity-text-animation', { type: 'chars', charsClass: 'char' }); splits.push(first);
