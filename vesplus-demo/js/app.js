@@ -26,7 +26,7 @@
       'a11y.skipContent': 'Aller au contenu', 'a11y.brand': 'Elementa Experiences, retour au début', 'a11y.mainNav': 'Navigation principale', 'a11y.menu': 'Menu', 'a11y.intro': 'Séquence d’ouverture', 'a11y.skipIntro': 'Passer l’introduction', 'a11y.retreat': 'Le refuge', 'a11y.spaces': 'Les espaces', 'a11y.gallery': 'Galerie', 'a11y.stay': 'Séjour et localisation', 'a11y.availability': 'Disponibilités',
       'lang': 'EN', 'langAria': 'Switch to English', 'langAlt': 'English',
       'nav.retreat': 'Le refuge', 'nav.spaces': 'Les espaces', 'nav.gallery': 'Galerie', 'nav.location': 'Localisation', 'cta.availability': 'Vérifier les disponibilités',
-      'hero.frameAria': 'Visite filmée du refuge, contrôlée par le défilement', 'hero.c0': 'Au-dessus de la forêt', 'hero.c1': 'La terrasse', 'hero.c2': 'La chambre', 'hero.c3': 'Le poêle', 'hero.c4': 'La cuisinette', 'hero.c5': 'Le miroir rond', 'hero.c6': 'L’échelle', 'hero.c7': 'Vers la terrasse', 'hero.c8': 'Le toit', 'hero.c9': 'Le refuge', 'hero.c10': 'La douche',
+      'hero.frameAria': 'Visite filmée du refuge, contrôlée par le défilement', 'hero.c0': 'Au-dessus de la forêt', 'hero.c1': 'La terrasse', 'hero.c2': 'La chambre', 'hero.c3': 'Le poêle', 'hero.c4': 'La cuisinette', 'hero.c5': 'Le miroir rond', 'hero.c6': 'L’échelle', 'hero.c7': 'Vers la terrasse', 'hero.c8': 'Le toit', 'hero.c9': 'Le refuge', 'hero.c10': 'La douche', 'hero.c11': 'Le hublot',
       'hero.kicker': 'Découvrir Elementa.', 'hero.title': 'Une échappée façonnée par les <em>éléments</em>.', 'hero.skip': 'Passer l’exploration', 'hero.scroll': 'Défilez pour explorer', 'hero.watch': 'Voir l’expérience',
       'story.first': 'Hors du quotidien.', 'story.title': 'Un refuge en forêt où une architecture pensée vous rapproche du paysage.',
       'story.body1': 'Une seule pièce, vitrée sur deux côtés, en porte-à-faux sur un terrain boisé privé de Rawdon, dans Lanaudière. Le lit fait face aux arbres, la terrasse s’ouvre juste derrière la vitre, une échelle intérieure mène au toit.',
@@ -51,7 +51,7 @@
       'a11y.skipContent': 'Skip to content', 'a11y.brand': 'Elementa Experiences, back to the top', 'a11y.mainNav': 'Main navigation', 'a11y.menu': 'Menu', 'a11y.intro': 'Opening sequence', 'a11y.skipIntro': 'Skip intro', 'a11y.retreat': 'The retreat', 'a11y.spaces': 'The spaces', 'a11y.gallery': 'Gallery', 'a11y.stay': 'Your stay and location', 'a11y.availability': 'Availability',
       'lang': 'FR', 'langAria': 'Passer au français', 'langAlt': 'Français',
       'nav.retreat': 'The Retreat', 'nav.spaces': 'The Spaces', 'nav.gallery': 'Gallery', 'nav.location': 'Location', 'cta.availability': 'Check availability',
-      'hero.frameAria': 'Filmed walk through the cabin, controlled by scrolling', 'hero.c0': 'Above the forest', 'hero.c1': 'The terrace', 'hero.c2': 'The room', 'hero.c3': 'The stove', 'hero.c4': 'The kitchen', 'hero.c5': 'The round mirror', 'hero.c6': 'The ladder', 'hero.c7': 'Out to the terrace', 'hero.c8': 'The rooftop', 'hero.c9': 'The cabin', 'hero.c10': 'The shower',
+      'hero.frameAria': 'Filmed walk through the cabin, controlled by scrolling', 'hero.c0': 'Above the forest', 'hero.c1': 'The terrace', 'hero.c2': 'The room', 'hero.c3': 'The stove', 'hero.c4': 'The kitchen', 'hero.c5': 'The round mirror', 'hero.c6': 'The ladder', 'hero.c7': 'Out to the terrace', 'hero.c8': 'The rooftop', 'hero.c9': 'The cabin', 'hero.c10': 'The shower', 'hero.c11': 'The porthole',
       'hero.kicker': 'Discover Elementa.', 'hero.title': 'An escape shaped by the <em>elements</em>.', 'hero.skip': 'Skip exploration', 'hero.scroll': 'Scroll to explore', 'hero.watch': 'Watch the experience',
       'story.first': 'Outside the everyday.', 'story.title': 'A forest retreat where thoughtful architecture brings you closer to the landscape.',
       'story.body1': 'One room, glazed on two sides, cantilevered over a private wooded lot in Rawdon, Lanaudière. The bed faces the trees, the terrace opens just past the glass, and an indoor ladder leads to the roof.',
@@ -346,7 +346,7 @@
       if (caption) caption.textContent = t('hero.c0');
       if (heroState.ready && heroState.seekTo) {
         const range = +(mobile ? hero.dataset.scrollVhMobile : hero.dataset.scrollVh) || 5;
-        const CAPS = [[0, 'hero.c0'], [8, 'hero.c1'], [13, 'hero.c2'], [16, 'hero.c3'], [20, 'hero.c4'], [24, 'hero.c5'], [30, 'hero.c6'], [38, 'hero.c7'], [44, 'hero.c8'], [54, 'hero.c9'], [58, 'hero.c10']];
+        const CAPS = [[0, 'hero.c0'], [4, 'hero.c1'], [9, 'hero.c2'], [11.7, 'hero.c3'], [14.3, 'hero.c4'], [19.5, 'hero.c5'], [24.5, 'hero.c6'], [30.5, 'hero.c7'], [35, 'hero.c8'], [46.5, 'hero.c9'], [49.5, 'hero.c11'], [54.5, 'hero.c10']];
         let capIdx = -1;
         const scenes = $('.frame-scenes'); if (scenes) scenes.innerHTML = CAPS.map(cp => `<li>${t(cp[1])}</li>`).join('');
         // the timeline's own progress is the scrubbed (smoothed) one, so the frame settles when scrolling stops
