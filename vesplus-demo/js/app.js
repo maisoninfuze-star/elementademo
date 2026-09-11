@@ -240,36 +240,86 @@
     try { history.pushState(null, '', '#' + id); } catch (err) {}
   });
 
-  /* ---------------- hero: scroll-controlled film (the media slot stays empty until the approved video is supplied) ---------------- */
-  const hero = $('.hero'), video = $('.hero-video'), poster = $('.hero-poster'), watch = $('.hero-watch');
-  const heroState = { duration: 0, ready: false, failed: false };
-  function setupVideoMedia() {
+  /* ---------------- hero: scroll-controlled walkthrough ----------------
+     Primary: a WebP frame sequence drawn on a canvas (instant random access in both directions, eased towards the
+     scroll position so the frame settles when scrolling stops). Fallback: the mp4 scrubbed through currentTime, then a
+     "watch" button that plays it normally. Nothing autoplays. */
+  const hero = $('.hero'), video = $('.hero-video'), poster = $('.hero-poster'), watch = $('.hero-watch'), canvas = $('.hero-canvas');
+  const heroState = { duration: +hero.dataset.duration || 0, ready: false, failed: false, mode: null };
+  function setupHeroMedia() {
     if (hero.dataset.poster) poster.style.backgroundImage = `url("${hero.dataset.poster}")`;
+    if (!anim) { hero.classList.add('no-video'); return; }
+    if (!setupFrames()) setupVideoMedia();
+  }
+  function setupFrames() {
+    const dir = hero.dataset.framesDir, total = +hero.dataset.frames;
+    if (!dir || !total || !canvas) return false;
+    const tier = isMobile() ? 'm' : 'd';
+    const ctx = canvas.getContext('2d', { alpha: false });
+    const imgs = new Array(total).fill(null), loaded = new Array(total).fill(false);
+    let target = 0, cur = 0, drawn = -1, raf = 0, failedFirst = false;
+    const src = i => `${dir}/${tier}/f_${String(i + 1).padStart(4, '0')}.webp`;
+    const nearest = i => { for (let d = 0; d < total; d++) { if (i - d >= 0 && loaded[i - d]) return imgs[i - d]; if (i + d < total && loaded[i + d]) return imgs[i + d]; } return null; };
+    const draw = () => {
+      const img = nearest(Math.round(cur)); if (!img) return;
+      const cw = canvas.width, ch = canvas.height, s = Math.max(cw / img.naturalWidth, ch / img.naturalHeight), dw = img.naturalWidth * s, dh = img.naturalHeight * s;
+      ctx.drawImage(img, (cw - dw) / 2, (ch - dh) * 0.45, dw, dh);
+      if (!poster.classList.contains('is-off')) poster.classList.add('is-off');
+    };
+    const resize = () => { const dpr = Math.min(window.devicePixelRatio || 1, isMobile() ? 1.5 : 2); const r = canvas.parentElement.getBoundingClientRect(); canvas.width = Math.max(2, Math.round(r.width * dpr)); canvas.height = Math.max(2, Math.round(r.height * dpr)); drawn = -1; draw(); };
+    const decodeAround = i => { for (let k = Math.max(0, i - 10); k <= Math.min(total - 1, i + 24); k++) { const im = imgs[k]; if (im && loaded[k] && im.decode && !im.__dec) { im.__dec = true; im.decode().catch(() => {}); } } };
+    const tick = () => {
+      const diff = target - cur; cur = Math.abs(diff) < 0.04 ? target : cur + diff * 0.22;
+      const i = Math.round(cur); if (i !== drawn) { drawn = i; draw(); decodeAround(i); }
+      raf = Math.abs(target - cur) > 0.01 ? requestAnimationFrame(tick) : 0;
+    };
+    const load = (list, concurrency) => new Promise(res => {
+      let next = 0, done = 0; const pending = list.filter(i => !imgs[i]); if (!pending.length) return res();
+      const step = () => {
+        if (next >= pending.length) return; const i = pending[next++]; const im = new Image(); im.decoding = 'async';
+        const fin = ok => { if (ok) { loaded[i] = true; if (Math.abs(i - Math.round(cur)) < 2 || drawn < 0) { drawn = -1; if (!raf) raf = requestAnimationFrame(tick); } } if (++done === pending.length) res(); step(); };
+        im.onload = () => fin(true); im.onerror = () => { if (i === 0) failedFirst = true; fin(false); }; im.src = src(i); imgs[i] = im;
+      };
+      for (let c = 0; c < concurrency; c++) step();
+    });
+    heroState.mode = 'frames';
+    heroState.seekTo = p => { target = Math.max(0, Math.min(total - 1, p * (total - 1))); if (!raf) raf = requestAnimationFrame(tick); };
+    window.addEventListener('resize', resize); resize();
+    const all = Array.from({ length: total }, (_, i) => i);
+    load([0], 1).then(() => {
+      if (failedFirst) { heroState.mode = null; window.removeEventListener('resize', resize); setupVideoMedia(); return; }
+      heroState.ready = true; rebuildScroll();
+      return load(all.filter(i => i % 4 === 0), 6).then(() => load(all.filter(i => i % 2 === 0), 6)).then(() => load(all, 6));
+    });
+    return true;
+  }
+  function setupVideoMedia() {
     const qv = new URLSearchParams(location.search).get('video');
     const src = (qv && !qv.includes('//') ? qv : null) || (isMobile() && hero.dataset.videoSrcMobile) || hero.dataset.videoSrc;
-    if (!src || !anim) { hero.classList.add('no-video'); return; }
-    let pending = null, seeking = false;
-    let guard = null;
+    if (!src) { hero.classList.add('no-video'); return; }
+    if (canvas) canvas.hidden = true;
+    let pending = null, seeking = false, guard = null;
     const applySeek = () => {
       if (pending == null || seeking) return;
       const time = pending; pending = null;
-      if (Math.abs(video.currentTime - time) < 0.02) return;        // same frame: no seek, no event to wait for
-      seeking = true; clearTimeout(guard); guard = setTimeout(() => { seeking = false; applySeek(); }, 600);   // never wait forever on a missing seeked
+      if (Math.abs(video.currentTime - time) < 0.02) return;
+      seeking = true; clearTimeout(guard); guard = setTimeout(() => { seeking = false; applySeek(); }, 600);
       try { video.currentTime = time; } catch (e) { seeking = false; }
     };
     video.addEventListener('seeked', () => { clearTimeout(guard); seeking = false; applySeek(); });
+    heroState.mode = 'video';
     heroState.seekTo = p => { if (!heroState.duration) return; pending = Math.min(heroState.duration - 0.04, Math.max(0, p * heroState.duration)); if (!seeking) requestAnimationFrame(applySeek); };
     const timer = setTimeout(() => { if (!heroState.ready) fallback(); }, 8000);
     video.addEventListener('loadedmetadata', () => {
-      clearTimeout(timer); heroState.duration = video.duration || 0; heroState.ready = heroState.duration > 0; video.pause();
+      clearTimeout(timer); heroState.duration = video.duration || heroState.duration; heroState.ready = heroState.duration > 0; video.pause();
       try { video.currentTime = 0.01; } catch (e) {}
       if (heroState.ready) { poster.classList.add('is-off'); rebuildScroll(); } else fallback();
     });
     video.addEventListener('error', fallback);
     function fallback() { clearTimeout(timer); if (heroState.failed) return; heroState.failed = true; heroState.ready = false; video.hidden = true; video.removeAttribute('src'); hero.classList.add('no-video'); watch.hidden = false; rebuildScroll(); }
-    watch.addEventListener('click', () => { video.hidden = false; video.controls = true; video.muted = false; video.src = src; video.play().catch(() => {}); watch.hidden = true; });
     video.hidden = false; video.src = src; video.load();
   }
+  watch.addEventListener('click', () => { const src = (isMobile() && hero.dataset.videoSrcMobile) || hero.dataset.videoSrc; if (canvas) canvas.hidden = true; poster.classList.add('is-off'); video.hidden = false; video.controls = true; video.muted = false; video.src = src; video.play().catch(() => {}); watch.hidden = true; });
 
   /* ---------------- scroll storytelling (each section pins itself; rebuilt per breakpoint and on language change) ---------------- */
   let mm = null;
@@ -387,7 +437,7 @@
   if (!hasGsap) { nav.classList.add('is-on'); html.classList.add('no-anim'); return; }
   if (!introSeen && !reduce && intro) lock();
   const start = () => {
-    try { setupVideoMedia(); rebuildScroll(); } catch (e) { console.error(e); }
+    try { setupHeroMedia(); rebuildScroll(); } catch (e) { console.error(e); }
     try { runIntro(); } catch (e) { console.error(e); finishIntro(); }
     requestAnimationFrame(() => ScrollTrigger.refresh());
   };
