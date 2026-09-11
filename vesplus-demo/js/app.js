@@ -286,10 +286,12 @@
     heroState.seekTo = p => { target = Math.max(0, Math.min(total - 1, p * (total - 1))); if (!raf) raf = requestAnimationFrame(tick); };
     window.addEventListener('resize', resize); resize();
     const all = Array.from({ length: total }, (_, i) => i);
+    const afterLoad = fn => (document.readyState === 'complete' ? fn() : window.addEventListener('load', fn, { once: true }));
     load([0], 1).then(() => {
       if (failedFirst) { heroState.mode = null; window.removeEventListener('resize', resize); setupVideoMedia(); return; }
       heroState.ready = true; rebuildScroll();
-      return load(all.filter(i => i % 4 === 0), 6).then(() => load(all.filter(i => i % 2 === 0), 6)).then(() => load(all, 6));
+      // the bulk of the sequence streams in after the load event (sparse first), so it never holds the page's load metrics hostage
+      afterLoad(() => load(all.filter(i => i % 4 === 0), 6).then(() => load(all.filter(i => i % 2 === 0), 6)).then(() => load(all, 6)));
     });
     return true;
   }
