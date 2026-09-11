@@ -293,14 +293,15 @@
         const range = +(mobile ? hero.dataset.scrollVhMobile : hero.dataset.scrollVh) || 5;
         const CAPS = [[0, 'hero.c0'], [8, 'hero.c1'], [13, 'hero.c2'], [16, 'hero.c3'], [20, 'hero.c4'], [24, 'hero.c5'], [30, 'hero.c6'], [38, 'hero.c7'], [44, 'hero.c8'], [54, 'hero.c9'], [58, 'hero.c10']];
         let capIdx = -1;
+        const scenes = $('.frame-scenes'); if (scenes) scenes.innerHTML = CAPS.map(cp => `<li>${t(cp[1])}</li>`).join('');
         // the timeline's own progress is the scrubbed (smoothed) one, so the frame settles when scrolling stops
         const heroTl = gsap.timeline({ scrollTrigger: { trigger: hero, start: 'top top', end: () => '+=' + vh() * range, pin: true, scrub: 0.6, invalidateOnRefresh: true }, onUpdate() {
           const p = this.progress(); heroState.seekTo(p);
           if (bar) bar.style.width = (p * 100).toFixed(2) + '%';
           const sec = p * heroState.duration; let i = 0; while (i + 1 < CAPS.length && CAPS[i + 1][0] <= sec) i++;
-          if (i !== capIdx && caption) { capIdx = i; caption.textContent = t(CAPS[i][1]); gsap.fromTo(caption, { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.4, overwrite: true }); }
+          if (i !== capIdx && caption) { capIdx = i; caption.textContent = t(CAPS[i][1]); gsap.fromTo(caption, { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.4, overwrite: true }); if (scenes) $$('li', scenes).forEach((li, k) => li.classList.toggle('is-on', k === i)); }
         } });
-        heroTl.to('.hero-scroll', { autoAlpha: 0, duration: 0.12, ease: 'none' }, 0.06).to({}, { duration: 0.82 });
+        heroTl.to('.frame-hint', { autoAlpha: 0, duration: 0.12, ease: 'none' }, 0.06).to({}, { duration: 0.82 });
       }
       const heroTitle = new SplitText('.hero-title', { type: 'words,chars', charsClass: 'char' }); splits.push(heroTitle);
       gsap.set(heroTitle.words, { overflow: 'hidden', display: 'inline-block', verticalAlign: 'top' });
