@@ -1,0 +1,226 @@
+<!--page {"id":"home","title":"meta.home.title","desc":"meta.home.desc","logo":"emblem,wordmark,signs","navclass":" intro-pending","head":"<link rel=\"preload\" as=\"image\" href=\"assets/film/hero-poster-1920.jpg\" imagesrcset=\"assets/film/hero-poster-960.jpg 960w, assets/film/hero-poster-1440.jpg 1440w, assets/film/hero-poster-1920.jpg 1920w\" imagesizes=\"100vw\" fetchpriority=\"high\">\n<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"LodgingBusiness\",\"name\":\"Elementa Expériences\",\"alternateName\":\"Elementa\",\"description\":\"Cabines de montagne à Sainte-Béatrix, dans Lanaudière, avec circuit thermal privé, terrasse sur le toit et séjour personnalisé. Ouvert toute l’année.\",\"slogan\":\"Loin du bruit, près de soi.\",\"image\":[\"assets/film/hero-poster-1920.jpg\",\"assets/film/still-aerial-1920.jpg\"],\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Sainte-Béatrix\",\"addressRegion\":\"QC\",\"addressCountry\":\"CA\"},\"areaServed\":\"Lanaudière\",\"numberOfRooms\":4,\"amenityFeature\":[{\"@type\":\"LocationFeatureSpecification\",\"name\":\"Circuit thermal privé (bain vapeur et douche extérieure)\",\"value\":true},{\"@type\":\"LocationFeatureSpecification\",\"name\":\"Terrasse sur le toit\",\"value\":true},{\"@type\":\"LocationFeatureSpecification\",\"name\":\"Foyer à bois\",\"value\":true},{\"@type\":\"LocationFeatureSpecification\",\"name\":\"Planchers chauffants\",\"value\":true},{\"@type\":\"LocationFeatureSpecification\",\"name\":\"Cuisine équipée\",\"value\":true},{\"@type\":\"LocationFeatureSpecification\",\"name\":\"Lit king\",\"value\":true}],\"sameAs\":[\"https://www.instagram.com/elementa.experiences/\",\"https://www.facebook.com/elementa.experiences\"]}</script>"}-->
+{{> head}}
+{{> header}}
+<main id="top">
+  <section class="hero" id="accueil" data-theme="dark" data-hero-video="assets/film/hero-1600.mp4" data-hero-video-mobile="assets/film/hero-960.mp4">
+    <div class="hero-media">
+      <img class="hero-poster" src="assets/film/hero-poster-1920.jpg" srcset="assets/film/hero-poster-960.jpg 960w, assets/film/hero-poster-1440.jpg 1440w, assets/film/hero-poster-1920.jpg 1920w" sizes="100vw" width="1920" height="1080" fetchpriority="high" decoding="async" data-i18n-attr="alt:hero.posterAlt">
+      <video class="hero-video" muted playsinline loop preload="none" tabindex="-1" data-i18n-attr="aria-label:hero.mediaAria" hidden></video>
+    </div>
+    <div class="flourish" aria-hidden="true">
+      <svg class="flourish-mark" viewBox="1500 100 2000 2200">
+        <g class="sign sign-sun"><use href="#p-sun"/></g>
+        <g class="sign sign-fire"><use href="#p-mountain"/></g>
+        <g class="sign sign-tree"><use href="#p-leaf"/></g>
+        <g class="sign sign-water"><use href="#p-wave1"/><use href="#p-wave2"/><use href="#p-wave3"/></g>
+        <g class="oval"><use href="#p-oval"/></g>
+      </svg>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="hero.eyebrow"></p>
+        <h1 class="hero-title" data-i18n="hero.title"></h1>
+        <p class="hero-desc" data-i18n="hero.desc"></p>
+        <div class="actions">
+          <a class="btn btn-brass" href="#planifier"><span data-i18n="hero.plan"></span></a>
+          <button type="button" class="btn" data-tour-open><span data-i18n="hero.visit"></span></button>
+        </div>
+      </div>
+      <div class="hero-foot">
+        <a class="hero-discover" href="#lieu"><span data-i18n="hero.discover"></span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M2 7l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></a>
+        <button type="button" class="media-toggle" aria-pressed="false" data-i18n-attr="aria-label:hero.pauseAria" hidden><svg class="ic-pause" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 2h3v10H3zM8 2h3v10H8z" fill="currentColor"/></svg><svg class="ic-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5l9 5.5-9 5.5z" fill="currentColor"/></svg><span class="label" data-i18n="hero.pause"></span></button>
+      </div>
+    </div>
+  </section>
+
+  <div id="contenu" tabindex="-1"></div>
+
+  <section class="section" id="lieu" data-theme="light" tabindex="-1">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow reveal" data-i18n="lieu.eyebrow"></p>
+          <h2 class="title reveal" data-i18n="lieu.title"></h2>
+        </div>
+        <p class="lead reveal" data-delay="1" data-i18n="lieu.lead"></p>
+      </div>
+      <ul class="facts reveal" data-delay="1">
+        <li><b data-i18n="lieu.f1b"></b><span data-i18n="lieu.f1"></span></li>
+        <li><b data-i18n="lieu.f2b"></b><span data-i18n="lieu.f2"></span></li>
+        <li><b data-i18n="lieu.f3b"></b><span data-i18n="lieu.f3"></span></li>
+        <li><b data-i18n="lieu.f4b"></b><span data-i18n="lieu.f4"></span></li>
+      </ul>
+      <figure class="figure ratio-16-9 place-figure reveal-img">
+        <img src="assets/film/still-aerial-1920.jpg" srcset="assets/film/still-aerial-960.jpg 960w, assets/film/still-aerial-1920.jpg 1920w" sizes="(min-width: 1440px) 1312px, 92vw" width="1920" height="1080" loading="lazy" decoding="async" data-i18n-attr="alt:lieu.imgAlt">
+      </figure>
+      <p class="caption" data-i18n="lieu.imgCap"></p>
+    </div>
+  </section>
+
+  <section class="section" id="cabine" data-theme="dark" tabindex="-1">
+    <div class="wrap">
+      <div class="cabin-grid">
+        <div class="cabin-left">
+          <figure class="figure ratio-3-2 cabin-main reveal-img">
+            <img src="assets/img/window.jpg" srcset="assets/img/window-800.jpg 800w, assets/img/window.jpg 1600w" sizes="(min-width: 900px) 56vw, 92vw" width="1600" height="1066" loading="lazy" decoding="async" data-i18n-attr="alt:cab.img1Alt">
+          </figure>
+          <figure class="figure ratio-4-5 cabin-detail reveal-img">
+            <img src="assets/img/brass.jpg" srcset="assets/img/brass-800.jpg 800w, assets/img/brass.jpg 1600w" sizes="(min-width: 900px) 26vw, 50vw" width="1600" height="1066" loading="lazy" decoding="async" data-i18n-attr="alt:cab.img2Alt">
+          </figure>
+          <p class="caption" data-i18n="cab.img2Cap"></p>
+        </div>
+        <div class="cabin-side">
+          <p class="eyebrow reveal" data-i18n="cab.eyebrow"></p>
+          <h2 class="title reveal" data-i18n="cab.title"></h2>
+          <p class="lead reveal" data-delay="1" style="margin-top:26px" data-i18n="cab.lead"></p>
+          <p class="body reveal" data-delay="1" data-i18n="cab.layout"></p>
+          <ul class="feature-list reveal" data-delay="2">
+            <li data-i18n="cab.l1"></li><li data-i18n="cab.l2"></li><li data-i18n="cab.l3"></li><li data-i18n="cab.l4"></li><li data-i18n="cab.l5"></li><li data-i18n="cab.l6"></li><li data-i18n="cab.l7"></li><li data-i18n="cab.l8"></li><li data-i18n="cab.l9"></li>
+          </ul>
+          <div class="actions reveal" data-delay="2">
+            <a class="btn" href="cabines.html"><span data-i18n="cab.more"></span></a>
+            <a class="link" href="cabines.html#equipements"><span data-i18n="cab.equip"></span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h10M7 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience" data-theme="light" tabindex="-1">
+    <div class="wrap">
+      <p class="eyebrow reveal" data-i18n="exp.eyebrow"></p>
+      <h2 class="title reveal" style="margin-bottom:clamp(36px,5vw,64px)" data-i18n="exp.title"></h2>
+      <div class="details">
+        <div class="details-nav">
+          <div class="tabs" role="tablist" aria-orientation="vertical" data-i18n-attr="aria-label:exp.tablistAria">
+            <button type="button" class="tab" role="tab" id="tab-feu" aria-selected="true" aria-controls="panel-feu" data-img="0"><span data-i18n="exp.t1"></span><span class="num">01</span></button>
+            <button type="button" class="tab" role="tab" id="tab-vapeur" aria-selected="false" aria-controls="panel-vapeur" tabindex="-1" data-img="1"><span data-i18n="exp.t2"></span><span class="num">02</span></button>
+            <button type="button" class="tab" role="tab" id="tab-toit" aria-selected="false" aria-controls="panel-toit" tabindex="-1" data-img="2"><span data-i18n="exp.t3"></span><span class="num">03</span></button>
+          </div>
+          <div class="tabpanel" role="tabpanel" id="panel-feu" aria-labelledby="tab-feu" tabindex="0"><p data-i18n="exp.p1"></p></div>
+          <div class="tabpanel" role="tabpanel" id="panel-vapeur" aria-labelledby="tab-vapeur" tabindex="0" hidden><p data-i18n="exp.p2"></p></div>
+          <div class="tabpanel" role="tabpanel" id="panel-toit" aria-labelledby="tab-toit" tabindex="0" hidden><p data-i18n="exp.p3"></p></div>
+        </div>
+        <div class="details-media reveal-img">
+          <img class="is-on" src="assets/img/stove.jpg" srcset="assets/img/stove-800.jpg 800w, assets/img/stove.jpg 1403w" sizes="(min-width: 900px) 52vw, 92vw" width="1403" height="1229" loading="lazy" decoding="async" data-i18n-attr="alt:exp.alt1">
+          <img src="assets/img/bath.jpg" srcset="assets/img/bath-800.jpg 800w, assets/img/bath.jpg 1474w" sizes="(min-width: 900px) 52vw, 92vw" width="1474" height="982" loading="lazy" decoding="async" data-i18n-attr="alt:exp.alt2">
+          <img src="assets/img/ch-rooftop.jpg" srcset="assets/img/ch-rooftop-800.jpg 800w, assets/img/ch-rooftop.jpg 1536w" sizes="(min-width: 900px) 52vw, 92vw" width="1536" height="1024" loading="lazy" decoding="async" data-i18n-attr="alt:exp.alt3">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="mentalite" data-theme="forest" tabindex="-1">
+    <div class="wrap">
+      <div class="mind">
+        <figure class="figure ratio-4-3 mind-media reveal-img">
+          <img src="assets/img/deck-view.jpg" srcset="assets/img/deck-view-800.jpg 800w, assets/img/deck-view.jpg 1600w" sizes="(min-width: 900px) 56vw, 92vw" width="1600" height="1066" loading="lazy" decoding="async" data-i18n-attr="alt:mind.alt">
+        </figure>
+        <div class="mind-copy">
+          <p class="eyebrow reveal" data-i18n="mind.eyebrow"></p>
+          <h2 class="title reveal" data-i18n="mind.title"></h2>
+          <p class="lead reveal" data-delay="1" style="margin-top:26px" data-i18n="mind.lead"></p>
+          <div class="actions reveal" data-delay="2"><a class="link" href="mentalite.html"><span data-i18n="mind.more"></span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h10M7 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="histoire" data-theme="light" tabindex="-1">
+    <div class="wrap">
+      <div class="craft">
+        <div class="craft-copy">
+          <p class="eyebrow reveal" data-i18n="story.eyebrow"></p>
+          <h2 class="title reveal" data-i18n="story.title"></h2>
+          <p class="lead reveal" data-delay="1" style="margin-top:26px" data-i18n="story.lead"></p>
+          <div class="actions reveal" data-delay="2"><a class="btn" href="histoire.html"><span data-i18n="story.more"></span></a></div>
+        </div>
+        <div class="craft-media">
+          <figure class="figure ratio-4-5 reveal-img"><img src="assets/img/kitchen-materials.jpg" srcset="assets/img/kitchen-materials-800.jpg 800w, assets/img/kitchen-materials.jpg 1474w" sizes="(min-width: 900px) 28vw, 45vw" width="1474" height="982" loading="lazy" decoding="async" data-i18n-attr="alt:story.alt1"></figure>
+          <figure class="figure ratio-4-5 reveal-img"><img src="assets/img/deck-table.jpg" srcset="assets/img/deck-table-800.jpg 800w, assets/img/deck-table.jpg 1600w" sizes="(min-width: 900px) 28vw, 45vw" width="1600" height="1066" loading="lazy" decoding="async" data-i18n-attr="alt:story.alt2"></figure>
+          <figure class="figure ratio-3-2 reveal-img"><img src="assets/img/lounger.jpg" srcset="assets/img/lounger-800.jpg 800w, assets/img/lounger.jpg 1474w" sizes="(min-width: 900px) 40vw, 70vw" width="1474" height="982" loading="lazy" decoding="async" data-i18n-attr="alt:story.alt3"></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seasons" id="saisons" data-theme="dark" tabindex="-1">
+    <figure class="figure">
+      <img src="assets/film/still-cabin-roof-1920.jpg" srcset="assets/film/still-cabin-roof-960.jpg 960w, assets/film/still-cabin-roof-1920.jpg 1920w" sizes="100vw" width="1920" height="1080" loading="lazy" decoding="async" data-i18n-attr="alt:seasons.alt">
+    </figure>
+    <div class="seasons-copy">
+      <div class="wrap">
+        <h2 class="title reveal" data-i18n="seasons.title"></h2>
+        <p class="lead reveal" data-delay="1" data-i18n="seasons.lead"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="galerie" data-theme="dark" tabindex="-1">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow reveal" data-i18n="gal.eyebrow"></p>
+          <h2 class="title reveal" data-i18n="gal.title"></h2>
+        </div>
+      </div>
+      <div class="gallery-grid" data-gallery>
+        <figure class="figure g1 reveal-img"><button type="button" data-lb="0" data-i18n-attr="aria-label:gal.openAria"><img src="assets/img/bedroom-overview.jpg" srcset="assets/img/bedroom-overview-800.jpg 800w, assets/img/bedroom-overview.jpg 1474w" sizes="(min-width: 900px) 56vw, 92vw" width="1474" height="982" loading="lazy" decoding="async" data-i18n-attr="alt:gal.c1"></button></figure>
+        <figure class="figure g2 reveal-img"><button type="button" data-lb="1" data-i18n-attr="aria-label:gal.openAria"><img src="assets/img/stove.jpg" srcset="assets/img/stove-800.jpg 800w, assets/img/stove.jpg 1403w" sizes="(min-width: 900px) 36vw, 46vw" width="1403" height="1229" loading="lazy" decoding="async" data-i18n-attr="alt:gal.c2"></button></figure>
+        <figure class="figure g3 reveal-img"><button type="button" data-lb="2" data-i18n-attr="aria-label:gal.openAria"><img src="assets/img/bath.jpg" srcset="assets/img/bath-800.jpg 800w, assets/img/bath.jpg 1474w" sizes="(min-width: 900px) 30vw, 46vw" width="1474" height="982" loading="lazy" decoding="async" data-i18n-attr="alt:gal.c3"></button></figure>
+        <figure class="figure g4 reveal-img"><button type="button" data-lb="3" data-i18n-attr="aria-label:gal.openAria"><img src="assets/img/ch-rooftop.jpg" srcset="assets/img/ch-rooftop-800.jpg 800w, assets/img/ch-rooftop.jpg 1536w" sizes="(min-width: 900px) 30vw, 46vw" width="1536" height="1024" loading="lazy" decoding="async" data-i18n-attr="alt:gal.c4"></button></figure>
+        <figure class="figure g5 reveal-img"><button type="button" data-lb="4" data-i18n-attr="aria-label:gal.openAria"><img src="assets/img/porthole-close.jpg" srcset="assets/img/porthole-close-800.jpg 800w, assets/img/porthole-close.jpg 1474w" sizes="(min-width: 900px) 30vw, 46vw" width="1474" height="982" loading="lazy" decoding="async" data-i18n-attr="alt:gal.c5"></button></figure>
+        <figure class="figure g6 reveal-img"><button type="button" data-lb="5" data-i18n-attr="aria-label:gal.openAria"><img src="assets/img/kitchen-v2.jpg" srcset="assets/img/kitchen-v2-800.jpg 800w, assets/img/kitchen-v2.jpg 1536w" sizes="(min-width: 900px) 40vw, 46vw" width="1536" height="1024" loading="lazy" decoding="async" data-i18n-attr="alt:gal.c6"></button></figure>
+        <figure class="figure g7 reveal-img"><button type="button" data-lb="6" data-i18n-attr="aria-label:gal.openAria"><img src="assets/img/terrace-detail-v2.jpg" srcset="assets/img/terrace-detail-v2-800.jpg 800w, assets/img/terrace-detail-v2.jpg 1536w" sizes="(min-width: 900px) 52vw, 92vw" width="1536" height="1024" loading="lazy" decoding="async" data-i18n-attr="alt:gal.c7"></button></figure>
+        <figure class="figure g8 reveal-img"><button type="button" data-lb="7" data-i18n-attr="aria-label:gal.openAria"><img src="assets/img/ladder-roof-v2.jpg" srcset="assets/img/ladder-roof-v2-800.jpg 800w, assets/img/ladder-roof-v2.jpg 1536w" sizes="(min-width: 1440px) 1312px, 92vw" width="1536" height="1024" loading="lazy" decoding="async" data-i18n-attr="alt:gal.c8"></button></figure>
+      </div>
+      <div class="gallery-foot">
+        <a class="link" href="galerie.html"><span data-i18n="gal.all"></span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h10M7 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></a>
+        <a class="link" href="https://www.instagram.com/elementa.experiences/" rel="noopener" target="_blank">@elementa.experiences</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="localisation" data-theme="light" tabindex="-1">
+    <div class="wrap">
+      <div class="plan">
+        <div class="plan-info">
+          <p class="eyebrow reveal" data-i18n="loc.eyebrow"></p>
+          <h2 class="title reveal" data-i18n="loc.title"></h2>
+          <p class="lead reveal" data-delay="1" style="margin-top:26px" data-i18n="loc.lead"></p>
+          <dl class="info-list reveal" data-delay="1">
+            <div><dt data-i18n="loc.d1"></dt><dd data-i18n="loc.v1"></dd></div>
+            <div><dt data-i18n="loc.d2"></dt><dd data-i18n="loc.v2"></dd></div>
+            <div><dt data-i18n="loc.d3"></dt><dd data-i18n="loc.v3"></dd></div>
+            <div><dt data-i18n="loc.d4"></dt><dd data-i18n="loc.v4"></dd></div>
+          </dl>
+          <div class="actions reveal" data-delay="2"><a class="link" href="faq.html"><span data-i18n="loc.faq"></span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h10M7 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></a></div>
+        </div>
+        <div class="plan-form" id="planifier" tabindex="-1">
+          <p class="eyebrow reveal" data-i18n="plan.eyebrow"></p>
+          <h2 class="display reveal" style="font-size:clamp(40px,5vw,72px)" data-i18n="plan.title"></h2>
+          <p class="lead reveal" data-delay="1" style="margin-top:22px" data-i18n="plan.lead"></p>
+          <form class="form reveal" data-delay="1" id="enquiry" novalidate data-endpoint="" method="post" action="#planifier">
+            <div class="form-row">
+              <div class="field"><label for="f-arrival" data-i18n="f.arrival"></label><input id="f-arrival" name="arrival" type="date" required autocomplete="off"><span class="err" id="e-arrival" aria-live="polite"></span></div>
+              <div class="field"><label for="f-departure" data-i18n="f.departure"></label><input id="f-departure" name="departure" type="date" required autocomplete="off"><span class="err" id="e-departure" aria-live="polite"></span></div>
+              <div class="field wide"><label for="f-guests" data-i18n="f.guests"></label><select id="f-guests" name="guests" required><option value="" data-i18n="f.gChoose"></option><option value="1" data-i18n="f.g1"></option><option value="2" data-i18n="f.g2"></option><option value="3+" data-i18n="f.g3"></option></select><span class="err" id="e-guests" aria-live="polite"></span></div>
+              <div class="field"><label for="f-name" data-i18n="f.name"></label><input id="f-name" name="name" type="text" required autocomplete="name"><span class="err" id="e-name" aria-live="polite"></span></div>
+              <div class="field"><label for="f-email" data-i18n="f.email"></label><input id="f-email" name="email" type="email" required autocomplete="email" inputmode="email"><span class="err" id="e-email" aria-live="polite"></span></div>
+              <div class="field wide"><label for="f-note"><span data-i18n="f.note"></span> <span class="opt" data-i18n="f.optional"></span></label><textarea id="f-note" name="note" rows="4" data-i18n-attr="placeholder:f.notePh"></textarea></div>
+            </div>
+            <label class="check"><input type="checkbox" name="consent" value="yes"><span data-i18n="f.consent"></span></label>
+            <div class="form-foot">
+              <button type="submit" class="btn btn-solid"><span data-i18n="f.submit"></span></button>
+              <p class="form-note" data-i18n="f.privacy"></p>
+            </div>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{{> tour}}
+{{> lightbox}}
+{{> footer}}

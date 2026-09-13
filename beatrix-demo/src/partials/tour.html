@@ -1,0 +1,51 @@
+<dialog class="tour" id="visite" data-i18n-attr="aria-label:tour.aria" data-frames-dir="assets/film/frames" data-frames="720" data-duration="62.47" data-video="assets/film/tour-1280.mp4" data-video-mobile="assets/film/tour-720.mp4" data-poster="assets/film/still-aerial-1920.jpg">
+  <div class="tour-shell">
+    <header class="tour-bar">
+      <h2 class="tour-title" id="tour-title" data-i18n="tour.title"></h2>
+      <div class="tour-modes" role="group" data-i18n-attr="aria-label:tour.modesAria">
+        <button type="button" class="mode" data-mode="guided" aria-pressed="true" data-i18n="tour.guided"></button>
+        <button type="button" class="mode" data-mode="manual" aria-pressed="false" data-i18n="tour.manual"></button>
+      </div>
+      <a class="btn btn-plan" href="{{home}}#planifier" data-tour-plan><span data-i18n="tour.plan"></span></a>
+      <button type="button" class="tour-close" data-tour-close><span class="label" data-i18n="tour.close"></span><span class="icon-btn" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M2 2l12 12M14 2L2 14" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span></button>
+    </header>
+    <div class="tour-stage">
+      <div class="tour-scroll" tabindex="-1">
+        <div class="tour-track">
+          <div class="tour-sticky">
+            <video class="tour-video" playsinline muted preload="none" aria-hidden="true"></video>
+            <canvas class="tour-canvas" aria-hidden="true"></canvas>
+            <img class="tour-poster" src="assets/film/still-aerial-960.jpg" srcset="assets/film/still-aerial-960.jpg 960w, assets/film/still-aerial-1920.jpg 1920w" sizes="100vw" width="1920" height="1080" data-i18n-attr="alt:tour.posterAlt" loading="lazy" decoding="async">
+            <p class="tour-caption"><span class="num" aria-hidden="true">01 / 12</span><span class="text" aria-live="polite"></span></p>
+            <p class="tour-hint"><span class="label" data-i18n="tour.hint"></span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M2 7l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></p>
+            <div class="tour-big" hidden><button type="button" data-tour-start data-i18n-attr="aria-label:tour.startAria"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3l14 9-14 9z" fill="currentColor"/></svg></button></div>
+            <div class="tour-end" hidden>
+              <h3 data-i18n="tour.end.title"></h3>
+              <div class="actions">
+                <button type="button" class="btn" data-tour-replay data-i18n="tour.replay"></button>
+                <a class="btn" href="cabines.html" data-i18n="tour.cabins"></a>
+                <a class="btn btn-brass" href="{{home}}#planifier" data-tour-plan><span data-i18n="tour.plan"></span></a>
+              </div>
+            </div>
+            <p class="tour-unavailable" hidden data-i18n="tour.unavailable"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="tour-controls">
+      <div class="tour-line">
+        <button type="button" class="tour-play" aria-pressed="false" data-i18n-attr="aria-label:tour.play"><svg class="ic-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5l9 5.5-9 5.5z" fill="currentColor"/></svg><svg class="ic-pause" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 2h3v10H3zM8 2h3v10H8z" fill="currentColor"/></svg></button>
+        <span class="tour-time" aria-hidden="true">0:00 / 1:02</span>
+        <input type="range" class="tour-range" min="0" max="1000" step="1" value="0" data-i18n-attr="aria-label:tour.range" aria-valuetext="0:00">
+      </div>
+      <ol class="tour-chapters" data-i18n-attr="aria-label:tour.chaptersAria">
+        <li><button type="button" data-time="0" aria-current="true"><span class="num">01</span><span data-i18n="tour.ch1"></span></button></li>
+        <li><button type="button" data-time="9"><span class="num">02</span><span data-i18n="tour.ch2"></span></button></li>
+        <li><button type="button" data-time="11.7"><span class="num">03</span><span data-i18n="tour.ch3"></span></button></li>
+        <li><button type="button" data-time="14.3"><span class="num">04</span><span data-i18n="tour.ch4"></span></button></li>
+        <li><button type="button" data-time="31.5"><span class="num">05</span><span data-i18n="tour.ch5"></span></button></li>
+        <li><button type="button" data-time="49.5"><span class="num">06</span><span data-i18n="tour.ch6"></span></button></li>
+      </ol>
+    </footer>
+  </div>
+</dialog>
