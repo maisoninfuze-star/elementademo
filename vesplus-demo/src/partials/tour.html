@@ -1,0 +1,18 @@
+<div class="tour" id="tour" role="dialog" aria-modal="true" data-i18n-aria="tour.aria" aria-label="Visite virtuelle filmée de la cabine" hidden>
+  <div class="tour-inner">
+    <div class="tour-head">
+      <div><p class="kicker" data-i18n="cta.tour">Visite virtuelle</p><p class="tour-lead" data-i18n="tour.lead">…</p></div>
+      <button type="button" class="btn btn-outline tour-close" data-i18n="tour.close">Fermer la visite</button>
+    </div>
+    <div class="tour-stage">
+      <video class="tour-video" playsinline preload="metadata" poster="assets/film/poster-v3.jpg" src="assets/film/walkthrough-720-v3.mp4"></video>
+      <button type="button" class="tour-toggle" aria-pressed="false"><span class="tour-toggle-icon" aria-hidden="true"></span><span class="tour-toggle-label" data-i18n="tour.play">Lire</span></button>
+      <div class="tour-bar" aria-hidden="true"><i></i></div>
+      <p class="tour-unavailable" hidden data-i18n="tour.unavailable">…</p>
+    </div>
+    <div class="tour-foot">
+      <ol class="tour-chapters" data-i18n-aria="tour.chapters" aria-label="Chapitres"></ol>
+      <a class="btn btn-solid tour-cta" href="{{HOME}}#disponibilites" data-i18n="cta.availability">Vérifier les disponibilités</a>
+    </div>
+  </div>
+</div>
