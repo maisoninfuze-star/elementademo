@@ -1,6 +1,7 @@
 {
   "fr": {
     "brand": "Elementa Expériences",
+    "brand.tagline": "Expériences",
     "meta.home.title": "Elementa Expériences · Cabines de montagne à Sainte-Béatrix, Lanaudière",
     "meta.home.desc": "Loin du bruit, près de soi. Un complexe d’hébergement d’exception à Sainte-Béatrix, dans Lanaudière : cabines de montagne perchées à flanc de falaise, circuit thermal privé, séjour personnalisé.",
     "meta.sb.title": "Elementa Sainte-Béatrix · Le projet et les cabines de montagne",
@@ -60,6 +61,7 @@
     "nav.gallery": "Galerie",
     "nav.early": "Rester informé",
     "cta.availability": "Vérifier les disponibilités",
+    "cta.reserve": "Réserver",
     "cta.book": "Réserver votre séjour",
     "cta.cabins": "Découvrir les cabines",
     "cta.early": "S’inscrire à la liste d’accès anticipé",
@@ -309,6 +311,7 @@
   },
   "en": {
     "brand": "Elementa Experiences",
+    "brand.tagline": "Experiences",
     "meta.home.title": "Elementa Experiences · Mountain cabins in Sainte-Béatrix, Lanaudière",
     "meta.home.desc": "Far from the noise, close to yourself. An exceptional lodging complex in Sainte-Béatrix, Lanaudière: mountain cabins perched on a cliffside, a private thermal circuit, a personalized stay.",
     "meta.sb.title": "Elementa Sainte-Béatrix · The project and the mountain cabins",
@@ -368,6 +371,7 @@
     "nav.gallery": "Gallery",
     "nav.early": "Stay informed",
     "cta.availability": "Check availability",
+    "cta.reserve": "Book now",
     "cta.book": "Book your stay",
     "cta.cabins": "Discover the cabins",
     "cta.early": "Join the early-access list",

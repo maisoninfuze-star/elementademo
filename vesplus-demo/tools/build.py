@@ -10,7 +10,7 @@
 Run from anywhere: python3 tools/build.py. Bump VERSION for the ?v= stamps.
 """
 import json, os, re, sys
-VERSION = '20260913a'
+VERSION = '20260918a'
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, 'src')
 NB, NBSP = ' ', ' '
