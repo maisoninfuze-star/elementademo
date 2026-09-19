@@ -74,22 +74,21 @@ html.js .nav.is-on,html.no-js .nav,html.reduced .nav{opacity:1;visibility:visibl
 .menu-links .menu-cta{margin-top:18px;font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-2)}
 .lang-alt{align-self:flex-end}
 
-/* ---------- intro (logo assembly) ---------- */
-.intro{display:none}
-html.intro-on .intro{display:flex;position:fixed;inset:0;z-index:1003;align-items:center;justify-content:center;background:var(--bg)}
-.intro-svg{width:min(78vw,100vh);height:auto;fill:var(--ink);color:var(--ink);overflow:visible}
-.intro-svg .sign,.intro-svg .oval-draw,.intro-svg .emblem-final,.intro-svg .wordmark-final,.intro-svg .tagline-final{opacity:0}
-.intro-svg .sun-strokes line,.intro-svg .oval-stroke{stroke:var(--ink);fill:none}
-.intro-skip{position:absolute;right:var(--pad);bottom:max(24px,env(safe-area-inset-bottom));min-height:44px;padding:0 18px;border:1px solid var(--line);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);transition:color .3s,border-color .3s}
-.intro-skip:hover{color:var(--ink);border-color:var(--ink)}
-@media (max-width:767px){.intro-svg{width:min(88vw,70vh)}}
 
 /* ---------- hero: a cinematic still under the navigation, copy lower-left, virtual tour and scroll cue ---------- */
 .hero{position:relative;height:100vh;height:100svh;background:var(--bg);overflow:hidden}
 .hero-media{position:absolute;inset:0;overflow:hidden;background:#000}
-.hero-media picture,.hero-photo{display:block;width:100%;height:100%}
-.hero-photo{object-fit:cover;object-position:50% 42%;will-change:transform}
-.hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,10,.46),rgba(11,11,10,.3) 34%,rgba(11,11,10,.44) 58%,rgba(11,11,10,.84));pointer-events:none}
+.hero-film,.hero-park{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.hero-media{will-change:transform}
+.hero-park{opacity:0}
+.hero.is-parked .hero-park{opacity:1}
+.hero.is-playing .hero-park{transition:opacity .7s ease}
+.hero-skip{position:absolute;right:var(--pad);bottom:clamp(28px,5vh,52px);z-index:3;min-height:44px;padding:0 18px;border:1px solid rgba(233,228,218,.45);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:rgba(11,11,10,.35);backdrop-filter:blur(6px);transition:color .3s,border-color .3s,background .3s}
+.hero-skip:hover{border-color:var(--ink);background:rgba(11,11,10,.55)}
+.hero-skip[hidden]{display:none}
+html.js-anim .hero:not(.is-parked) .hero-copy,html.js-anim .hero:not(.is-parked) .hero-scroll{visibility:hidden}
+.hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,10,.46),rgba(11,11,10,.3) 34%,rgba(11,11,10,.44) 58%,rgba(11,11,10,.84));pointer-events:none;transition:opacity .8s ease}
+.hero.is-playing:not(.is-parked) .hero-scrim{opacity:.28}
 .hero-bar{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:var(--nav-h) var(--pad) 0}
 .hero-copy{position:relative;z-index:1;min-width:0;max-width:min(92%,900px);margin:0 auto}
 .hero-kicker{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-2);margin-bottom:18px;text-shadow:0 1px 14px rgba(11,11,10,.7)}
@@ -341,7 +340,7 @@ html.js-anim .hero-copy .char{display:inline-block}
 @media (max-width:767px){
   :root{--nav-h:64px}
   .nav-emblem{height:30px}.nav-wordmark{height:12px}.nav-lockup{gap:3px}.nav-tagline{font-size:7px;letter-spacing:.3em}
-  .hero-photo{object-position:50% 36%}
+  .hero-skip{right:auto;left:50%;transform:translateX(-50%);bottom:max(22px,env(safe-area-inset-bottom))}
   .hero-scrim{background:linear-gradient(180deg,rgba(11,11,10,.5),rgba(11,11,10,0) 30%,rgba(11,11,10,.1) 50%,rgba(11,11,10,.86))}
   .hero-bar{padding:calc(var(--nav-h) + 8px) var(--pad) 96px}
   .hero-scroll{right:auto;left:50%;transform:translateX(-50%);bottom:max(22px,env(safe-area-inset-bottom))}
@@ -371,4 +370,3 @@ html.js-anim .hero-copy .char{display:inline-block}
 @media (prefers-reduced-motion:reduce){
   .btn,.route-list a,.gallery-item img,.hamburger span,.route-list-menu{transition:none}
 }
-html.reduced .intro-svg .emblem-final,html.reduced .intro-svg .wordmark-final,html.reduced .intro-svg .tagline-final{opacity:1}

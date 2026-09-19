@@ -14,7 +14,7 @@ src/shell.html         head + layout wrapper for the secondary pages
 tools/build.py         python3 tools/build.py → writes js/i18n.js, the 11 secondary pages, refreshes the shared regions of
                        index.html (between the NAV / MENU / EARLY / FOOTER / TOUR markers) and injects the French strings into
                        every data-i18n element. Bump VERSION there for the ?v= stamps. index.html itself is hand-authored.
-tools/trace_logo.py    logo vectoriser (numpy, opencv, pypotrace); tools/inject_logo.py rewrites the SVG into index.html
+tools/trace_logo.py    logo vectoriser (numpy, opencv, pypotrace); tools/inject_logo.py rewrites the SVG into index.html (its INTRO_* markers are gone since the intro was removed; only LOGO_DEFS remain)
 ```
 
 Never edit the generated root pages or `js/i18n.js` by hand.
@@ -33,8 +33,7 @@ Contact addresses come from the client document: `info@elementa-experiences.com`
 
 The layout follows the Scale.com reference the client supplied (full-bleed photo hero with a centred headline and a bottom-right scroll prompt, a pure-black statement band, flat 16 px-radius cards with 32 px padding, no shadows, 1280 px content width), with Elementa's own palette, typefaces and confirmed French copy. The pinned, scroll-scrubbed story and chapter sections were removed at the owner's request: content is now laid out in fixed blocks that are fully readable at rest, so nothing can be skipped by scrolling fast.
 
-- Intro (about 5.5 s, every visit): sun (rays drawn) → mountain → leaf → water → convergence into the traced master emblem → wordmark wipe → flight into the compact navigation lockup (emblem + ELEMENTA + « Expériences »). Skip button; only back/forward history navigation skips it; reduced motion shows the finished logo for 1.4 s.
-- Hero: the graded exterior photograph (`assets/img/hero-cabin-v1*.jpg`, portrait crop on phones), copy centred, « Défilez » in an outlined 40 px square at the bottom right. The photo drifts and the copy recedes as the page scrolls; « Visite virtuelle » opens the filmed walkthrough in a dialog.
+- Hero film (2026-09-19, every visit): the 16 s approach flight (`assets/film/hero-approach-1080.mp4`, 720 p variant on phones; H.264 re-encodes of the client's HEVC master, poster = first frame) autoplays muted, then **parks** on the balcony still (`assets/img/hero-approach-park*.jpg`, the film's last frame). Only then does the copy appear — « Loin du bruit, près de soi. », the lead, **« Entrer »** (opens the filmed walkthrough dialog) and « Réserver votre séjour ». « Passer » skips ahead; a scroll-away, back/forward navigation, reduced motion, data-saver, a missing GSAP or a refused autoplay all park immediately, so the text is never held back. The animated logo intro was removed (the film is the intro; the nav is visible from the first frame). The parked hero keeps the slow drift and the copy recedes on scroll.
 - `.intro-band` (« Séjour haut de gamme. »): two static columns — copy and CTA on the left, the cabin-on-stilts photograph in a 24 px-radius panel on the right.
 - `.void-band`: pure #000, the emblem as line-work, « L'essentiel d'un séjour à Elementa. » and the four facts as flat cards.
 - `.chapters-grid` (« Le lieu, les cabines, l'étage. »): three flat cards (photo, sign, kicker, title, copy, link) to the Sainte-Béatrix page.

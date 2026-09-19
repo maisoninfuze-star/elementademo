@@ -14,7 +14,7 @@
   if (hasGsap) gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText, DrawSVGPlugin, MotionPathPlugin);
   if (reduce) html.classList.add('reduced');
   if (anim) html.classList.add('js-anim');
-  const nav = $('.nav'), main = $('main'), footer = $('.site-footer'), early = $('.early'), intro = $('#intro'), hero = $('.hero');
+  const nav = $('.nav'), main = $('main'), footer = $('.site-footer'), early = $('.early'), hero = $('.hero');
   const page = html.dataset.page || 'home';
   const isMobile = () => matchMedia('(max-width: 1024px)').matches;
   const inertAll = v => [main, footer, early].forEach(el => { if (el) el.inert = v; });
@@ -68,84 +68,71 @@
   /* ---------------- scroll lock (intro) ---------------- */
   const lock = () => { locked = true; document.body.classList.add('lock'); if (smoother) smoother.paused(true); };
   const unlock = () => { locked = false; document.body.classList.remove('lock'); if (smoother && !menuOpen && !overlayOpen()) smoother.paused(false); };
-  window.addEventListener('error', () => { try { finishIntro(); unlock(); } catch (e) {} });
+  window.addEventListener('error', () => { try { parkHero('global-error'); } catch (e) {} });
 
-  /* ---------------- intro (home only): the four signs, the emblem, the wordmark, the flight to the nav ---------------- */
-  // plays on every visit; only history navigation (back/forward) skips it
-  const introSeen = (() => { try { const n = performance.getEntriesByType('navigation')[0]; return !!n && n.type === 'back_forward' && sessionStorage.getItem('elementa-intro') === '1'; } catch (e) { return false; } })();
-  let introDone = false, introStarted = false, introTl = null, watchdog = null;
+  /* ---------------- hero film (home only): the approach flight plays once, parks on the balcony still, then the copy appears ---------------- */
+  // plays on every visit; back/forward navigation, reduced motion, data-saver, refused autoplay, a scroll-away or « Passer » jump straight to the parked still
+  const filmSeen = (() => { try { const n = performance.getEntriesByType('navigation')[0]; return !!n && n.type === 'back_forward' && sessionStorage.getItem('elementa-film') === '1'; } catch (e) { return false; } })();
+  let parked = false, filmStarted = false, watchdog = null, parkReason = '';
   const heroState = { reveal: null };
-  function finishIntro() {
-    if (introDone) return; introDone = true; clearTimeout(watchdog);
-    if (introTl) { introTl.kill(); introTl = null; }
-    try { sessionStorage.setItem('elementa-intro', '1'); } catch (e) {}
-    html.classList.remove('intro-on'); if (intro) intro.hidden = true;
-    inertAll(false); nav.classList.add('is-on');
-    unlock();
-    if (heroState.reveal) heroState.reveal.play();
+  const film = $('.hero-film'), skipBtn = $('.hero-skip');
+  function parkHero(reason) {
+    if (parked) return; parked = true; parkReason = String(reason || 'unknown'); clearInterval(watchdog);
+    try { sessionStorage.setItem('elementa-film', '1'); } catch (e) {}
+    if (hero) hero.classList.add('is-parked');
+    if (film) { try { film.pause(); } catch (e) {} }
+    if (skipBtn) skipBtn.hidden = true;
+    if (heroState.reveal) { heroState.reveal.play(); setTimeout(() => { if (heroState.reveal && heroState.reveal.progress() < 1) heroState.reveal.progress(1); }, 2600); }
     const id = decodeURIComponent(location.hash.slice(1)); const target = id && document.getElementById(id);
-    const skipHadFocus = document.activeElement === $('.intro-skip') || document.activeElement === document.body;
-    if (intro && skipHadFocus) { main.setAttribute('tabindex', '-1'); main.focus({ preventScroll: true }); }
     requestAnimationFrame(() => { if (hasGsap) ScrollTrigger.refresh(); if (target) requestAnimationFrame(() => scrollToEl(target, false)); });
   }
-  function runIntro() {
-    if (!intro || introSeen || !hasGsap) { finishIntro(); return; }
-    introStarted = true; lock(); inertAll(true); html.classList.add('intro-on');
-    $('.intro-skip').addEventListener('click', finishIntro);
-    $('.intro-skip').focus({ preventScroll: true });
-    watchdog = setTimeout(finishIntro, 12000);
-    const svg = $('.intro-svg');
-    const sun = $('.sign-sun', svg), fire = $('.sign-fire', svg), tree = $('.sign-tree', svg), water = $('.sign-water', svg);
-    const oval = $('.oval-draw', svg), ovalStroke = $('.oval-stroke', svg), rays = $$('.sun-strokes line', svg);
-    const emblem = $('.emblem-final', svg), wordmark = $('.wordmark-final', svg), tagline = $('.tagline-final', svg), wmClip = $('.wm-clip-rect', svg);
-    if (reduce) {   // finished logo, briefly, then the page
-      gsap.set(wmClip, { attr: { width: 4600 } }); gsap.set([emblem, wordmark, tagline], { opacity: 1 });
-      setTimeout(finishIntro, 1400); return;
+  const finishIntro = parkHero;                                   // kept as an alias for the public API and the error handler
+  function runHeroFilm() {
+    if (!film || !hero) { parkHero('no-film'); return; }
+    const saveData = !!(navigator.connection && navigator.connection.saveData);
+    if (filmSeen || reduce || saveData || !anim) { parkHero(filmSeen ? 'seen' : reduce ? 'reduce' : saveData ? 'save-data' : 'no-anim'); return; }
+    filmStarted = true;
+    if (document.visibilityState === 'hidden') {                  // background tab: start the flight when the visitor actually looks
+      document.addEventListener('visibilitychange', function onVis() { if (document.visibilityState === 'visible') { document.removeEventListener('visibilitychange', onVis); if (!parked) beginFilm(); } });
+      return;
     }
-    const BOX = { sun: [1851, 325, 3142, 1340], fire: [2075, 648, 2918, 1487], tree: [2262, 895, 2731, 1735], water: [1857, 1520, 3136, 2125] };
-    const SC = { x: 2500, y: 1925 }, SOLO = 2300;
-    const geo = k => { const [x0, y0, x1, y1] = BOX[k]; const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2; return { cx, cy, s: SOLO / Math.max(x1 - x0, y1 - y0), dx: SC.x - cx, dy: SC.y - cy }; };
-    const G = { sun: geo('sun'), fire: geo('fire'), tree: geo('tree'), water: geo('water') };
-    const solo = (el, g) => ({ svgOrigin: `${g.cx} ${g.cy}`, x: g.dx, y: g.dy, scale: g.s });
-    const staging = { x: 0, y: 0, scale: 0.9, opacity: 0.22, duration: 0.6, ease: 'power2.inOut' };
-    gsap.set(sun, solo(sun, G.sun)); gsap.set(fire, solo(fire, G.fire)); gsap.set(tree, solo(tree, G.tree)); gsap.set(water, solo(water, G.water));
-    gsap.set(rays, { drawSVG: '0%' }); gsap.set(ovalStroke, { drawSVG: '50% 50%' }); gsap.set(wmClip, { attr: { width: 0 } });
-    const flight = (group, target, cx, cy) => {
-      let m = null;
-      const measure = () => {
-        if (m) return m;
-        const k = svg.getBoundingClientRect().width / 4700;
-        const cur = group.getBoundingClientRect(), tgt = target.getBoundingClientRect();
-        return (m = { x: ((tgt.left + tgt.width / 2) - (cur.left + cur.width / 2)) / k, y: ((tgt.top + tgt.height / 2) - (cur.top + cur.height / 2)) / k, scale: tgt.width / cur.width });
-      };
-      return { svgOrigin: `${cx} ${cy}`, x: () => measure().x, y: () => measure().y, scale: () => measure().scale, duration: 0.8, ease: 'power3.inOut' };
+    beginFilm();
+  }
+  function beginFilm() {
+    hero.classList.add('is-playing');
+    film.src = (isMobile() && film.dataset.srcMobile) || film.dataset.src;
+    film.muted = true; film.defaultMuted = true; film.playsInline = true;
+    film.addEventListener('ended', () => parkHero('ended'), { once: true });
+    film.addEventListener('error', () => parkHero('video-error'), { once: true });
+    // stall guard: park only if the film stops advancing for 10 s while the page is visible (a slow but moving download keeps playing); hard cap 60 s of visible time
+    let lastT = 0, stalledFor = 0, visibleFor = 0;
+    watchdog = setInterval(() => {
+      if (parked) { clearInterval(watchdog); return; }
+      if (document.visibilityState !== 'visible') return;
+      visibleFor += 2.5;
+      if (film.currentTime - lastT < 0.4) stalledFor += 2.5; else stalledFor = 0;
+      lastT = film.currentTime;
+      if (stalledFor >= 10) parkHero('stall'); else if (visibleFor >= 60) parkHero('watchdog');
+    }, 2500);
+    if (skipBtn) { skipBtn.hidden = false; skipBtn.addEventListener('click', () => parkHero('skip')); }
+    const y0 = window.scrollY;                                   // baseline: a restored or anchored scroll position is not a scroll-away
+    const onScroll = () => { if (Math.abs(window.scrollY - y0) > 40) { parkHero('scroll'); window.removeEventListener('scroll', onScroll); } };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    // play() can reject transiently (AbortError while the new source is still loading), so retry as the media becomes ready;
+    // only a real policy block (NotAllowedError) or repeated failure parks the film
+    let attempts = 0;
+    const attempt = () => {
+      if (parked) return; attempts++;
+      const p = film.play();
+      if (p && typeof p.catch === 'function') p.catch(err => {
+        const name = err && err.name;
+        if (name === 'NotAllowedError') parkHero('autoplay-refused');
+        else if (attempts >= 3) parkHero('autoplay-failed:' + name);
+      });
     };
-    const fE = flight(emblem, $('.nav-emblem'), 2496.5, 1187), fW = flight(wordmark, $('.nav-wordmark'), 2497, 2867);
-    introTl = gsap.timeline({ defaults: { ease: 'power2.inOut' }, onComplete: finishIntro })
-      .set(sun, { opacity: 1 }, 0)
-      .to(rays, { drawSVG: '100%', duration: 0.5, stagger: { each: 0.012, from: 'center' }, ease: 'power2.out' }, 0.05)
-      .to(sun, staging, 0.7)
-      .fromTo(fire, { opacity: 0, scale: G.fire.s * 0.92 }, { opacity: 1, scale: G.fire.s, duration: 0.55 }, 0.75)
-      .to(fire, staging, 1.4)
-      .fromTo(tree, { opacity: 0, scale: G.tree.s * 0.92 }, { opacity: 1, scale: G.tree.s, duration: 0.55 }, 1.45)
-      .to(tree, staging, 2.1)
-      .set(water, { opacity: 1 }, 2.15)
-      .fromTo($$('.wave', water), { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.45, stagger: 0.09 }, 2.15)
-      .to(water, { x: 0, y: 0, scale: 1, opacity: 1, duration: 1.0, ease: 'power3.inOut' }, 2.8)
-      .to($('.wave-extra', water), { opacity: 0, duration: 0.5 }, 2.8)
-      .to([sun, fire, tree], { scale: 1, opacity: 1, duration: 1.0, ease: 'power3.inOut', stagger: 0.06 }, 2.85)
-      .set(oval, { opacity: 1 }, 2.95)
-      .to(ovalStroke, { drawSVG: '0% 100%', duration: 1.0 }, 2.95)
-      .set([sun, fire, tree, water, oval], { opacity: 0 }, 4.0)
-      .set(emblem, { opacity: 1 }, 4.0)
-      .set(wordmark, { opacity: 1 }, 4.02)
-      .to(wmClip, { attr: { width: 4600 }, duration: 0.65, ease: 'power2.out' }, 4.05)
-      .fromTo(tagline, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45 }, 4.3)
-      .to(tagline, { opacity: 0, duration: 0.3 }, 4.7)
-      .to(emblem, fE, 4.7)
-      .to(wordmark, fW, 4.7)
-      .call(() => nav.classList.add('is-on'), null, 5.15)
-      .to(intro, { autoAlpha: 0, duration: 0.35 }, 5.2);
+    film.addEventListener('loadeddata', attempt, { once: true });
+    film.addEventListener('canplaythrough', attempt, { once: true });
+    attempt();
   }
 
   /* ---------------- navigation, menu, anchors ---------------- */
@@ -231,7 +218,6 @@
     ctxMM.add({ desktop: '(min-width: 1025px)', mobile: '(max-width: 1024px)' }, ctx => {
       const mobile = ctx.conditions.mobile; const splits = []; const vh = () => window.innerHeight;
       const bp = mobile ? 'm' : 'd';                              // a real breakpoint change never leaves the page locked (programmatic rebuilds keep the intro running)
-      if (buildState.bp && buildState.bp !== bp && introStarted && !introDone) finishIntro();
       buildState.bp = bp;
       if (!anim) return;
       const once = (trigger, start = 'top 85%') => ({ trigger, start, once: true });
@@ -240,11 +226,10 @@
         const heroTitle = new SplitText('.hero-title', { type: 'words,chars', charsClass: 'char' }); splits.push(heroTitle);
         gsap.set(heroTitle.words, { overflow: 'hidden', display: 'inline-block', verticalAlign: 'top' });
         heroState.reveal = gsap.timeline({ paused: true });
-        if (!introDone) heroState.reveal.fromTo('.hero-media', { autoAlpha: 0, scale: 1.12 }, { autoAlpha: 1, scale: 1, duration: 1.8, ease: 'power3.out' }, 0);
         heroState.reveal.from(heroTitle.chars, { yPercent: 100, opacity: 0, duration: 0.7, stagger: 0.012, ease: 'power3.out' }, 0.35)
           .from(['.hero-kicker', '.hero-lead', '.hero-links', '.hero-scroll'], { autoAlpha: 0, y: 14, duration: 0.7, stagger: 0.1, ease: 'power3.out' }, 0.7);
-        if (introDone) heroState.reveal.play();
-        gsap.fromTo('.hero-photo', { yPercent: 0, scale: 1 }, { yPercent: 16, scale: mobile ? 1.04 : 1.08, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true, invalidateOnRefresh: true } });
+        if (parked) heroState.reveal.progress(1);
+        gsap.fromTo('.hero-media', { yPercent: 0, scale: 1 }, { yPercent: 16, scale: mobile ? 1.04 : 1.08, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true, invalidateOnRefresh: true } });
         gsap.to('.hero-bar', { autoAlpha: 0, y: -40, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: '55% top', scrub: true, invalidateOnRefresh: true } });
       }
       /* everywhere: images uncover through a mask and drift inside it; headings rise line by line; groups fade up */
@@ -319,14 +304,15 @@
   }
 
   /* ---------------- boot ---------------- */
-  if (!hasGsap) { nav.classList.add('is-on'); html.classList.add('no-anim'); return; }
-  if (!introSeen && !reduce && intro) lock();
+  if (!hasGsap) { nav.classList.add('is-on'); html.classList.add('no-anim'); parkHero('no-gsap'); return; }
+  nav.classList.add('is-on');
   const start = () => {
     try { rebuildScroll(); } catch (e) { console.error(e); }
-    try { runIntro(); } catch (e) { console.error(e); finishIntro(); }
+    try { runHeroFilm(); } catch (e) { console.error(e); parkHero('boot-error'); }
     requestAnimationFrame(() => ScrollTrigger.refresh());
   };
-  (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(() => requestAnimationFrame(start));
+  let booted = false; const boot = () => { if (booted) return; booted = true; start(); };
+  (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(() => { requestAnimationFrame(boot); setTimeout(boot, 800); });
   window.addEventListener('load', () => ScrollTrigger.refresh());
-  window.__el = { get smoother() { return smoother; }, get introDone() { return introDone; }, get locked() { return locked; }, get lang() { return lang; }, heroState, finishIntro, rebuildScroll, openTour, closeTour };
+  window.__el = { get smoother() { return smoother; }, get parked() { return parked; }, get parkReason() { return parkReason; }, get locked() { return locked; }, get lang() { return lang; }, heroState, finishIntro, rebuildScroll, openTour, closeTour };
 })();
