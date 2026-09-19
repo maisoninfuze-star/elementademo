@@ -247,50 +247,6 @@
         gsap.fromTo('.hero-photo', { yPercent: 0, scale: 1 }, { yPercent: 16, scale: mobile ? 1.04 : 1.08, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true, invalidateOnRefresh: true } });
         gsap.to('.hero-bar', { autoAlpha: 0, y: -40, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: '55% top', scrub: true, invalidateOnRefresh: true } });
       }
-      /* story (home): dimensional grid reveal → "Séjour haut de gamme." → colour wipes → brand copy → stay features */
-      if ($('.story')) {
-        const first = new SplitText('.pre-text-wrapper.first .opacity-text-animation', { type: 'chars', charsClass: 'char' }); splits.push(first);
-        const title = new SplitText('.pre-text-left .p', { type: 'lines,words', linesClass: 'line' }); splits.push(title);
-        gsap.set('.pre-text-left .line', { overflow: 'hidden' });
-        gsap.timeline({ scrollTrigger: { trigger: '.story', start: 'top top', end: () => '+=' + vh() * (mobile ? 3.6 : 4.4), pin: true, scrub: 1, invalidateOnRefresh: true } })
-          .fromTo('.image-grid-group .image-wrapper', { y: () => vh() * 0.55, rotationX: -62, transformOrigin: '50% 0%', z: -700, autoAlpha: 0.35 }, { y: 0, z: 0, rotationX: 0, autoAlpha: 1, duration: 0.9, ease: 'sine', stagger: { amount: 0.3, from: 'random', grid: [3, 3] } }, 0)
-          .fromTo('.image-grid-group', { scale: 0.86 }, { scale: 1, duration: 1, ease: 'none' }, 0)
-          .fromTo('.pre-text-wrapper.first', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.5 }, 1.0)
-          .fromTo(first.chars, { yPercent: 100 }, { yPercent: 0, duration: 0.6, stagger: 0.02, ease: 'power2.out' }, 1.05)
-          .to('.pre-text-wrapper.first', { autoAlpha: 0, duration: 0.5 }, 2.0)
-          .fromTo('.after-image-wrapper', { xPercent: 100 }, { xPercent: 0, duration: 0.8, stagger: 0.12, ease: 'power2.inOut' }, 2.1)
-          .fromTo('.after-image-wrapper img', { xPercent: -100 }, { xPercent: 0, duration: 0.8, stagger: 0.12, ease: 'power2.inOut' }, 2.1)
-          .fromTo('.pre-text-wrapper.second', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.5 }, 3.5)
-          .fromTo(title.words, { yPercent: 105 }, { yPercent: 0, duration: 0.7, stagger: 0.02, ease: 'power3.out' }, 3.55)
-          .fromTo('.pre-text-right .p', { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.15 }, 3.7)
-          .fromTo('.animation-btn', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.3 }, 3.95)
-          .fromTo('.animation-btn .svg-border rect', { drawSVG: '0%' }, { drawSVG: '100%', duration: 0.8, ease: 'power2.inOut' }, 3.95)
-          .to('.pre-text-wrapper.second', { autoAlpha: 0, duration: 0.5 }, 5.1)
-          .to('.image-grid-group', { autoAlpha: 0, scale: 0.96, duration: 0.6 }, 5.1)
-          .fromTo('.stay-features', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4 }, 5.4)
-          .fromTo('.features-title', { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 5.45)
-          .fromTo('.stay-features .feature-group', { autoAlpha: 0, y: 40 }, { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.1 }, 5.5)
-          .to({}, { duration: 0.7 });
-      }
-      /* chapters (home): the demo's parallax slide reveal, each photograph drifting like a slow camera move */
-      const wrappers = $$('.portfolio-wrapper');
-      if (wrappers.length) {
-        const chapters = gsap.timeline({ scrollTrigger: { trigger: '.chapters', start: 'top top', end: () => '+=' + vh() * (mobile ? 2.6 : 3), pin: true, scrub: 1, invalidateOnRefresh: true } });
-        wrappers.forEach((w, i) => {
-          const info = $('.chapter-info .info', w), thumb = $('.portfolio-thumbnail', w);
-          if (i === 0) {
-            gsap.from(info, { y: 30, autoAlpha: 0, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: '.chapters', start: 'top 60%', once: true } });
-            chapters.fromTo(thumb, { scale: 1.1 }, { scale: 1, duration: 1.3, ease: 'none' }, 0);
-            return;
-          }
-          const at = (i - 1) * 1.5 + 0.5;
-          chapters.fromTo(w, { yPercent: 100 }, { yPercent: 0, duration: 1, ease: 'none' }, at)
-            .fromTo($('.portfolio', w), { yPercent: -100 }, { yPercent: 0, duration: 1, ease: 'none' }, at)
-            .fromTo(thumb, { scale: 1.12 }, { scale: 1, duration: 1.6, ease: 'none' }, at)
-            .fromTo(info, { y: 40, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.4 }, at + 0.7);
-        });
-        chapters.to({}, { duration: 0.5 });
-      }
       /* everywhere: images uncover through a mask and drift inside it; headings rise line by line; groups fade up */
       $$('.reveal-clip').forEach(fig => {
         const img = $('img', fig); if (!img) return;
@@ -304,7 +260,7 @@
         const inner = s.lines.map(l => { const w = document.createElement('span'); w.style.display = 'block'; while (l.firstChild) w.appendChild(l.firstChild); l.appendChild(w); return w; });
         gsap.from(inner, { yPercent: 110, duration: 1, stagger: 0.09, ease: 'power4.out', scrollTrigger: once(el, 'top 88%') });
       });
-      $$('.page-lead, .prose > p, .pull-quote, .section-head .section-body, .split-copy > :not([data-split]), .arch-copy > :not([data-split]), .room-copy > :not([data-split]), .event-copy > :not([data-split]), .next-inner > :not([data-split]), .contact-card, .plan-list > div, .faq-item, .partners-list li, .soon-card, .stay-col, .avail-inner > :not([data-split]), .early-copy > :not([data-split]), .early-form, .equip-grid .feature-group, .story-cta').forEach(el => {
+      $$('.page-lead, .prose > p, .pull-quote, .section-head .section-body, .split-copy > :not([data-split]), .arch-copy > :not([data-split]), .room-copy > :not([data-split]), .event-copy > :not([data-split]), .next-inner > :not([data-split]), .contact-card, .plan-list > div, .faq-item, .partners-list li, .soon-card, .stay-col, .avail-inner > :not([data-split]), .early-copy > :not([data-split]), .early-form, .equip-grid .feature-group, .story-cta, .intro-copy > :not([data-split]), .intro-media, .fact, .chapter-card').forEach(el => {
         gsap.from(el, { y: 26, autoAlpha: 0, duration: 0.8, ease: 'power3.out', scrollTrigger: once(el, 'top 90%') });
       });
       if ($('.gallery-grid')) gsap.from('.gallery-item', { y: 26, autoAlpha: 0, duration: 0.6, stagger: 0.07, ease: 'power3.out', scrollTrigger: once('.gallery-grid') });

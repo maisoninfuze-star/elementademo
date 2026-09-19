@@ -29,13 +29,16 @@ Never edit the generated root pages or `js/i18n.js` by hand.
 
 Contact addresses come from the client document: `info@elementa-experiences.com` (general, availability form, early-access list), `media@elementa-experiences.com` (media), `hamza@hamzamajdi.com` (press kit). Both forms open the visitor's email app with the request pre-filled; nothing pretends to send.
 
-## Home page motion
+## Home page layout and motion (2026-09-18 — client feedback)
 
-- Intro (about 5.5 s, every visit): sun (rays drawn) → mountain → leaf → water → convergence into the traced master emblem → wordmark wipe → flight into the compact navigation lockup. Skip button; only back/forward history navigation skips it; reduced motion shows the finished logo for 1.4 s.
-- Hero: the graded exterior photograph (`assets/img/hero-cabin-v1*.jpg`, portrait crop on phones) settles in after the intro (scale 1.12 → 1), then drifts and recedes as the page scrolls. « Visite virtuelle » opens the filmed walkthrough in a dialog (`assets/film/walkthrough-720-v3.mp4`, 12 clickable chapters, play/pause, Escape, focus trap). The scroll-scrubbed frame sequence of the previous version was removed with the film it depended on (git history: commit 1c2f7e9).
-- Story (pinned 4.4 vh desktop / 3.6 phones): grid fly-in, « Séjour haut de gamme. », colour wipes, client copy with the drawn-border button, four facts.
-- Chapters (pinned 3 / 2.6 vh): slide reveals with a slow scale on each photograph.
-- Everywhere: photographs uncover through a clip-path mask and drift inside it while scrolling; headings rise line by line through a mask; groups fade up once. Reduced motion: no pins, everything in flow.
+The layout follows the Scale.com reference the client supplied (full-bleed photo hero with a centred headline and a bottom-right scroll prompt, a pure-black statement band, flat 16 px-radius cards with 32 px padding, no shadows, 1280 px content width), with Elementa's own palette, typefaces and confirmed French copy. The pinned, scroll-scrubbed story and chapter sections were removed at the owner's request: content is now laid out in fixed blocks that are fully readable at rest, so nothing can be skipped by scrolling fast.
+
+- Intro (about 5.5 s, every visit): sun (rays drawn) → mountain → leaf → water → convergence into the traced master emblem → wordmark wipe → flight into the compact navigation lockup (emblem + ELEMENTA + « Expériences »). Skip button; only back/forward history navigation skips it; reduced motion shows the finished logo for 1.4 s.
+- Hero: the graded exterior photograph (`assets/img/hero-cabin-v1*.jpg`, portrait crop on phones), copy centred, « Défilez » in an outlined 40 px square at the bottom right. The photo drifts and the copy recedes as the page scrolls; « Visite virtuelle » opens the filmed walkthrough in a dialog.
+- `.intro-band` (« Séjour haut de gamme. »): two static columns — copy and CTA on the left, the cabin-on-stilts photograph in a 24 px-radius panel on the right.
+- `.void-band`: pure #000, the emblem as line-work, « L'essentiel d'un séjour à Elementa. » and the four facts as flat cards.
+- `.chapters-grid` (« Le lieu, les cabines, l'étage. »): three flat cards (photo, sign, kicker, title, copy, link) to the Sainte-Béatrix page.
+- Everywhere: headings rise line by line through a mask once; blocks fade up once when they enter the viewport (`once: true`, no pin, no scrub). With the script off or reduced motion, everything is plain document flow and visible.
 
 ## Hero photograph
 
