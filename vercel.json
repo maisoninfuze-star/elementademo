@@ -3,24 +3,31 @@
   "redirects": [
     {
       "source": "/vesplus",
-      "destination": "/vesplus/",
-      "permanent": false
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vesplus/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vesplus/(.*)",
+      "destination": "/$1",
+      "permanent": true
     },
     {
       "source": "/beatrix",
       "destination": "/beatrix/",
       "permanent": false
+    },
+    {
+      "source": "/rawdon",
+      "destination": "/rawdon/",
+      "permanent": false
     }
   ],
   "rewrites": [
-    {
-      "source": "/vesplus/",
-      "destination": "/vesplus-demo/index.html"
-    },
-    {
-      "source": "/vesplus/(.*)",
-      "destination": "/vesplus-demo/$1"
-    },
     {
       "source": "/beatrix/",
       "destination": "/beatrix-demo/index.html"
@@ -30,8 +37,20 @@
       "destination": "/beatrix-demo/$1"
     },
     {
-      "source": "/(.*)",
+      "source": "/rawdon/",
+      "destination": "/site/index.html"
+    },
+    {
+      "source": "/rawdon/(.*)",
       "destination": "/site/$1"
+    },
+    {
+      "source": "/",
+      "destination": "/vesplus-demo/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/vesplus-demo/$1"
     }
   ],
   "headers": [

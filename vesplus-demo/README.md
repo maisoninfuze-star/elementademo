@@ -1,6 +1,6 @@
 # Elementa Expériences — /vesplus/ demo
 
-Live: https://elementademo.vercel.app/vesplus/ (served from this folder by the root `vercel.json`: `/vesplus` redirects to `/vesplus/`, `/vesplus/(.*)` rewrites to `/vesplus-demo/$1`). Local: any static server, e.g. `npx serve .`.
+Live: https://elementademo.vercel.app/ — since 2026-09-19 this folder IS the main demo: the root `vercel.json` rewrites `/` and `/(.*)` to `/vesplus-demo/…`, and the old `/vesplus/…` URLs 301 to the root. The previous root site (`../site`, Rawdon) stays reachable at `/rawdon/`, the `/beatrix/` demo is unchanged. Local: use `python3 ../../ELementa/range_server.py 8266 .` (Range support — plain `python -m http.server` stalls the hero film).
 
 This folder started as a clone of vesplus.co.kr (that extraction is kept under `docs/research` and `docs/design-references`) and was converted in place into an Elementa Expériences demo: same stack (plain HTML/CSS/JS with GSAP 3.13, ScrollTrigger, ScrollSmoother, SplitText, DrawSVGPlugin, MotionPathPlugin, all self-hosted in `js/vendor`), same strongest interactions (intro logo flying into the navigation, pinned dimensional photo grid with colour wipes, outlined buttons, full-screen chapter reveals), Elementa identity and the client's content tree of September 2026 (Sainte-Béatrix). The root Elementa site in `../site` and the `/beatrix/` demo are untouched.
 
