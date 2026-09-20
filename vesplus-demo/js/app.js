@@ -60,7 +60,7 @@
   }
   const scrollToEl = (el, smooth = true) => {
     if (smoother) smoother.scrollTo(el, smooth && !reduce, 'top top');
-    else el.scrollIntoView({ behavior: smooth && !reduce ? 'smooth' : 'auto', block: 'start' });
+    else el.scrollIntoView({ behavior: smooth && !reduce ? 'smooth' : 'instant', block: 'start' });   // 'instant', not 'auto': html has scroll-behavior:smooth, and a ScrollTrigger.refresh() cancels a smooth scroll mid-flight
   };
   const pauseScroll = () => { document.body.classList.add('paused'); if (smoother) smoother.paused(true); };
   const resumeScroll = () => { if (menuOpen || overlayOpen()) return; document.body.classList.remove('paused'); if (smoother && !locked) smoother.paused(false); };
@@ -68,7 +68,92 @@
   /* ---------------- scroll lock (intro) ---------------- */
   const lock = () => { locked = true; document.body.classList.add('lock'); if (smoother) smoother.paused(true); };
   const unlock = () => { locked = false; document.body.classList.remove('lock'); if (smoother && !menuOpen && !overlayOpen()) smoother.paused(false); };
-  window.addEventListener('error', () => { try { parkHero('global-error'); } catch (e) {} });
+  window.addEventListener('error', () => { try { parkHero('global-error'); finishIntro(); } catch (e) {} });
+
+  /* ---------------- intro (home only): the four signs, the emblem, the wordmark, the flight to the nav — then the approach film ---------------- */
+  // plays on every visit; only history navigation (back/forward) skips it; a hidden tab waits until the visitor actually looks
+  const intro = $('#intro');
+  const introSeen = (() => { try { const n = performance.getEntriesByType('navigation')[0]; return !!n && n.type === 'back_forward' && sessionStorage.getItem('elementa-intro') === '1'; } catch (e) { return false; } })();
+  const introWanted = !!intro && !introSeen && hasGsap;
+  let introDone = false, introStarted = false, introTl = null, introWatchdog = null;
+  if (introWanted) { html.classList.add('intro-on'); lock(); }   // overlay up before the first paint, page scroll held
+  function finishIntro() {
+    if (introDone) return; introDone = true; clearTimeout(introWatchdog);
+    if (introTl) { introTl.kill(); introTl = null; }
+    try { sessionStorage.setItem('elementa-intro', '1'); } catch (e) {}
+    html.classList.remove('intro-on'); if (intro) intro.hidden = true;
+    inertAll(false); nav.classList.add('is-on');
+    unlock();
+    const skipHadFocus = document.activeElement === $('.intro-skip') || document.activeElement === document.body;
+    if (intro && introStarted && skipHadFocus) { main.setAttribute('tabindex', '-1'); main.focus({ preventScroll: true }); }
+    runHeroFilm();                                                // the film follows the logo (or parks at once when it cannot play)
+    requestAnimationFrame(() => { if (hasGsap) ScrollTrigger.refresh(); });
+  }
+  function runIntro() {
+    if (!introWanted) { finishIntro(); return; }
+    if (document.visibilityState === 'hidden') {                  // background tab: hold the overlay, animate when the visitor looks
+      document.addEventListener('visibilitychange', function onVis() { if (document.visibilityState === 'visible') { document.removeEventListener('visibilitychange', onVis); if (!introDone) runIntro(); } });
+      return;
+    }
+    introStarted = true; inertAll(true);
+    $('.intro-skip').addEventListener('click', finishIntro);
+    $('.intro-skip').focus({ preventScroll: true });
+    introWatchdog = setTimeout(finishIntro, 12000);
+    primeFilm();                                                  // the approach film buffers behind the logo so it starts instantly
+    const svg = $('.intro-svg');
+    const sun = $('.sign-sun', svg), fire = $('.sign-fire', svg), tree = $('.sign-tree', svg), water = $('.sign-water', svg);
+    const oval = $('.oval-draw', svg), ovalStroke = $('.oval-stroke', svg), rays = $$('.sun-strokes line', svg);
+    const emblem = $('.emblem-final', svg), wordmark = $('.wordmark-final', svg), tagline = $('.tagline-final', svg), wmClip = $('.wm-clip-rect', svg);
+    if (reduce) {   // finished logo, briefly, then the page
+      gsap.set(wmClip, { attr: { width: 4600 } }); gsap.set([emblem, wordmark, tagline], { opacity: 1 });
+      setTimeout(finishIntro, 1400); return;
+    }
+    const BOX = { sun: [1851, 325, 3142, 1340], fire: [2075, 648, 2918, 1487], tree: [2262, 895, 2731, 1735], water: [1857, 1520, 3136, 2125] };
+    const SC = { x: 2500, y: 1925 }, SOLO = 2300;
+    const geo = k => { const [x0, y0, x1, y1] = BOX[k]; const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2; return { cx, cy, s: SOLO / Math.max(x1 - x0, y1 - y0), dx: SC.x - cx, dy: SC.y - cy }; };
+    const G = { sun: geo('sun'), fire: geo('fire'), tree: geo('tree'), water: geo('water') };
+    const solo = (el, g) => ({ svgOrigin: `${g.cx} ${g.cy}`, x: g.dx, y: g.dy, scale: g.s });
+    const staging = { x: 0, y: 0, scale: 0.9, opacity: 0.22, duration: 0.6, ease: 'power2.inOut' };
+    gsap.set(sun, solo(sun, G.sun)); gsap.set(fire, solo(fire, G.fire)); gsap.set(tree, solo(tree, G.tree)); gsap.set(water, solo(water, G.water));
+    gsap.set(rays, { drawSVG: '0%' }); gsap.set(ovalStroke, { drawSVG: '50% 50%' }); gsap.set(wmClip, { attr: { width: 0 } });
+    const flight = (group, target, cx, cy) => {
+      let m = null;
+      const measure = () => {
+        if (m) return m;
+        const k = svg.getBoundingClientRect().width / 4700;
+        const cur = group.getBoundingClientRect(), tgt = target.getBoundingClientRect();
+        return (m = { x: ((tgt.left + tgt.width / 2) - (cur.left + cur.width / 2)) / k, y: ((tgt.top + tgt.height / 2) - (cur.top + cur.height / 2)) / k, scale: tgt.width / cur.width });
+      };
+      return { svgOrigin: `${cx} ${cy}`, x: () => measure().x, y: () => measure().y, scale: () => measure().scale, duration: 0.8, ease: 'power3.inOut' };
+    };
+    const fE = flight(emblem, $('.nav-emblem'), 2496.5, 1187), fW = flight(wordmark, $('.nav-wordmark'), 2497, 2867);
+    introTl = gsap.timeline({ defaults: { ease: 'power2.inOut' }, onComplete: finishIntro })
+      .set(sun, { opacity: 1 }, 0)
+      .to(rays, { drawSVG: '100%', duration: 0.5, stagger: { each: 0.012, from: 'center' }, ease: 'power2.out' }, 0.05)
+      .to(sun, staging, 0.7)
+      .fromTo(fire, { opacity: 0, scale: G.fire.s * 0.92 }, { opacity: 1, scale: G.fire.s, duration: 0.55 }, 0.75)
+      .to(fire, staging, 1.4)
+      .fromTo(tree, { opacity: 0, scale: G.tree.s * 0.92 }, { opacity: 1, scale: G.tree.s, duration: 0.55 }, 1.45)
+      .to(tree, staging, 2.1)
+      .set(water, { opacity: 1 }, 2.15)
+      .fromTo($$('.wave', water), { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.45, stagger: 0.09 }, 2.15)
+      .to(water, { x: 0, y: 0, scale: 1, opacity: 1, duration: 1.0, ease: 'power3.inOut' }, 2.8)
+      .to($('.wave-extra', water), { opacity: 0, duration: 0.5 }, 2.8)
+      .to([sun, fire, tree], { scale: 1, opacity: 1, duration: 1.0, ease: 'power3.inOut', stagger: 0.06 }, 2.85)
+      .set(oval, { opacity: 1 }, 2.95)
+      .to(ovalStroke, { drawSVG: '0% 100%', duration: 1.0 }, 2.95)
+      .set([sun, fire, tree, water, oval], { opacity: 0 }, 4.0)
+      .set(emblem, { opacity: 1 }, 4.0)
+      .set(wordmark, { opacity: 1 }, 4.02)
+      .to(wmClip, { attr: { width: 4600 }, duration: 0.65, ease: 'power2.out' }, 4.05)
+      .fromTo(tagline, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45 }, 4.3)
+      .to(tagline, { opacity: 0, duration: 0.3 }, 4.7)
+      .to(emblem, fE, 4.7)
+      .to(wordmark, fW, 4.7)
+      .call(() => nav.classList.add('is-on'), null, 5.15)
+      .call(() => runHeroFilm(true), null, 5.2)                   // the flight takes off under the fading overlay
+      .to(intro, { autoAlpha: 0, duration: 0.35 }, 5.2);
+  }
 
   /* ---------------- hero film (home only): the approach flight plays once, parks on the balcony still, then the copy appears ---------------- */
   // plays on every visit; back/forward navigation, reduced motion, data-saver, refused autoplay, a scroll-away or « Passer » jump straight to the parked still
@@ -86,11 +171,21 @@
     const id = decodeURIComponent(location.hash.slice(1)); const target = id && document.getElementById(id);
     requestAnimationFrame(() => { if (hasGsap) ScrollTrigger.refresh(); if (target) requestAnimationFrame(() => scrollToEl(target, false)); });
   }
-  const finishIntro = parkHero;                                   // kept as an alias for the public API and the error handler
-  function runHeroFilm() {
-    if (!film || !hero) { parkHero('no-film'); return; }
-    const saveData = !!(navigator.connection && navigator.connection.saveData);
-    if (filmSeen || reduce || saveData || !anim) { parkHero(filmSeen ? 'seen' : reduce ? 'reduce' : saveData ? 'save-data' : 'no-anim'); return; }
+  const saveData = !!(navigator.connection && navigator.connection.saveData);
+  const filmWanted = !!film && !!hero && !filmSeen && !reduce && !saveData && anim;
+  let filmPrimed = false;
+  function primeFilm() {                                          // attach the source early so the flight is buffered when its cue comes
+    if (filmPrimed || !filmWanted) return; filmPrimed = true;
+    film.src = (isMobile() && film.dataset.srcMobile) || film.dataset.src;
+    film.muted = true; film.defaultMuted = true; film.playsInline = true;
+  }
+  function runHeroFilm(early) {                                  // early = cued from inside the logo timeline, before the page is unlocked
+    if (filmStarted || parked) return;
+    const anchor = (() => { try { const id = decodeURIComponent(location.hash.slice(1)); return !!(id && id !== 'top' && id !== 'hero' && document.getElementById(id)); } catch (e) { return false; } })();
+    if (!filmWanted || anchor) {                                  // nothing to play: park — but only once the intro has unlocked the page (the park may scroll to an anchor)
+      if (early) return;
+      parkHero(!film || !hero ? 'no-film' : filmSeen ? 'seen' : reduce ? 'reduce' : saveData ? 'save-data' : !anim ? 'no-anim' : 'anchor'); return;
+    }
     filmStarted = true;
     if (document.visibilityState === 'hidden') {                  // background tab: start the flight when the visitor actually looks
       document.addEventListener('visibilitychange', function onVis() { if (document.visibilityState === 'visible') { document.removeEventListener('visibilitychange', onVis); if (!parked) beginFilm(); } });
@@ -100,8 +195,7 @@
   }
   function beginFilm() {
     hero.classList.add('is-playing');
-    film.src = (isMobile() && film.dataset.srcMobile) || film.dataset.src;
-    film.muted = true; film.defaultMuted = true; film.playsInline = true;
+    primeFilm();
     film.addEventListener('ended', () => parkHero('ended'), { once: true });
     film.addEventListener('error', () => parkHero('video-error'), { once: true });
     // stall guard: park only if the film stops advancing for 10 s while the page is visible (a slow but moving download keeps playing); hard cap 60 s of visible time
@@ -132,6 +226,8 @@
     };
     film.addEventListener('loadeddata', attempt, { once: true });
     film.addEventListener('canplaythrough', attempt, { once: true });
+    // phones pause the flight when the visitor switches apps and do not resume it on their own
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && !parked && film.paused && !film.ended) film.play().catch(() => {}); });
     attempt();
   }
 
@@ -300,14 +396,13 @@
 
   /* ---------------- boot ---------------- */
   if (!hasGsap) { nav.classList.add('is-on'); html.classList.add('no-anim'); parkHero('no-gsap'); return; }
-  nav.classList.add('is-on');
   const start = () => {
     try { rebuildScroll(); } catch (e) { console.error(e); }
-    try { runHeroFilm(); } catch (e) { console.error(e); parkHero('boot-error'); }
+    try { runIntro(); } catch (e) { console.error(e); parkHero('boot-error'); finishIntro(); }
     requestAnimationFrame(() => ScrollTrigger.refresh());
   };
   let booted = false; const boot = () => { if (booted) return; booted = true; start(); };
   (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(() => { requestAnimationFrame(boot); setTimeout(boot, 800); });
   window.addEventListener('load', () => ScrollTrigger.refresh());
-  window.__el = { get smoother() { return smoother; }, get parked() { return parked; }, get parkReason() { return parkReason; }, get locked() { return locked; }, get lang() { return lang; }, heroState, finishIntro, rebuildScroll, openTour, closeTour };
+  window.__el = { get smoother() { return smoother; }, get introDone() { return introDone; }, get parked() { return parked; }, get parkReason() { return parkReason; }, parkHero, get locked() { return locked; }, get lang() { return lang; }, heroState, finishIntro, rebuildScroll, openTour, closeTour };
 })();
