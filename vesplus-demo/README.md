@@ -21,8 +21,8 @@ Never edit the generated root pages or `js/i18n.js` by hand.
 
 ## Pages (client tree)
 
-- `index.html` — Accueil: intro, cinematic hero (photo), « Séjour haut de gamme » pinned story, « Le lieu / Les cabines / À l'étage » pinned chapters, galerie, localisation, disponibilités, liste d'accès anticipé, footer.
-- `sainte-beatrix.html` — Le projet, Cabines de montagne, 0.0 L'architecture, Visite virtuelle (chambre, cuisine, à l'étage), Autres équipements, Une histoire qui commence.
+- `index.html` — Accueil: hero film (approach flight → parked balcony still → « Entrer »), « Séjour haut de gamme » two-column block, black statement band with the four facts, « Le lieu / Les cabines / À l'étage » cards, localisation, disponibilités, liste d'accès anticipé, footer. (The photo gallery moved to the Sainte-Béatrix page on 2026-09-19.)
+- `sainte-beatrix.html` — Le projet, Cabines de montagne, 0.0 L'architecture, Visite virtuelle (chambre, cuisine, à l'étage), Autres équipements, Une histoire qui commence. Also the photo gallery (`#galerie`): a full-width arrow carousel of 9 cards with captions beneath the photos (`.carousel`, native snap scrolling, no autoplay, no lightbox).
 - `evenements.html` — retraite corporative, bien-être, créative, mariage d'exception (each → liste d'accès anticipé).
 - `blogue.html` (articles à venir), `histoire.html`, `partenaires.html`, `contact.html`, `planifier.html` (with the availability form), `faq.html`, `actualites.html` (dossier de presse), `boutique.html` and `habitations.html` (placeholders, as in the client tree).
 - Every page ends with the « Rester informé » band (email + occasion) and the footer (address 175, rue Panoramique, Sainte-Béatrix; Instagram/Facebook @elementa.experiences).

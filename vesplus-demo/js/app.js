@@ -248,25 +248,20 @@
       $$('.page-lead, .prose > p, .pull-quote, .section-head .section-body, .split-copy > :not([data-split]), .arch-copy > :not([data-split]), .room-copy > :not([data-split]), .event-copy > :not([data-split]), .next-inner > :not([data-split]), .contact-card, .plan-list > div, .faq-item, .partners-list li, .soon-card, .stay-col, .avail-inner > :not([data-split]), .early-copy > :not([data-split]), .early-form, .equip-grid .feature-group, .story-cta, .intro-copy > :not([data-split]), .intro-media, .fact, .chapter-card').forEach(el => {
         gsap.from(el, { y: 26, autoAlpha: 0, duration: 0.8, ease: 'power3.out', scrollTrigger: once(el, 'top 90%') });
       });
-      if ($('.gallery-grid')) gsap.from('.gallery-item', { y: 26, autoAlpha: 0, duration: 0.6, stagger: 0.07, ease: 'power3.out', scrollTrigger: once('.gallery-grid') });
       return () => { splits.forEach(s => s.revert()); };
     });
     return ctxMM;
   }
 
-  /* ---------------- gallery lightbox (home) ---------------- */
-  const lb = $('#lightbox'), lbImg = $('.lb-img'), lbCap = $('.lb-cap'), lbStatus = $('.lb-status');
-  const items = $$('.gallery-item'); let lbIndex = 0, lbOpener = null;
-  const photos = items.map(b => { const img = $('img', b); return { src: img.getAttribute('srcset').split(',').pop().trim().split(' ')[0], cap: () => $('.gallery-cap', b).textContent }; });
-  function showLb(i) { lbIndex = (i + photos.length) % photos.length; const p = photos[lbIndex]; lbImg.src = p.src; lbImg.alt = p.cap(); lbCap.textContent = p.cap(); lbStatus.textContent = `${lbIndex + 1} ${t('ga.of')} ${photos.length}. ${p.cap()}`; }
-  function openLightbox(i, opener) { lbOpener = opener; showLb(i); lb.hidden = false; inertAll(true); pauseScroll(); $('.lb-close').focus(); }
-  function closeLightbox() { if (!lb || lb.hidden) return; lb.hidden = true; inertAll(false); resumeScroll(); if (lbOpener && lbOpener.focus) lbOpener.focus(); }
-  if (lb) {
-    items.forEach((b, i) => b.addEventListener('click', () => openLightbox(i, b)));
-    $('.lb-close').addEventListener('click', closeLightbox); $('.lb-prev').addEventListener('click', () => showLb(lbIndex - 1)); $('.lb-next').addEventListener('click', () => showLb(lbIndex + 1));
-    lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
-    lb.addEventListener('keydown', e => { if (e.key === 'ArrowRight') showLb(lbIndex + 1); if (e.key === 'ArrowLeft') showLb(lbIndex - 1); trapTab(lb, e); });
-  }
+  /* ---------------- carousel (Sainte-Béatrix gallery): the arrows page by one card; touch and trackpad use native snap scrolling ---------------- */
+  $$('.carousel').forEach(car => {
+    const track = $('.car-track', car), prev = $('.car-prev', car), next = $('.car-next', car); if (!track || !prev || !next) return;
+    const step = () => { const c = $('.car-card', track); return c ? c.getBoundingClientRect().width + 16 : track.clientWidth * 0.8; };
+    const update = () => { prev.disabled = track.scrollLeft <= 4; next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4; };
+    prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: reduce ? 'auto' : 'smooth' }));
+    next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: reduce ? 'auto' : 'smooth' }));
+    track.addEventListener('scroll', update, { passive: true }); window.addEventListener('resize', update); update();
+  });
 
   /* ---------------- forms: availability request and early-access list (mailto to the address in the client copy; no fake confirmation) ---------------- */
   const CONTACT = 'info@elementa-experiences.com';
