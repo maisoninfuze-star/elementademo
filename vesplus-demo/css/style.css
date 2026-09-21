@@ -309,6 +309,13 @@ html.reduced .intro-svg .emblem-final,html.reduced .intro-svg .wordmark-final,ht
 .tour-inner{width:min(1200px,100%);max-height:100%;display:flex;flex-direction:column;gap:18px}
 .tour-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
 .tour-head .kicker{margin-bottom:8px}
+.tour-head-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.tour-switch{display:flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:999px}
+.tour-film{min-height:34px;padding:0 14px;border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);transition:color .3s,background .3s}
+.tour-film:hover{color:var(--ink)}
+.tour-film.is-on{color:var(--bg);background:var(--ink)}
+.tour-next{position:absolute;left:50%;bottom:clamp(20px,6vh,48px);transform:translateX(-50%);z-index:2}
+.tour-next[hidden]{display:none}
 .tour-lead{max-width:56ch;font-size:15px;line-height:1.5;color:var(--ink-2)}
 .tour-stage{position:relative;aspect-ratio:16/9;max-height:66vh;background:#000;overflow:hidden}
 .tour-video{width:100%;height:100%;object-fit:cover;cursor:pointer}
@@ -340,6 +347,7 @@ html.reduced .intro-svg .emblem-final,html.reduced .intro-svg .wordmark-final,ht
   .page-hero{aspect-ratio:4/3}
   .tour-inner{gap:12px}
   .tour-head{flex-direction:column;align-items:flex-start}
+  .tour-head-actions{width:100%;justify-content:space-between}
   .tour-stage{max-height:none}
   .tour-chapters{flex-wrap:nowrap;overflow-x:auto;max-width:100%;padding-bottom:4px;-webkit-overflow-scrolling:touch}
   .grid-2{grid-template-columns:1fr}

@@ -1,12 +1,19 @@
-<div class="tour" id="tour" role="dialog" aria-modal="true" data-i18n-aria="tour.aria" aria-label="Visite virtuelle filmée de la cabine" hidden>
+<div class="tour" id="tour" role="dialog" aria-modal="true" data-i18n-aria="tour.aria" aria-label="Visite virtuelle filmée de la cabine et de ses alentours" hidden>
   <div class="tour-inner">
     <div class="tour-head">
       <div><p class="kicker" data-i18n="cta.tour">Visite virtuelle</p><p class="tour-lead" data-i18n="tour.lead">…</p></div>
-      <button type="button" class="btn btn-outline tour-close" data-i18n="tour.close">Fermer la visite</button>
+      <div class="tour-head-actions">
+        <div class="tour-switch" role="group" data-i18n-aria="tour.films" aria-label="Choisir le film">
+          <button type="button" class="tour-film is-on" data-film="cabin" aria-pressed="true" data-i18n="tour.filmCabin">La cabine</button>
+          <button type="button" class="tour-film" data-film="outside" aria-pressed="false" data-i18n="tour.filmOutside">Les alentours</button>
+        </div>
+        <button type="button" class="btn btn-outline tour-close" data-i18n="tour.close">Fermer la visite</button>
+      </div>
     </div>
     <div class="tour-stage">
-      <video class="tour-video" playsinline preload="metadata" poster="assets/film/poster-v3.jpg" src="assets/film/walkthrough-720-v3.mp4"></video>
+      <video class="tour-video" playsinline preload="metadata" poster="assets/film/poster-cabin-v4.jpg" src="assets/film/tour-cabin-720-v4.mp4"></video>
       <button type="button" class="tour-toggle" aria-pressed="false"><span class="tour-toggle-icon" aria-hidden="true"></span><span class="tour-toggle-label" data-i18n="tour.play">Lire</span></button>
+      <button type="button" class="btn btn-solid tour-next" hidden data-i18n="tour.seeOutside">Voir les alentours</button>
       <div class="tour-bar" aria-hidden="true"><i></i></div>
       <p class="tour-unavailable" hidden data-i18n="tour.unavailable">…</p>
     </div>

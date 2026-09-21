@@ -90,7 +90,7 @@
     requestAnimationFrame(() => { if (hasGsap) ScrollTrigger.refresh(); });
   }
   function runIntro() {
-    if (!introWanted) { finishIntro(); return; }
+    if (!introWanted || introDone) { finishIntro(); return; }   // already finished (error handler, harness) → never animate a hidden overlay
     if (document.visibilityState === 'hidden') {                  // background tab: hold the overlay, animate when the visitor looks
       document.addEventListener('visibilitychange', function onVis() { if (document.visibilityState === 'visible') { document.removeEventListener('visibilitychange', onVis); if (!introDone) runIntro(); } });
       return;
@@ -122,7 +122,7 @@
         if (m) return m;
         const k = svg.getBoundingClientRect().width / 4700;
         const cur = group.getBoundingClientRect(), tgt = target.getBoundingClientRect();
-        return (m = { x: ((tgt.left + tgt.width / 2) - (cur.left + cur.width / 2)) / k, y: ((tgt.top + tgt.height / 2) - (cur.top + cur.height / 2)) / k, scale: tgt.width / cur.width });
+        return (m = { x: ((tgt.left + tgt.width / 2) - (cur.left + cur.width / 2)) / k, y: ((tgt.top + tgt.height / 2) - (cur.top + cur.height / 2)) / k, scale: tgt.width / (cur.width || 1) });
       };
       return { svgOrigin: `${cx} ${cy}`, x: () => measure().x, y: () => measure().y, scale: () => measure().scale, duration: 0.8, ease: 'power3.inOut' };
     };
@@ -271,21 +271,39 @@
   // the navigation turns solid once the page has scrolled past its first pixels
   if (hasGsap) ScrollTrigger.create({ start: 60, end: 'max', onToggle: s => nav.classList.toggle('is-solid', s.isActive), onRefresh: s => nav.classList.toggle('is-solid', s.isActive) });
 
-  /* ---------------- virtual tour: the filmed walkthrough in a dialog, with chapters ---------------- */
-  const tour = $('#tour'), tv = $('.tour-video'), tourToggle = $('.tour-toggle'), tourBar = $('.tour-bar i'), tourChapters = $('.tour-chapters');
-  const CAPS = [[0, 'hero.c0'], [4, 'hero.c1'], [9, 'hero.c2'], [11.7, 'hero.c3'], [14.3, 'hero.c4'], [19.5, 'hero.c5'], [24.5, 'hero.c6'], [30.5, 'hero.c7'], [35, 'hero.c8'], [46.5, 'hero.c9'], [49.5, 'hero.c11'], [54.5, 'hero.c10']];
-  let tourOpener = null, tourChapter = -1;
+  /* ---------------- virtual tour: two films in a dialog — the cabin walkthrough and the surroundings — with chapters ---------------- */
+  const tour = $('#tour'), tv = $('.tour-video'), tourToggle = $('.tour-toggle'), tourBar = $('.tour-bar i'), tourChapters = $('.tour-chapters'), tourLead = $('.tour-lead'), tourNext = $('.tour-next');
+  const FILMS = {
+    cabin: { src: 'assets/film/tour-cabin-720-v4.mp4', poster: 'assets/film/poster-cabin-v4.jpg', lead: 'tour.lead', next: 'outside', nextLabel: 'tour.seeOutside',
+      caps: [[0, 'hero.c0'], [10.2, 'hero.c1'], [15.2, 'hero.c2'], [18, 'hero.c3'], [20.5, 'hero.c4'], [25.8, 'hero.c5'], [30.8, 'hero.c6'], [36.8, 'hero.c7'], [41.2, 'hero.c8'], [52.8, 'hero.c9'], [55.8, 'hero.c11'], [60.8, 'hero.c10']] },
+    outside: { src: () => isMobile() ? 'assets/film/tour-outside-720-v1.mp4' : 'assets/film/tour-outside-1080-v1.mp4', poster: 'assets/film/poster-outside-v1.jpg', lead: 'tour.leadOut', next: 'cabin', nextLabel: 'tour.seeCabin',
+      caps: [[0, 'out.c0'], [2.5, 'out.c1'], [7, 'out.c2'], [13, 'out.c3'], [21, 'out.c4']] }
+  };
+  let tourOpener = null, tourChapter = -1, tourFilm = 'cabin';
+  const CAPS = () => FILMS[tourFilm].caps;
   function buildChapters() {
-    if (!tourChapters) return;
-    tourChapters.innerHTML = CAPS.map((c, i) => `<li><button type="button" data-t="${c[0]}" data-i="${i}">${t(c[1])}</button></li>`).join('');
+    if (!tourChapters) return; tourChapter = -1;
+    tourChapters.innerHTML = CAPS().map((c, i) => `<li><button type="button" data-t="${c[0]}" data-i="${i}">${t(c[1])}</button></li>`).join('');
   }
   function setChapter(i) { if (i === tourChapter) return; tourChapter = i; $$('button', tourChapters).forEach(b => b.classList.toggle('is-on', +b.dataset.i === i)); }
-  function openTour(chapter, opener) {
-    if (!tour) return; tourOpener = opener || document.activeElement;
-    buildChapters(); tour.hidden = false; inertAll(true); pauseScroll();
-    const start = CAPS[Math.max(0, Math.min(CAPS.length - 1, chapter || 0))][0];
+  function seekTo(start) {
     const go = () => { try { tv.currentTime = start; } catch (e) {} tv.play().catch(() => {}); };
     if (tv.readyState >= 1) go(); else tv.addEventListener('loadedmetadata', go, { once: true });
+  }
+  function setFilm(key, chapter) {                                // swap the film (source, poster, lead, chapters) and start at a chapter
+    const f = FILMS[key]; if (!f || !tv) return;
+    if (tourFilm !== key) { tourFilm = key; tv.pause(); tv.poster = f.poster; tv.src = typeof f.src === 'function' ? f.src() : f.src; }
+    $$('.tour-film', tour).forEach(b => { const on = b.dataset.film === key; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', String(on)); });
+    if (tourLead) { tourLead.dataset.i18n = f.lead; tourLead.innerHTML = t(f.lead); }
+    if (tourNext) { tourNext.dataset.i18n = f.nextLabel; tourNext.textContent = t(f.nextLabel); tourNext.hidden = true; }
+    tour.classList.remove('is-ended'); $('.tour-unavailable').hidden = true; tourToggle.hidden = false;
+    buildChapters();
+    const caps = f.caps; seekTo(caps[Math.max(0, Math.min(caps.length - 1, chapter || 0))][0]);
+  }
+  function openTour(chapter, opener, film) {
+    if (!tour) return; tourOpener = opener || document.activeElement;
+    tour.hidden = false; inertAll(true); pauseScroll();
+    setFilm(film || 'cabin', chapter);
     $('.tour-close').focus();
   }
   function closeTour() {
@@ -293,15 +311,19 @@
     if (tourOpener && tourOpener.focus) tourOpener.focus();
   }
   if (tour) {
-    $$('.tour-open').forEach(b => b.addEventListener('click', () => openTour(+b.dataset.tourChapter || 0, b)));
+    $$('.tour-open').forEach(b => b.addEventListener('click', () => openTour(+b.dataset.tourChapter || 0, b, b.dataset.tourFilm)));
+    $$('.tour-film', tour).forEach(b => b.addEventListener('click', () => setFilm(b.dataset.film, 0)));
+    if (tourNext) tourNext.addEventListener('click', () => setFilm(FILMS[tourFilm].next, 0));
     $('.tour-close').addEventListener('click', closeTour);
     tour.addEventListener('click', e => { if (e.target === tour) closeTour(); });
     tour.addEventListener('keydown', e => trapTab(tour, e));
     tourToggle.addEventListener('click', () => tv.paused ? tv.play().catch(() => {}) : tv.pause());
     tv.addEventListener('click', () => tv.paused ? tv.play().catch(() => {}) : tv.pause());
     const syncToggle = () => { const playing = !tv.paused; tour.classList.toggle('is-playing', playing); tourToggle.setAttribute('aria-pressed', String(playing)); $('.tour-toggle-label').textContent = t(playing ? 'tour.pause' : 'tour.play'); };
-    tv.addEventListener('play', syncToggle); tv.addEventListener('pause', syncToggle); tv.addEventListener('ended', syncToggle);
-    tv.addEventListener('timeupdate', () => { const d = tv.duration || 0; if (tourBar && d) tourBar.style.width = (tv.currentTime / d * 100).toFixed(2) + '%'; let i = 0; while (i + 1 < CAPS.length && CAPS[i + 1][0] <= tv.currentTime) i++; setChapter(i); });
+    tv.addEventListener('play', () => { tour.classList.remove('is-ended'); if (tourNext) tourNext.hidden = true; syncToggle(); });
+    tv.addEventListener('pause', syncToggle);
+    tv.addEventListener('ended', () => { syncToggle(); tour.classList.add('is-ended'); if (tourNext) { tourNext.hidden = false; tourNext.focus(); } });   // the other film is one click away
+    tv.addEventListener('timeupdate', () => { const d = tv.duration || 0; if (tourBar && d) tourBar.style.width = (tv.currentTime / d * 100).toFixed(2) + '%'; const caps = CAPS(); let i = 0; while (i + 1 < caps.length && caps[i + 1][0] <= tv.currentTime) i++; setChapter(i); });
     tv.addEventListener('error', () => { $('.tour-unavailable').hidden = false; tourToggle.hidden = true; });
     tourChapters.addEventListener('click', e => { const b = e.target.closest('button[data-t]'); if (!b) return; try { tv.currentTime = +b.dataset.t; } catch (err) {} tv.play().catch(() => {}); });
   }

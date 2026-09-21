@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20260920a">
+<link rel="stylesheet" href="css/style.css?v=20260920b">
 <script>document.documentElement.classList.replace('no-js','js')</script>
 </head>
 <body class="page">
@@ -176,15 +176,22 @@
 </div><!-- .content -->
 </div><!-- .layout -->
 <!-- TOUR_START -->
-<div class="tour" id="tour" role="dialog" aria-modal="true" data-i18n-aria="tour.aria" aria-label="Visite virtuelle filmée de la cabine" hidden>
+<div class="tour" id="tour" role="dialog" aria-modal="true" data-i18n-aria="tour.aria" aria-label="Visite virtuelle filmée de la cabine et de ses alentours" hidden>
   <div class="tour-inner">
     <div class="tour-head">
       <div><p class="kicker" data-i18n="cta.tour">Visite virtuelle</p><p class="tour-lead" data-i18n="tour.lead">Une visite filmée de la cabine, de la forêt jusqu’au bain vapeur. Choisissez un chapitre ou laissez-la se dérouler.</p></div>
-      <button type="button" class="btn btn-outline tour-close" data-i18n="tour.close">Fermer la visite</button>
+      <div class="tour-head-actions">
+        <div class="tour-switch" role="group" data-i18n-aria="tour.films" aria-label="Choisir le film">
+          <button type="button" class="tour-film is-on" data-film="cabin" aria-pressed="true" data-i18n="tour.filmCabin">La cabine</button>
+          <button type="button" class="tour-film" data-film="outside" aria-pressed="false" data-i18n="tour.filmOutside">Les alentours</button>
+        </div>
+        <button type="button" class="btn btn-outline tour-close" data-i18n="tour.close">Fermer la visite</button>
+      </div>
     </div>
     <div class="tour-stage">
-      <video class="tour-video" playsinline preload="metadata" poster="assets/film/poster-v3.jpg" src="assets/film/walkthrough-720-v3.mp4"></video>
+      <video class="tour-video" playsinline preload="metadata" poster="assets/film/poster-cabin-v4.jpg" src="assets/film/tour-cabin-720-v4.mp4"></video>
       <button type="button" class="tour-toggle" aria-pressed="false"><span class="tour-toggle-icon" aria-hidden="true"></span><span class="tour-toggle-label" data-i18n="tour.play">Lire</span></button>
+      <button type="button" class="btn btn-solid tour-next" hidden data-i18n="tour.seeOutside">Voir les alentours</button>
       <div class="tour-bar" aria-hidden="true"><i></i></div>
       <p class="tour-unavailable" hidden data-i18n="tour.unavailable">La vidéo n’a pas pu être chargée. Vous pouvez poursuivre la découverte sur la page.</p>
     </div>
@@ -202,7 +209,7 @@
 <script src="js/vendor/SplitText.min.js"></script>
 <script src="js/vendor/DrawSVGPlugin.min.js"></script>
 <script src="js/vendor/MotionPathPlugin.min.js"></script>
-<script src="js/i18n.js?v=20260920a"></script>
-<script src="js/app.js?v=20260920a"></script>
+<script src="js/i18n.js?v=20260920b"></script>
+<script src="js/app.js?v=20260920b"></script>
 </body>
 </html>

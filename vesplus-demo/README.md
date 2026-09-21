@@ -29,6 +29,16 @@ Never edit the generated root pages or `js/i18n.js` by hand.
 
 Contact addresses come from the client document: `info@elementa-experiences.com` (general, availability form, early-access list), `media@elementa-experiences.com` (media), `hamza@hamzamajdi.com` (press kit). Both forms open the visitor's email app with the request pre-filled; nothing pretends to send.
 
+
+### Virtual tour dialog (`src/partials/tour.html`, 2026-09-20)
+
+Two films in one dialog, switched with the « La cabine / Les alentours » pills and with a « Voir les alentours » / « Revoir la cabine » button that appears when a film ends:
+
+- **La cabine** — the owner's upscaled walkthrough (`assets/film/tour-cabin-720-v4.mp4`, 69 s). The upscale arrived as a 16:9 picture letterboxed in a 1344×2410 portrait canvas; it is cropped to the picture (`crop=1344:756:0:832`) and encoded 1280×720, 30 fps, H.264, capped at 4.2 Mbps, no audio (the source carries a soundtrack; the tour has always been silent). The cut is the old one with a 6.25 s longer aerial opening, so every chapter time is the old time + 6.25 s (matched frame by frame with a DTW alignment, see the session notes). « Entrer » on the home hero opens chapter 1 (the terrace = the entrance), continuing from where the hero film parks.
+- **Les alentours** — the outdoor walk (`assets/film/tour-outside-1080-v1.mp4`, 720 p variant on phones, 26.6 s, silent source): entrance, stone garden, under the cabin, the stilt, the roof from the sky. Five chapters (`out.c0`–`out.c4`).
+
+Film names carry a version suffix because `assets/film` is cached immutably on Vercel: never overwrite, rename.
+
 ## Home page layout and motion (2026-09-18 — client feedback)
 
 The layout follows the Scale.com reference the client supplied (full-bleed photo hero with a centred headline and a bottom-right scroll prompt, a pure-black statement band, flat 16 px-radius cards with 32 px padding, no shadows, 1280 px content width), with Elementa's own palette, typefaces and confirmed French copy. The pinned, scroll-scrubbed story and chapter sections were removed at the owner's request: content is now laid out in fixed blocks that are fully readable at rest, so nothing can be skipped by scrolling fast.
